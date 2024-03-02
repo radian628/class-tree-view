@@ -4,7 +4,7 @@ import { getDataForTerm } from "./get-classes.js";
 import cachedSpring2024 from "./cached_spring2024.json" with { type: "json" };
 import { getHumanReadableSyntaxTree, getPrereqs, getPrereqsSyntaxTree } from "./get-prereqs.js";
 
-const rawClassList = (await getDataForTerm("202403")).map((s) => s.data).flat(1);
+const rawClassList = (cachedSpring2024).map((s) => s.data).flat(1);
 
 // const rawClassNamesTxt = rawClassList.map(c => c.courseTitle).join("\n");
 
