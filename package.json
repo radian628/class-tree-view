@@ -12,7 +12,8 @@
   "scripts": {
     "scrape": "node scraper/index.js",
     "updatedb": "node scraper/updatedb.js",
-    "build": "node ./build-frontend.js"
+    "build": "node ./build-frontend.js",
+    "serve-dev": "node ./serve-dev.js"
   },
   "devDependencies": {
     "@types/react": "^18.2.61",
