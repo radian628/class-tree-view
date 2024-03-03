@@ -49,6 +49,12 @@ async function main() {
 
     console.log('Courses have been inserted successfully.');
 
+    // Test query to retrieve data from the database
+    const testQuery = 'SELECT * FROM Courses LIMIT 5';
+    const [rows] = await connection.execute(testQuery);
+    console.log('Test Query Result:', rows);
+
+
     await connection.end();
 }
 
