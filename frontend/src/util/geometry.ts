@@ -2,7 +2,7 @@ function clamp(x: number, a: number, b: number) {
   return Math.min(Math.max(x, a), b);
 }
 
-function intersectLineSegmentStartingAtBoxCenter(
+export function intersectLineSegmentStartingAtBoxCenter(
   x1: number,
   y1: number,
   x2: number,

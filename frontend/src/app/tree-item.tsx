@@ -9,7 +9,7 @@ export function TreeItem(props: {
   const [isMouseDown, setIsMouseDown] = useState(false);
 
   useEffect(() => {
-    console.log("RESETTING MOUES EVENT LISTENRS");
+    // notify when mouse released by setting state and re-enable forces
     const mouseup = (e: MouseEvent) => {
       setIsMouseDown(false);
       props.setNode((node) => ({
@@ -18,6 +18,7 @@ export function TreeItem(props: {
       }));
     };
 
+    // move graphnode when mouse moved
     const mousemove = (e: MouseEvent) => {
       if (!isMouseDown) return;
       props.setNode((node) => ({
@@ -27,9 +28,9 @@ export function TreeItem(props: {
       }));
     };
 
+    // listener add/remove lifecycle stuff
     document.addEventListener("mouseup", mouseup);
     document.addEventListener("mousemove", mousemove);
-
     return () => {
       document.removeEventListener("mouseup", mouseup);
       document.removeEventListener("mousemove", mousemove);
@@ -40,6 +41,7 @@ export function TreeItem(props: {
     <div
       className="tree-node"
       onMouseDown={() => {
+        // register mouse down and disable forces on this node
         setIsMouseDown(true);
         props.setNode((node) => ({
           ...node,
