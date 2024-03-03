@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 import { mapMapValues } from "../util/map";
 
 import "./fdg.less";
+import { intersectLineSegmentStartingAtBoxCenter } from "../util/geometry";
 
 export function ForceDirectedGraph<T>(props: {
   graph: Map<string, FDGNode<T>>;
@@ -18,6 +19,9 @@ export function ForceDirectedGraph<T>(props: {
 }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const innerElementsRef = useRef<Map<string, HTMLDivElement | null>>(
+    new Map()
+  );
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -34,9 +38,71 @@ export function ForceDirectedGraph<T>(props: {
 
     let keepLooping = true;
 
-    // run canvas stuff
+    // run per-frame stuff
     function frame() {
-      // pairwise iteration over all elements
+      // update canvas
+      if (!canvas) return;
+
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      for (const [keyA, node] of props.graph.entries()) {
+        for (const [keyB, connection] of node.connections.entries()) {
+          const elementB = innerElementsRef.current.get(keyA);
+          const elementA = innerElementsRef.current.get(keyB);
+
+          if (!elementA || !elementB) continue;
+
+          const rect1 = elementA.getBoundingClientRect();
+          const rect2 = elementB.getBoundingClientRect();
+
+          const xCenter1 = rect1.width / 2 + rect1.left;
+          const xCenter2 = rect2.width / 2 + rect2.left;
+          const yCenter1 = rect1.height / 2 + rect1.top;
+          const yCenter2 = rect2.height / 2 + rect2.top;
+
+          const p2 = intersectLineSegmentStartingAtBoxCenter(
+            rect1.left,
+            rect1.top,
+            rect1.left + rect1.width,
+            rect1.top + rect1.height,
+            xCenter2,
+            yCenter2
+          );
+          const p1 = intersectLineSegmentStartingAtBoxCenter(
+            rect2.left,
+            rect2.top,
+            rect2.left + rect2.width,
+            rect2.top + rect2.height,
+            xCenter1,
+            yCenter1
+          );
+
+          const dir = Math.atan2(p2.y - p1.y, p2.x - p1.x);
+          const arrowLen = 20;
+          const arrowAngle = (Math.PI * 2.5) / 3;
+
+          ctx.lineWidth = 6;
+          ctx.lineCap = "round";
+          ctx.lineJoin = "round";
+          ctx.strokeStyle = "#888888";
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.moveTo(
+            p2.x + Math.cos(dir + arrowAngle) * arrowLen,
+            p2.y + Math.sin(dir + arrowAngle) * arrowLen
+          );
+          ctx.lineTo(p2.x, p2.y);
+          ctx.lineTo(
+            p2.x + Math.cos(dir - arrowAngle) * arrowLen,
+            p2.y + Math.sin(dir - arrowAngle) * arrowLen
+          );
+          ctx.stroke();
+        }
+      }
+
+      // modify graph
       props.setGraph((graph) =>
         mapMapValues(graph, (aKey, a) => {
           return produce(a, (a) => {
@@ -91,6 +157,9 @@ export function ForceDirectedGraph<T>(props: {
               style={{
                 top: `${v.y}px`,
                 left: `${v.x}px`,
+              }}
+              ref={(elt) => {
+                innerElementsRef.current.set(k, elt);
               }}
             >
               <props.itemTemplate
