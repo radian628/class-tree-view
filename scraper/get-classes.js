@@ -55,6 +55,8 @@ export async function getDataForTerm(term) {
   );
   const setSearchModeJson = await setSearchModeRes.json();
 
+  console.log(`Beginning request for ${term}`);
+
   // get data from the search
   async function getClasses(count, offset) {
     const dataRes = await fetch(

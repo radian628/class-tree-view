@@ -11,6 +11,7 @@
   "type": "module",
   "scripts": {
     "scrape": "node scraper/index.js",
+    "updatedb": "node scraper/updatedb.js",
     "build": "node ./build-frontend.js"
   },
   "devDependencies": {
