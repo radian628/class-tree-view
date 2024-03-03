@@ -30,9 +30,10 @@ services:
     networks:
       - tree-network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      # TODO make this use variables
+      test: ["CMD-SHELL", "mysql -h localhost -u mysql-user -pmysql-password-insecure -e 'SELECT 1'"]
       interval: 5s
-      timeout: 2s
+      timeout: 3s
       retries: 5
 
 

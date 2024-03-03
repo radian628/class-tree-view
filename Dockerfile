@@ -10,6 +10,6 @@ RUN npm install
 
 COPY . .
 
-# RUN npm run writeDB
+RUN npm run writeDB
 
-CMD ["npm", "run", "writeDB"]
+CMD ["npm", "run", "serve-dev"]

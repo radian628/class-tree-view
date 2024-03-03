@@ -1,7 +1,6 @@
 # Course Tree Visualizer
 
 ## Running
-`$ docker-compose build`
-`$ docker-compose up`
+`$ docker-compose up --build`
 
 Navigate to localhost:8000
