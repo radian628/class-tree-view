@@ -1,4 +1,8 @@
 import { createRoot } from "react-dom";
 import React from "react";
+import { App } from "./app/app";
+import { enableMapSet } from "immer";
 
-createRoot(document.getElementById("root")!).render(<div>Got here!!!!1</div>);
+enableMapSet();
+
+createRoot(document.getElementById("root")!).render(<App></App>);
