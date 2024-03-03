@@ -4,10 +4,12 @@ WORKDIR /app
 
 COPY package*.json ./
 
+COPY out ./
+
 RUN npm install
 
 COPY . .
 
-RUN npm run updatedb
+# RUN npm run writeDB
 
-CMD ["npm", "run", "serve-dev"]
+CMD ["npm", "run", "writeDB"]

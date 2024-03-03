@@ -3,23 +3,42 @@ services:
   app:
     build:
       context: .
-    depends_on:
-      - db
     environment:
-      DB_HOST: db
+      DB_HOST: mysql
       DB_USER: mysql-user
       DB_PASSWORD: mysql-password-insecure
-      DB_DATABASE: mysql-database
+      DB_NAME: coursetree-database
+    depends_on:
+      mysql:
+        condition: service_healthy
     ports:
       - "8000:8000"
+    networks:
+      - tree-network
 
-  db:
+  mysql:
     image: mysql:latest
-    restart: always
+    volumes:
+      - db-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root-password-insecure
-      MYSQL_DATABASE: mysql-database
+      MYSQL_DATABASE: coursetree-database
       MYSQL_USER: mysql-user
       MYSQL_PASSWORD: mysql-password-insecure
     ports:
       - "3306:3306"
+    networks:
+      - tree-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 2s
+      retries: 5
+
+
+volumes:
+  db-data:
+    
+networks:
+  tree-network:
+    driver: bridge
