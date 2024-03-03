@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/fdg/fdg.less", "../src/app/app.less"],
+  "sourcesContent": [".fdg {\n  overflow: hidden;\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.fdg .fdg-background-canvas,\n.fdg .fdg-contents {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n}\n.fdg .fdg-elem-outer {\n  position: absolute;\n}\n", "body {\n  margin: 0;\n}\n.tree-container {\n  width: 100vw;\n  height: 100vh;\n}\n.tree-node {\n  user-select: none;\n  cursor: grab;\n}\n"],
+  "mappings": "AAAA,CAAC,IACC,SAAU,OACV,SAAU,SACV,MAAO,KACP,OAAQ,IACV,CACA,CANC,IAMI,CAAC,sBACN,CAPC,IAOI,CAAC,aACJ,SAAU,SACV,MAAO,KACP,OAAQ,KACR,IAAK,EACL,KAAM,CACR,CACA,CAdC,IAcI,CAAC,eACJ,SAAU,QACZ,CChBA,YACU,CACV,CACA,CAAC,eACC,MAAO,MACP,OAAQ,KACV,CACA,CAAC,UACC,YAAa,KACb,OAAQ,IACV",
+  "names": []
+}
