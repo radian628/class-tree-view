@@ -1,7 +1,7 @@
 import mysql from 'mysql2/promise';
 import { readFile } from 'fs/promises';
 import { fileURLToPath } from 'url';
-import path from 'path';  // Import the path module
+import path from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,7 +14,7 @@ async function main() {
         database: process.env.DB_NAME
     });
 
-    // Ensure the table exists
+    // Create courses table if it doesn't exist
     const createTableQuery = `
     CREATE TABLE IF NOT EXISTS Courses (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -24,39 +24,46 @@ async function main() {
         subject VARCHAR(255) NOT NULL,
         courseTitle VARCHAR(255) NOT NULL
     )`;
+    //
+    // Create closure table for prereq trees
+    // Each entry lists all ancestors
+    // Will we want descendants listed as well?
+        // Could make it easier to be like "oh, cool, I just unlocked this class"
+    // ALso, performance is faster with ints and stuff that fits in cache (<32B)
+    const createClosureTable = `
+    CREATE TABLE IF NOT EXISTS Courses (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        courseTitle VARCHAR(255) NOT NULL,
+        prerequisite VARCHAR(255) NOT NULL
+    )`;
+
 
     await connection.execute(createTableQuery);
 
-    // Read and parse the JSON file
-    const jsonData = await readFile(path.join(__dirname, '../out/2024.json'), 'utf8');
-    const courses = JSON.parse(jsonData);
+    const courseJSONCache = await readFile(path.join(__dirname, '../out/2024.json'), 'utf8');
+    const courses = JSON.parse(courseJSONCache);
 
-    // Prepare the insert query
     const insertQuery = `
     INSERT INTO Courses (term, courseReferenceNumber, courseNumber, subject, courseTitle)
     VALUES (?, ?, ?, ?, ?)`;
 
-    // Iterate over each course and insert the relevant data into the database
     for (const course of courses) {
         await connection.execute(insertQuery, [
             course.term,
             course.courseReferenceNumber,
             course.courseNumber,
             course.subject,
-            course.courseTitle.replace(/&amp;/g, '&') // Decoding HTML entities
+            course.courseTitle.replace(/&amp;/g, '&')
         ]);
     }
 
     console.log('Courses have been inserted successfully.');
 
-    // Test query to retrieve data from the database
     const testQuery = 'SELECT * FROM Courses LIMIT 5';
     const [rows] = await connection.execute(testQuery);
     console.log('Test Query Result:', rows);
-
 
     await connection.end();
 }
 
 main().catch(console.error);
-
