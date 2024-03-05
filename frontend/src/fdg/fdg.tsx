@@ -59,6 +59,12 @@ export function ForceDirectedGraph<T>(props: {
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
+      const containerRect = containerRef.current?.getBoundingClientRect();
+      const offsetX = containerRect?.left ?? 0;
+      const offsetY = containerRect?.top ?? 0;
+      ctx.save();
+      ctx.translate(-offsetX, -offsetY);
+
       // draw all connections on canvas
       for (const [keyA, node] of props.graph.entries()) {
         for (const [keyB, connection] of node.connections.entries()) {
@@ -115,6 +121,7 @@ export function ForceDirectedGraph<T>(props: {
           ctx.stroke();
         }
       }
+      ctx.restore();
 
       // modify graph
       props.setGraph((graph) =>
