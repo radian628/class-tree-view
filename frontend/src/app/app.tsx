@@ -52,7 +52,7 @@ const nodeB: [string, FDGNode<string>] = [
 const nodeC: [string, FDGNode<string>] = [
   "c",
   {
-    data: "Node C",
+    data: "Node C Hot Reload Test 222",
 
     ...defaultFDGNodeSettings,
 
