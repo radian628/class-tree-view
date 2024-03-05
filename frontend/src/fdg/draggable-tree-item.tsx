@@ -6,6 +6,7 @@ import { FDGItemComponent } from "./fdg";
 export function DraggableTreeItem<T>(props: {
   node: FDGNode<T>;
   setNode: (setter: (oldNode: FDGNode<T>) => FDGNode<T>) => void;
+  scale: number;
   children: React.ReactElement | string;
 }) {
   const [isMouseDown, setIsMouseDown] = useState(false);
@@ -25,8 +26,8 @@ export function DraggableTreeItem<T>(props: {
       if (!isMouseDown) return;
       props.setNode((node) => ({
         ...node,
-        x: node.x + e.movementX,
-        y: node.y + e.movementY,
+        x: node.x + e.movementX / props.scale,
+        y: node.y + e.movementY / props.scale,
       }));
     };
 

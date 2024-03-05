@@ -1,7 +1,7 @@
 import { FDGNode } from "./fdg-types";
 import { produce } from "immer";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { mapMapValues } from "../util/map";
 
 import "./fdg.less";
@@ -10,6 +10,7 @@ import { intersectLineSegmentStartingAtBoxCenter } from "../util/geometry";
 export type FDGItemProps<T> = {
   node: FDGNode<T>;
   setNode: (setter: (oldNode: FDGNode<T>) => FDGNode<T>) => void;
+  scale: number;
 };
 
 export type FDGItemComponent<T> = (
@@ -28,6 +29,12 @@ export function ForceDirectedGraph<T>(props: {
   const innerElementsRef = useRef<Map<string, HTMLDivElement | null>>(
     new Map()
   );
+
+  const [isClickingCanvas, setIsClickingCanvas] = useState(false);
+
+  const [positionOffset, setPositionOffset] = useState({ x: 0, y: 0 });
+
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -52,6 +59,7 @@ export function ForceDirectedGraph<T>(props: {
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
+      // draw all connections on canvas
       for (const [keyA, node] of props.graph.entries()) {
         for (const [keyB, connection] of node.connections.entries()) {
           const elementB = innerElementsRef.current.get(keyA);
@@ -85,10 +93,10 @@ export function ForceDirectedGraph<T>(props: {
           );
 
           const dir = Math.atan2(p2.y - p1.y, p2.x - p1.x);
-          const arrowLen = 20;
+          const arrowLen = 20 * scale;
           const arrowAngle = (Math.PI * 2.5) / 3;
 
-          ctx.lineWidth = 6;
+          ctx.lineWidth = 6 * scale;
           ctx.lineCap = "round";
           ctx.lineJoin = "round";
           ctx.strokeStyle = "#888888";
@@ -150,42 +158,86 @@ export function ForceDirectedGraph<T>(props: {
     requestAnimationFrame(frame);
   });
 
+  useEffect(() => {
+    const mousemove = (e: MouseEvent) => {
+      if (!isClickingCanvas) return;
+
+      setPositionOffset({
+        x: positionOffset.x - e.movementX / scale,
+        y: positionOffset.y - e.movementY / scale,
+      });
+    };
+
+    const mouseup = (e: MouseEvent) => {
+      setIsClickingCanvas(false);
+    };
+
+    document.addEventListener("mousemove", mousemove);
+    document.body.addEventListener("mouseup", mouseup);
+
+    return () => {
+      document.removeEventListener("mousemove", mousemove);
+      document.body.removeEventListener("mouseup", mouseup);
+    };
+  });
+
   return (
     <div className="fdg" ref={containerRef}>
       <canvas className="fdg-background-canvas" ref={canvasRef}></canvas>
-      <div className="fdg-contents">
-        {[...props.graph.entries()].map(([k, v]) => {
-          return (
-            // individual element in the FDG
-            <div
-              className="fdg-elem-outer"
-              key={k}
-              style={{
-                top: `${v.y}px`,
-                left: `${v.x}px`,
-              }}
-              ref={(elt) => {
-                innerElementsRef.current.set(k, elt);
-              }}
-            >
-              <props.itemTemplate
-                node={v}
-                setNode={(setter) => {
-                  // set a single node of the graph
-                  props.setGraph((graph) => {
-                    const newNode = setter(graph.get(k)!);
-                    return produce(
-                      [graph, newNode] as [Map<string, FDGNode<T>>, FDGNode<T>],
-                      ([g, nn]) => {
-                        g.set(k, nn);
-                      }
-                    )[0];
-                  });
+      <div
+        className="fdg-contents"
+        onMouseDown={(e) => {
+          if (e.target !== e.currentTarget) return;
+          console.log("got here!!!!!");
+          setIsClickingCanvas(true);
+        }}
+        onWheel={(e) => {
+          setScale(scale * (1 + e.deltaY * 0.001));
+        }}
+      >
+        <div
+          className="fdg-contents-inner"
+          style={{
+            transform: `scale(${scale})`,
+          }}
+        >
+          {[...props.graph.entries()].map(([k, v]) => {
+            return (
+              // individual element in the FDG
+              <div
+                className="fdg-elem-outer"
+                key={k}
+                style={{
+                  top: `${v.y - positionOffset.y}px`,
+                  left: `${v.x - positionOffset.x}px`,
                 }}
-              ></props.itemTemplate>
-            </div>
-          );
-        })}
+                ref={(elt) => {
+                  innerElementsRef.current.set(k, elt);
+                }}
+              >
+                <props.itemTemplate
+                  scale={scale}
+                  node={v}
+                  setNode={(setter) => {
+                    // set a single node of the graph
+                    props.setGraph((graph) => {
+                      const newNode = setter(graph.get(k)!);
+                      return produce(
+                        [graph, newNode] as [
+                          Map<string, FDGNode<T>>,
+                          FDGNode<T>
+                        ],
+                        ([g, nn]) => {
+                          g.set(k, nn);
+                        }
+                      )[0];
+                    });
+                  }}
+                ></props.itemTemplate>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
