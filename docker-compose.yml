@@ -1,0 +1,45 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+    environment:
+      DB_HOST: mysql
+      DB_USER: mysql-user
+      DB_PASSWORD: mysql-password-insecure
+      DB_NAME: coursetree-database
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    networks:
+      - tree-network
+
+  mysql:
+    image: mysql:latest
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root-password-insecure
+      MYSQL_DATABASE: coursetree-database
+      MYSQL_USER: mysql-user
+      MYSQL_PASSWORD: mysql-password-insecure
+    ports:
+      - "3306:3306"
+    networks:
+      - tree-network
+    healthcheck:
+      # TODO make this use variables
+      test: ["CMD-SHELL", "mysql -h localhost -u mysql-user -pmysql-password-insecure -e 'SELECT 1'"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+
+volumes:
+  db-data:
+    
+networks:
+  tree-network:
+    driver: bridge

@@ -2,6 +2,7 @@
   "dependencies": {
     "immer": "^10.0.3",
     "less": "^4.2.0",
+    "mysql2": "^3.9.2",
     "node-fetch": "^3.3.2",
     "node-html-parser": "^6.1.12",
     "react": "^18.2.0",
@@ -11,8 +12,10 @@
   "type": "module",
   "scripts": {
     "scrape": "node scraper/index.js",
-    "updatedb": "node scraper/updatedb.js",
-    "build": "node ./build-frontend.js"
+    "updateJSON": "node scraper/updatedb.js",
+    "writeDB": "node backend/test_mysql_connection.js",
+    "build": "node ./build-frontend.js",
+    "serve-dev": "node ./serve-dev.js"
   },
   "devDependencies": {
     "@types/react": "^18.2.61",
