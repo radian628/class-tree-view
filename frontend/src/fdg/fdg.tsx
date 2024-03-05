@@ -7,15 +7,21 @@ import { mapMapValues } from "../util/map";
 import "./fdg.less";
 import { intersectLineSegmentStartingAtBoxCenter } from "../util/geometry";
 
+export type FDGItemProps<T> = {
+  node: FDGNode<T>;
+  setNode: (setter: (oldNode: FDGNode<T>) => FDGNode<T>) => void;
+};
+
+export type FDGItemComponent<T> = (
+  props: FDGItemProps<T>
+) => React.ReactElement;
+
 export function ForceDirectedGraph<T>(props: {
   graph: Map<string, FDGNode<T>>;
   setGraph: (
     setter: (old: Map<string, FDGNode<T>>) => Map<string, FDGNode<T>>
   ) => void;
-  itemTemplate: (props: {
-    node: FDGNode<T>;
-    setNode: (setter: (oldNode: FDGNode<T>) => FDGNode<T>) => void;
-  }) => React.ReactElement;
+  itemTemplate: FDGItemComponent<T>;
 }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);

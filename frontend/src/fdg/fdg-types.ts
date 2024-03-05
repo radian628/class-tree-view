@@ -1,3 +1,17 @@
+export type FDGConnectionSettings = {
+  // styling properties
+  directionality: "forwards" | "backwards" | "bidirectional";
+  style: "solid" | "dotted";
+  color: string;
+
+  // how far away the connected nodes should ideally be
+  targetDist: number;
+
+  // how strongly the connection impacts the distance between the nodes
+  attractStrength: number;
+  repelStrength: number;
+};
+
 export interface FDGNode<T> {
   mass: number;
   repulsionRadius: number;
@@ -10,20 +24,5 @@ export interface FDGNode<T> {
 
   applyForces: boolean;
 
-  connections: Map<
-    string,
-    {
-      // styling properties
-      directionality: "forwards" | "backwards" | "bidirectional";
-      style: "solid" | "dotted";
-      color: string;
-
-      // how far away the connected nodes should ideally be
-      targetDist: number;
-
-      // how strongly the connection impacts the distance between the nodes
-      attractStrength: number;
-      repelStrength: number;
-    }
-  >;
+  connections: Map<string, FDGConnectionSettings>;
 }

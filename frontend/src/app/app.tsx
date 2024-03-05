@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FDGNode } from "../fdg/fdg-types";
+import { FDGConnectionSettings, FDGNode } from "../fdg/fdg-types";
 import { ForceDirectedGraph } from "../fdg/fdg";
 import React from "react";
 import "./app.less";
@@ -12,45 +12,60 @@ const defaultFDGNodeSettings = {
   applyForces: true,
 };
 
-const defaultConnectionSettings = {
-  directionality: "unidirectional",
+const defaultConnectionSettings: FDGConnectionSettings = {
+  directionality: "forwards",
   style: "solid",
   color: "black",
   targetDist: 150,
   attractStrength: 0.01,
   repelStrength: 0.1,
-} as const;
+};
+
+const nodeA: [string, FDGNode<string>] = [
+  "a",
+  {
+    data: "Node A",
+
+    ...defaultFDGNodeSettings,
+
+    x: 300,
+    y: 300,
+
+    connections: new Map([["b", defaultConnectionSettings]]),
+  },
+];
+
+const nodeB: [string, FDGNode<string>] = [
+  "b",
+  {
+    data: "Node B",
+
+    ...defaultFDGNodeSettings,
+
+    x: 400,
+    y: 600,
+
+    connections: new Map([["c", defaultConnectionSettings]]),
+  },
+];
+
+const nodeC: [string, FDGNode<string>] = [
+  "c",
+  {
+    data: "Node C",
+
+    ...defaultFDGNodeSettings,
+
+    x: 500,
+    y: 700,
+
+    connections: new Map([]),
+  },
+];
 
 export function App() {
   const [graph, setGraph] = useState(
-    new Map<string, FDGNode<string>>([
-      [
-        "a",
-        {
-          data: "Node A",
-
-          ...defaultFDGNodeSettings,
-
-          x: 300,
-          y: 300,
-
-          connections: new Map([["b", defaultConnectionSettings]]),
-        },
-      ],
-      [
-        "b",
-        {
-          data: "Node B",
-
-          ...defaultFDGNodeSettings,
-
-          x: 400,
-          y: 600,
-
-          connections: new Map([]),
-        },
-      ],
-    ])
+    new Map<string, FDGNode<string>>([nodeA, nodeB, nodeC])
   );
 
   return (
