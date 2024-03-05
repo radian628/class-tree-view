@@ -14,7 +14,7 @@ export interface FDGNode<T> {
     string,
     {
       // styling properties
-      directionality: "forwards" | "backwards" | "bidirectional";
+      directionality: "unidirectional" | "bidirectional";
       style: "solid" | "dotted";
       color: string;
 
