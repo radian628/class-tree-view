@@ -223,11 +223,6 @@ export function ForceDirectedGraph<T>(props: {
     };
   });
 
-  // const [pointerCache, setPointerCache] = useState<
-  //   React.PointerEvent<HTMLDivElement>[]
-  // >([]);
-  // const [pinchZoomDeltaX, setPinchZoomDeltaX] = useState<number>(0);
-
   return (
     <div className="fdg" ref={containerRef}>
       <canvas className="fdg-background-canvas" ref={canvasRef}></canvas>
@@ -242,38 +237,6 @@ export function ForceDirectedGraph<T>(props: {
 
           setScale(scale * (1 + e.deltaY * 0.001));
         }}
-        // onPointerDown={(e) => {
-        //   console.log("pointedown? ");
-        //   setPointerCache((pc) => [...pc, e]);
-        //   if (pointerCache.length === 2) {
-        //     setPinchZoomDeltaX(
-        //       Math.abs(pointerCache[1].clientX - pointerCache[0].clientX)
-        //     );
-        //   }
-        // }}
-        // onPointerUp={(e) => {
-        //   setPointerCache((pc) =>
-        //     pc.filter((e2) => e2.pointerId !== e.pointerId)
-        //   );
-        //   e.preventDefault();
-        // }}
-        // onPointerMove={(e) => {
-        //   console.log("onpointermove?");
-        //   shouldForceRefreshCanvasRef.current = true;
-        //   setPointerCache((pc) => {
-        //     const npc = pc.map((e2) => (e2.pointerId === e.pointerId ? e : e2));
-        //     if (npc.length === 2) {
-        //       setPinchZoomDeltaX((dx) => {
-        //         const ndx = Math.abs(npc[1].clientX - npc[0].clientX);
-        //         console.log(dx, ndx);
-        //         setScale((scale * dx) / ndx);
-        //         return ndx;
-        //       });
-        //     }
-        //     return npc;
-        //   });
-        //   e.preventDefault();
-        // }}
       >
         <div
           className="fdg-contents-inner"
