@@ -1,6 +1,3 @@
-import COURSES_SPRING2024 from "../../../scraper/cached_spring2024.json";
-import PREREQS_SPRING2024 from "../../../out/spring_2024_prereqs.json";
-
 export type RawFaculty = {
   bannerId: string;
   category: null;
@@ -133,7 +130,7 @@ export type PrereqTree =
 // this type represents a course, regardless/independent of section
 // whenever possible, fields are copied 1:1 from RawCourseSection
 export type Course = {
-  prereqs: PrereqTree;
+  prereqs?: PrereqTree;
   courseNumber: string;
   subject: string;
   subjectDescription: string;

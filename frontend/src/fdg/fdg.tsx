@@ -179,6 +179,11 @@ export function ForceDirectedGraph<T>(props: {
       setIsClickingCanvas(false);
     };
 
+    const wheel = (e: WheelEvent) => {
+      e.preventDefault();
+      return false;
+    };
+
     document.addEventListener("mousemove", mousemove);
     document.body.addEventListener("mouseup", mouseup);
 
@@ -200,6 +205,10 @@ export function ForceDirectedGraph<T>(props: {
         }}
         onWheel={(e) => {
           setScale(scale * (1 + e.deltaY * 0.001));
+          console.log("event", e);
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
         }}
       >
         <div

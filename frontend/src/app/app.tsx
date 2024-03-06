@@ -4,6 +4,7 @@ import { ForceDirectedGraph } from "../fdg/fdg";
 import React from "react";
 import "./app.less";
 import { TreeItem } from "./tree-item";
+import { CourseTreeNodeDisplay } from "../courses/course-display";
 
 const defaultFDGNodeSettings = {
   repulsionRadius: 50,
@@ -69,12 +70,24 @@ export function App() {
   );
 
   return (
-    <div className="tree-container">
-      <ForceDirectedGraph
-        itemTemplate={TreeItem}
-        graph={graph}
-        setGraph={setGraph}
-      ></ForceDirectedGraph>
-    </div>
+    <>
+      <CourseTreeNodeDisplay
+        course={{
+          courseNumber: "444",
+          subject: "CS",
+          subjectDescription: "Computer Science",
+          courseTitle: "OPERATING SYSTEMS II",
+          creditHours: 4,
+          subjectCourse: "CS444",
+        }}
+      ></CourseTreeNodeDisplay>
+      <div className="tree-container">
+        <ForceDirectedGraph
+          itemTemplate={TreeItem}
+          graph={graph}
+          setGraph={setGraph}
+        ></ForceDirectedGraph>
+      </div>
+    </>
   );
 }
