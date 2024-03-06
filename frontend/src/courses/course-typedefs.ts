@@ -70,13 +70,13 @@ export type RawCourseSection = {
   waitAvailable: number;
 
   // TODO: figure out how these work
-  crossList: null;
-  crossListCapacity: null;
-  crossListCount: null;
-  crossListAvailable: null;
+  crossList: string | null;
+  crossListCapacity: number | null;
+  crossListCount: number | null;
+  crossListAvailable: number | null;
 
   // TODO: figure out how these work
-  creditHourHigh: number;
+  creditHourHigh: number | null;
   creditHourLow: number;
   creditHourIndicator: "OR";
 
@@ -94,10 +94,6 @@ export type RawCourseSection = {
   instructionalMethod: string;
   instructionalMethodDescription: string; // e.g. "In-person Section"
 };
-
-export type RawCourses = {
-  data: RawCourseSection[];
-}[];
 
 export type RawPrereqTree =
   | {
@@ -121,15 +117,19 @@ export type RawPrereqs = {
   [crn: string]: RawPrereqTree;
 };
 
-export function loadTermCoursesAndPrereqs(
-  rawCourses: RawCourses,
-  prereqs: RawPrereqs
-) {
-  const rawCourseList = rawCourses.map((c) => c.data).flat(1);
+export type PrereqTree =
+  | {
+      type: "class";
+      // course IDs as returned by getCourseID
+      id: string;
+    }
+  | {
+      type: "operator";
+      operator: "Or" | "And";
+      operands: PrereqTree[];
+    };
 
-  const mapByCRN = new Map(
-    rawCourseList.map((c) => {
-      return [c.courseReferenceNumber, c];
-    })
-  );
-}
+export type Course = {
+  prereqs: PrereqTree;
+  course: RawCourseSection;
+};
