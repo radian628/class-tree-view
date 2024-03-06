@@ -49,6 +49,7 @@ export type RawMeetingsFaculty = {
 };
 
 // note: courseNumber and subjectDescription match the prereq info
+// this type represents a single section of a course
 export type RawCourseSection = {
   id: number; // numerical ID (NOT CRN)
   term: string; // e.g. "202403"
@@ -129,7 +130,14 @@ export type PrereqTree =
       operands: PrereqTree[];
     };
 
+// this type represents a course, regardless/independent of section
+// whenever possible, fields are copied 1:1 from RawCourseSection
 export type Course = {
   prereqs: PrereqTree;
-  course: RawCourseSection;
+  courseNumber: string;
+  subject: string;
+  subjectDescription: string;
+  courseTitle: string;
+  creditHours: number;
+  subjectCourse: string;
 };
