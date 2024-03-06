@@ -2,10 +2,14 @@ import { useEffect, useState } from "react";
 import { FDGNode } from "../fdg/fdg-types";
 import React from "react";
 import { FDGItemComponent } from "./fdg";
+import { mapMapValues } from "../util/map";
 
 export function DraggableTreeItem<T>(props: {
   node: FDGNode<T>;
   setNode: (setter: (oldNode: FDGNode<T>) => FDGNode<T>) => void;
+  setGraph: (
+    setGraph: (oldGraph: Map<string, FDGNode<T>>) => Map<string, FDGNode<T>>
+  ) => void;
   scale: number;
   children: React.ReactElement | string;
 }) {
@@ -14,11 +18,16 @@ export function DraggableTreeItem<T>(props: {
   useEffect(() => {
     // notify when mouse released by setting state and re-enable forces
     const mouseup = (e: MouseEvent) => {
-      setIsMouseDown(false);
-      props.setNode((node) => ({
-        ...node,
-        applyForces: true,
-      }));
+      if (isMouseDown) {
+        // enable forces in everything in the graph
+        // (this will only recalc forces once
+        // and then disable them for any node that doesn't need forces)
+        props.setGraph((graph) =>
+          mapMapValues(graph, (k, v) => ({ ...v, applyForces: true }))
+        );
+
+        setIsMouseDown(false);
+      }
     };
 
     // move graphnode when mouse moved
@@ -38,7 +47,7 @@ export function DraggableTreeItem<T>(props: {
       document.removeEventListener("mouseup", mouseup);
       document.removeEventListener("mousemove", mousemove);
     };
-  }, [isMouseDown]);
+  });
 
   return (
     <div

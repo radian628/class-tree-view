@@ -11,6 +11,9 @@ export type FDGItemProps<T> = {
   node: FDGNode<T>;
   setNode: (setter: (oldNode: FDGNode<T>) => FDGNode<T>) => void;
   scale: number;
+  setGraph: (
+    setGraph: (oldGraph: Map<string, FDGNode<T>>) => Map<string, FDGNode<T>>
+  ) => void;
 };
 
 export type FDGItemComponent<T> = (
@@ -29,6 +32,7 @@ export function ForceDirectedGraph<T>(props: {
   const innerElementsRef = useRef<Map<string, HTMLDivElement | null>>(
     new Map()
   );
+  const shouldForceRefreshCanvasRef = useRef(false);
 
   const [isClickingCanvas, setIsClickingCanvas] = useState(false);
 
@@ -44,15 +48,12 @@ export function ForceDirectedGraph<T>(props: {
 
     // resize canvas if necessary
     const containerRect = container.getBoundingClientRect();
-    if (canvas.width !== containerRect.width)
-      canvas.width = containerRect?.width;
-    if (canvas.height !== containerRect.height)
-      canvas.height = containerRect?.height;
+    if (canvas.width !== Math.floor(containerRect.width))
+      canvas.width = Math.floor(containerRect.width);
+    if (canvas.height !== Math.floor(containerRect.height))
+      canvas.height = Math.floor(containerRect.height);
 
-    let keepLooping = true;
-
-    // run per-frame stuff
-    function frame() {
+    function refreshCanvas() {
       // update canvas
       if (!canvas) return;
 
@@ -62,6 +63,7 @@ export function ForceDirectedGraph<T>(props: {
       const containerRect = containerRef.current?.getBoundingClientRect();
       const offsetX = containerRect?.left ?? 0;
       const offsetY = containerRect?.top ?? 0;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.save();
       ctx.translate(-offsetX, -offsetY);
 
@@ -122,13 +124,18 @@ export function ForceDirectedGraph<T>(props: {
         }
       }
       ctx.restore();
+    }
 
-      // modify graph
+    function applyPhysics() {
       props.setGraph((graph) =>
         mapMapValues(graph, (aKey, a) => {
           return produce(a, (a) => {
+            if (!a.applyForces) return;
+
+            let totalNodeDelta = 0;
+
             mapMapValues(graph, (bKey, b) => {
-              if (aKey === bKey || !a.applyForces) return;
+              if (aKey === bKey) return;
 
               const dist = Math.hypot(a.x - b.x, a.y - b.y);
               const dx = (b.x - a.x) / dist;
@@ -142,8 +149,13 @@ export function ForceDirectedGraph<T>(props: {
                   dist > conn.targetDist
                     ? conn.attractStrength
                     : conn.repelStrength;
-                a.x += (dx * (dist - conn.targetDist) * factor) / b.mass;
-                a.y += (dy * (dist - conn.targetDist) * factor) / b.mass;
+
+                const moveDist = ((dist - conn.targetDist) * factor) / b.mass;
+
+                a.x += dx * moveDist;
+                a.y += dy * moveDist;
+
+                totalNodeDelta += moveDist;
 
                 // two elements are not connected
               } else {
@@ -151,14 +163,35 @@ export function ForceDirectedGraph<T>(props: {
                   const factor =
                     Math.min(0, -1 * (dist - a.repulsionRadius) ** 2) *
                     a.repulsionStrength;
-                  a.x += (dx * factor) / b.mass;
-                  a.y += (dy * factor) / b.mass;
+
+                  const moveDist = factor / b.mass;
+
+                  a.x += dx * moveDist;
+                  a.y += dy * moveDist;
+
+                  totalNodeDelta += moveDist;
                 }
               }
             });
+
+            if (totalNodeDelta < 0.2) a.applyForces = false;
           });
         })
       );
+    }
+
+    // run per-frame stuff
+    function frame() {
+      applyPhysics();
+
+      // if any nodes are moving, we must refresh the canvas
+      if (
+        shouldForceRefreshCanvasRef.current ||
+        [...props.graph.values()].some((e) => e.applyForces)
+      ) {
+        shouldForceRefreshCanvasRef.current = false;
+        refreshCanvas();
+      }
     }
 
     // run single frame
@@ -168,6 +201,8 @@ export function ForceDirectedGraph<T>(props: {
   useEffect(() => {
     const mousemove = (e: MouseEvent) => {
       if (!isClickingCanvas) return;
+
+      shouldForceRefreshCanvasRef.current = true;
 
       setPositionOffset({
         x: positionOffset.x - e.movementX / scale,
@@ -188,6 +223,11 @@ export function ForceDirectedGraph<T>(props: {
     };
   });
 
+  // const [pointerCache, setPointerCache] = useState<
+  //   React.PointerEvent<HTMLDivElement>[]
+  // >([]);
+  // const [pinchZoomDeltaX, setPinchZoomDeltaX] = useState<number>(0);
+
   return (
     <div className="fdg" ref={containerRef}>
       <canvas className="fdg-background-canvas" ref={canvasRef}></canvas>
@@ -195,12 +235,45 @@ export function ForceDirectedGraph<T>(props: {
         className="fdg-contents"
         onMouseDown={(e) => {
           if (e.target !== e.currentTarget) return;
-          console.log("got here!!!!!");
           setIsClickingCanvas(true);
         }}
         onWheel={(e) => {
+          shouldForceRefreshCanvasRef.current = true;
+
           setScale(scale * (1 + e.deltaY * 0.001));
         }}
+        // onPointerDown={(e) => {
+        //   console.log("pointedown? ");
+        //   setPointerCache((pc) => [...pc, e]);
+        //   if (pointerCache.length === 2) {
+        //     setPinchZoomDeltaX(
+        //       Math.abs(pointerCache[1].clientX - pointerCache[0].clientX)
+        //     );
+        //   }
+        // }}
+        // onPointerUp={(e) => {
+        //   setPointerCache((pc) =>
+        //     pc.filter((e2) => e2.pointerId !== e.pointerId)
+        //   );
+        //   e.preventDefault();
+        // }}
+        // onPointerMove={(e) => {
+        //   console.log("onpointermove?");
+        //   shouldForceRefreshCanvasRef.current = true;
+        //   setPointerCache((pc) => {
+        //     const npc = pc.map((e2) => (e2.pointerId === e.pointerId ? e : e2));
+        //     if (npc.length === 2) {
+        //       setPinchZoomDeltaX((dx) => {
+        //         const ndx = Math.abs(npc[1].clientX - npc[0].clientX);
+        //         console.log(dx, ndx);
+        //         setScale((scale * dx) / ndx);
+        //         return ndx;
+        //       });
+        //     }
+        //     return npc;
+        //   });
+        //   e.preventDefault();
+        // }}
       >
         <div
           className="fdg-contents-inner"
@@ -228,18 +301,22 @@ export function ForceDirectedGraph<T>(props: {
                   setNode={(setter) => {
                     // set a single node of the graph
                     props.setGraph((graph) => {
-                      const newNode = setter(graph.get(k)!);
+                      const oldNode = graph.get(k)!;
+                      const newNode = setter(oldNode);
                       return produce(
                         [graph, newNode] as [
                           Map<string, FDGNode<T>>,
                           FDGNode<T>
                         ],
                         ([g, nn]) => {
+                          if (nn.x !== oldNode.x || nn.y !== oldNode.y)
+                            shouldForceRefreshCanvasRef.current = true;
                           g.set(k, nn);
                         }
                       )[0];
                     });
                   }}
+                  setGraph={props.setGraph}
                 ></props.itemTemplate>
               </div>
             );
