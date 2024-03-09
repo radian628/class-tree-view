@@ -115,26 +115,26 @@ export type RawPrereqs = {
   [crn: string]: RawPrereqTree;
 };
 
-export type PrereqTree =
+export type PrereqRequirementTree =
   | {
-      type: "class";
-      // course IDs as returned by getCourseID
-      id: string;
-    }
-  | {
+      id: number;
       type: "operator";
       operator: "Or" | "And";
-      operands: PrereqTree[];
+      operands: PrereqRequirementTree[];
+    }
+  | {
+      id: number;
+      type: "class";
     };
 
 // this type represents a course, regardless/independent of section
 // whenever possible, fields are copied 1:1 from RawCourseSection
 export type Course = {
-  prereqs?: PrereqTree;
   courseNumber: string;
   subject: string;
   subjectDescription: string;
   courseTitle: string;
   creditHours: number;
   subjectCourse: string;
+  prereqID: number;
 };

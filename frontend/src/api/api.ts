@@ -1,5 +1,9 @@
 import { createContext, useContext } from "react";
-import { Course, RawCourseSection } from "../courses/course-typedefs";
+import {
+  Course,
+  PrereqRequirementTree,
+  RawCourseSection,
+} from "../courses/course-typedefs";
 
 export type APIResult<T> =
   | {
@@ -32,6 +36,8 @@ export interface CoursesAPI {
   getCourse(subject: string, number: string): Promise<APIResult<Course>>;
 
   getTerms(): Promise<APIResult<string[]>>;
+
+  getPrerequisiteTree(id: number): Promise<APIResult<PrereqRequirementTree>>;
 }
 
 const coursesAPIContext = createContext<CoursesAPI>({
@@ -51,6 +57,11 @@ const coursesAPIContext = createContext<CoursesAPI>({
     );
   },
   getTerms() {
+    throw new Error(
+      "Trying to use courses API outside of a CourseAPIProvider!!!"
+    );
+  },
+  getPrerequisiteTree(id) {
     throw new Error(
       "Trying to use courses API outside of a CourseAPIProvider!!!"
     );

@@ -193,6 +193,19 @@ export function ForceDirectedGraph<T>(props: {
     };
   });
 
+  const setNode = (k: string) => (setter) => {
+    // set a single node of the graph
+    props.setGraph((graph) => {
+      const newNode = setter(graph.get(k)!);
+      return produce(
+        [graph, newNode] as [Map<string, FDGNode<T>>, FDGNode<T>],
+        ([g, nn]) => {
+          g.set(k, nn);
+        }
+      )[0];
+    });
+  };
+
   return (
     <div className="fdg" ref={containerRef}>
       <canvas className="fdg-background-canvas" ref={canvasRef}></canvas>
@@ -234,21 +247,7 @@ export function ForceDirectedGraph<T>(props: {
                 <props.itemTemplate
                   scale={scale}
                   node={v}
-                  setNode={(setter) => {
-                    // set a single node of the graph
-                    props.setGraph((graph) => {
-                      const newNode = setter(graph.get(k)!);
-                      return produce(
-                        [graph, newNode] as [
-                          Map<string, FDGNode<T>>,
-                          FDGNode<T>
-                        ],
-                        ([g, nn]) => {
-                          g.set(k, nn);
-                        }
-                      )[0];
-                    });
-                  }}
+                  setNode={setNode(k)}
                 ></props.itemTemplate>
               </div>
             );
