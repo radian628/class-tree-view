@@ -13,5 +13,6 @@ shift
 jq -s 'flatten' "$@" > "$output_file"
 
 jq '[.[] | .data] | flatten' "$output_file" > "tmp"
-jq  'unique_by(.courseTitle)' "tmp" > "$output_file"
+cp tmp "$output_file"
+# jq  'unique_by(.courseTitle)' "tmp" > "$output_file"
 rm tmp

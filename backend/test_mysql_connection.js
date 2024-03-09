@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function main() {
+    // Relies on Docker?
     const connection = await mysql.createConnection({
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
@@ -19,33 +20,25 @@ async function main() {
     CREATE TABLE IF NOT EXISTS Courses (
         id INT AUTO_INCREMENT PRIMARY KEY,
         term VARCHAR(255) NOT NULL,
-        courseReferenceNumber VARCHAR(255) NOT NULL,
+        courseReferenceNumber INTEGER NOT NULL,
         courseNumber VARCHAR(255) NOT NULL,
         subject VARCHAR(255) NOT NULL,
-        courseTitle VARCHAR(255) NOT NULL
-    )`;
-    //
-    // Create closure table for prereq trees
-    // Each entry lists all ancestors
-    // Will we want descendants listed as well?
-        // Could make it easier to be like "oh, cool, I just unlocked this class"
-    // ALso, performance is faster with ints and stuff that fits in cache (<32B)
-    const createClosureTable = `
-    CREATE TABLE IF NOT EXISTS Courses (
-        id INT AUTO_INCREMENT PRIMARY KEY,
         courseTitle VARCHAR(255) NOT NULL,
-        prerequisite VARCHAR(255) NOT NULL
+        subjectCourse VARCHAR(255) NOT NULL,
+        scheduleTypeDescription VARCHAR(255) NOT NULL,
+        subjectDescription VARCHAR(255) NOT NULL,
+        UNIQUE (courseReferenceNumber)
     )`;
-
 
     await connection.execute(createTableQuery);
 
+    // TODO make this parameter
     const courseJSONCache = await readFile(path.join(__dirname, '../out/2024.json'), 'utf8');
-    const courses = JSON.parse(courseJSONCache);
+    let courses = JSON.parse(courseJSONCache);
 
     const insertQuery = `
-    INSERT INTO Courses (term, courseReferenceNumber, courseNumber, subject, courseTitle)
-    VALUES (?, ?, ?, ?, ?)`;
+    INSERT IGNORE INTO Courses (term, courseReferenceNumber, courseNumber, subject, courseTitle, subjectCourse, scheduleTypeDescription, subjectDescription)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
 
     for (const course of courses) {
         await connection.execute(insertQuery, [
@@ -53,7 +46,10 @@ async function main() {
             course.courseReferenceNumber,
             course.courseNumber,
             course.subject,
-            course.courseTitle.replace(/&amp;/g, '&')
+            course.courseTitle.replace(/&amp;/g, '&'),
+            course.subjectCourse,
+            course.scheduleTypeDescription,
+            course.subjectDescription,
         ]);
     }
 
