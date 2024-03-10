@@ -16,10 +16,12 @@ export type PrereqTree =
 export type PrereqTreeCacheEntry =
   | {
       type: "dne";
+      timestamp: number;
     }
   | {
       type: "tree";
       tree: PrereqTree;
+      timestamp: number;
     };
 
 export type PrereqTreeFromBanner =
@@ -36,6 +38,8 @@ export type PrereqTreeFromBanner =
       };
     };
 
+// given a subject (e.g. Mathematics) and a course number (e.g. 251)
+// get the subjectCourse (e.g. MTH251)
 async function convertPrereqToCourse(
   connection: Connection,
   subject: string,
@@ -59,13 +63,42 @@ export class PrereqTreeCache {
   map: Map<string, PrereqTreeCacheEntry>;
   conn: Connection;
 
-  constructor() {
+  constructor(conn: Connection) {
+    this.conn = conn;
     this.map = new Map();
   }
 
-  async getPrereqs(
-    subjectCourse: string
-  ): Promise<PrereqTreeCacheEntry | undefined> {
+  setDNE(subjectCourse: string) {
+    const dne: PrereqTreeCacheEntry = { type: "dne", timestamp: Date.now() };
+    this.map.set(subjectCourse, dne);
+    return dne;
+  }
+
+  // convert a syntax tree--- freshly converted from Banner's HTML garbage---
+  // into a nicer tree
+  async convertBannerSyntaxTree(
+    tree: PrereqTreeFromBanner
+  ): Promise<PrereqTree> {
+    if (tree.type === "operator") {
+      return {
+        type: tree.operator,
+        prereqs: await Promise.all(
+          tree.operands.map(this.convertBannerSyntaxTree.bind(this))
+        ),
+      };
+    }
+
+    return {
+      type: "course",
+      subjectCourse: await convertPrereqToCourse(
+        this.conn,
+        tree.class.subject,
+        tree.class.number
+      ),
+    };
+  }
+
+  async getDirectPrereqs(subjectCourse: string): Promise<PrereqTreeCacheEntry> {
     // best case: prereq info is in cache
     const entry = this.map.get(subjectCourse);
     if (entry) return entry;
@@ -80,35 +113,24 @@ export class PrereqTreeCache {
     LIMIT 1;`,
       [subjectCourse]
     );
-    if (!courseInfo) return;
+    if (!courseInfo) return this.setDNE(subjectCourse);
 
     // query banner for course prereq info
     const dataFromBanner = (await getPrereqsSyntaxTree(
       courseInfo.term,
       courseInfo.courseReferenceNumber
-    )) as PrereqTreeFromBanner;
+    )) as PrereqTreeFromBanner | undefined;
+    if (!dataFromBanner) return this.setDNE(subjectCourse);
 
-    async function convertBannerSyntaxTree(
-      tree: PrereqTreeFromBanner
-    ): Promise<PrereqTree> {
-      if (tree.type === "operator") {
-        return {
-          type: tree.operator,
-          prereqs: await Promise.all(
-            tree.operands.map(convertBannerSyntaxTree)
-          ),
-        };
-      }
+    // convert tree and use newly-generated cache entry
+    const convertedTree = await this.convertBannerSyntaxTree(dataFromBanner);
+    const newCacheEntry: PrereqTreeCacheEntry = {
+      type: "tree",
+      tree: convertedTree,
+      timestamp: Date.now(),
+    };
+    this.map.set(subjectCourse, newCacheEntry);
 
-      return {
-        type: "course",
-        subjectCourse: await convertPrereqToCourse(
-          this.conn,
-          this.class.subject,
-          this.class.number
-        ),
-      };
-    }
-    const convertedTree = await convertBannerSyntaxTree(dataFromBanner);
+    return newCacheEntry;
   }
 }
