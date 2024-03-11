@@ -1,11 +1,11 @@
-import { FDGNode } from "./fdg-types";
+import { FDGNode } from "./fdg-types.js";
 import { produce } from "immer";
 
 import React, { useEffect, useRef, useState } from "react";
-import { mapMapValues } from "../util/map";
+import { mapMapValues } from "../util/map.js";
 
 import "./fdg.less";
-import { intersectLineSegmentStartingAtBoxCenter } from "../util/geometry";
+import { intersectLineSegmentStartingAtBoxCenter } from "../util/geometry.js";
 
 export type FDGItemProps<T> = {
   node: FDGNode<T>;

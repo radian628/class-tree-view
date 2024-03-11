@@ -1,5 +1,5 @@
 import React from "react";
-import { RawCourseSection } from "./course-typedefs";
+import { RawCourseSection } from "./course-typedefs.js";
 
 export function CourseTreeNodeDisplay(props: { course: RawCourseSection }) {
   return (

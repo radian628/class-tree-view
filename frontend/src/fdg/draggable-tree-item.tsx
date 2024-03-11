@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { FDGNode } from "../fdg/fdg-types";
+import { FDGNode } from "../fdg/fdg-types.js";
 import React from "react";
-import { FDGItemComponent } from "./fdg";
+import { FDGItemComponent } from "./fdg.js";
 
 export function DraggableTreeItem<T>(props: {
   node: FDGNode<T>;

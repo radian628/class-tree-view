@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { FDGNode } from "../fdg/fdg-types";
+import { FDGNode } from "../fdg/fdg-types.js";
 import React from "react";
-import { DraggableTreeItem } from "../fdg/draggable-tree-item";
+import { DraggableTreeItem } from "../fdg/draggable-tree-item.js";
 
 export function TreeItem(props: {
   node: FDGNode<string>;

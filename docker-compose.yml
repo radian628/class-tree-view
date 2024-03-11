@@ -17,6 +17,7 @@ services:
       - tree-network
     volumes:
       - ./frontend/src:/app/frontend/src
+      - ./backend:/app/backend
 
   mysql:
     image: mysql:latest

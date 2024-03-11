@@ -10,5 +10,6 @@ COPY . .
 
 RUN npm run writeDB
 
-CMD ["npm", "run", "serve-dev"]
+CMD ["npm", "run", "build-frontend"]
+CMD ["npm", "run", "backend"]
 # CMD ["npm", "run", "writeDB"]

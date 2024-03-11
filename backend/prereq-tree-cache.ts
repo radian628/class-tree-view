@@ -1,7 +1,7 @@
 // subjectCourse is something like CS444 or MTH251 or WR121 etc.
 
 import { Connection, ResultSetHeader, RowDataPacket } from "mysql2/promise";
-import { getPrereqsSyntaxTree } from "../scraper/get-prereqs";
+import { getPrereqsSyntaxTree } from "../scraper/get-prereqs.js";
 
 export type PrereqTree =
   | {
