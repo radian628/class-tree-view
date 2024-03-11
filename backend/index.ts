@@ -8,6 +8,7 @@ import { fileURLToPath } from "url";
 import path from "path";
 import { PrereqTreeCache } from "./prereq-tree-cache.js";
 import { TermsCache } from "./terms-cache.js";
+import { CourseCache } from "./course-cache.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -48,7 +49,7 @@ async function main() {
     "utf8"
   );
   const courses: any = JSON.parse(courseJSONCache)
-    .map((e) => e.data)
+    .map((e: any) => e.data)
     .flat(1);
 
   const insertQuery = `
@@ -77,6 +78,7 @@ async function main() {
 
   const prereqTreeCache = new PrereqTreeCache(connection);
   const termsCache = new TermsCache();
+  const courseCache = new CourseCache(connection, termsCache);
 
   // create express server
   const app = express();

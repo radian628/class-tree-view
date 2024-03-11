@@ -18,6 +18,7 @@ services:
     volumes:
       - ./frontend/src:/app/frontend/src
       - ./backend:/app/backend
+      - ./cache:/app/cache
 
   mysql:
     image: mysql:latest
