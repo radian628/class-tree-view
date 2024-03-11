@@ -33,18 +33,6 @@ async function main() {
         scheduleTypeDescription VARCHAR(255) NOT NULL,
         subjectDescription VARCHAR(255) NOT NULL
     );`;
-  //
-  // Create closure table for prereq trees
-  // Each entry lists all ancestors
-  // Will we want descendants listed as well?
-  // Could make it easier to be like "oh, cool, I just unlocked this class"
-  // ALso, performance is faster with ints and stuff that fits in cache (<32B)
-  const createClosureTable = `
-    CREATE TABLE IF NOT EXISTS Courses (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        courseTitle VARCHAR(255) NOT NULL,
-        prerequisite VARCHAR(255) NOT NULL
-    );`;
 
   // remove this
   console.log("Removing old courses table (REMOVE THIS FOR PROD)");
