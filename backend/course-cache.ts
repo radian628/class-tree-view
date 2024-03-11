@@ -12,6 +12,13 @@ async function exists(path: string) {
     .catch(() => false);
 }
 
+// async delay
+function delay(ms: number) {
+  return new Promise((res, rej) => {
+    setTimeout(res, ms);
+  });
+}
+
 export class CourseCache {
   conn: Connection;
   termsCache: TermsCache;
@@ -49,6 +56,9 @@ export class CourseCache {
           .flat(1);
 
         await fs.writeFile(path, JSON.stringify(courses));
+
+        // wait a minute to give the server a break
+        await delay(1000 * 60);
       }
     }
 
