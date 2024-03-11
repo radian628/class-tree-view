@@ -2,16 +2,18 @@ import fetch from "node-fetch";
 import process from "node:process";
 import { z } from "zod";
 
-export const courseRawParser = z.object({
-  term: z.string(),
-  courseReferenceNumber: z.string(),
-  courseNumber: z.string(),
-  subject: z.string(),
-  courseTitle: z.string(),
-  subjectCourse: z.string(),
-  scheduleTypeDescription: z.string(),
-  subjectDescription: z.string(),
-});
+export const courseRawParser = z
+  .object({
+    term: z.string(),
+    courseReferenceNumber: z.string(),
+    courseNumber: z.string(),
+    subject: z.string(),
+    courseTitle: z.string(),
+    subjectCourse: z.string(),
+    scheduleTypeDescription: z.string(),
+    subjectDescription: z.string(),
+  })
+  .passthrough();
 
 export const loadCoursesRawParser = z.object({
   totalCount: z.number(),
