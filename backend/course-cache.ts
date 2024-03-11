@@ -56,17 +56,13 @@ export class CourseCache {
           .flat(1);
 
         await fs.writeFile(path, JSON.stringify(courses));
-
-        // wait a minute to give the server a break
-        await delay(1000 * 60);
+        console.log(`Wrote term ${terms[i].code} to file.`);
       }
-    }
 
-    // file cache -> db
-    for (const { code } of terms) {
-      const path = `/app/cache/courses-${code}.json`;
+      // reading to database
+      await fs.readFile(path).then(async (data: Buffer) => {
+        console.log(`Reading term ${terms[i].code} to database.`);
 
-      fs.readFile(path).then(async (data: Buffer) => {
         const courses: CourseRaw[] = JSON.parse(data.toString());
 
         // insert course data into DB
@@ -86,7 +82,11 @@ export class CourseCache {
             course.subjectDescription,
           ]),
         ]);
+
+        console.log(`Finished reading term ${terms[i].code} to database.`);
       });
+
+      if (shouldRedo) await delay(1000 * 15);
     }
 
     // get data from banner once per day
