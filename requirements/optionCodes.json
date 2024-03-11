@@ -1,0 +1,3418 @@
+{
+	"concentrations": [
+		{
+			"key": "754",
+			"description": "* COB: Dean's Academy",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "785",
+			"description": "*HORT/CSS:Plant Breeding and Genetics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "236",
+			"description": "Accountancy: Accounting Information Systems",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "035",
+			"description": "Amer Std: American Culture and Identities Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "036",
+			"description": "Amer Std: Culture & Natural Environments Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "037",
+			"description": "Amer Std: General American Studies Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "038",
+			"description": "Amer Std: Pre-Law Studies Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "709",
+			"description": "Animal Sci: Animal BioHealth/Pre-Professional",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "707",
+			"description": "Animal Sciences: Animal Behavior",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "708",
+			"description": "Animal Sciences: Animal Production",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "693",
+			"description": "Animal Sciences: Equine Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "712",
+			"description": "Animal Sciences: Rangeland Science Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "854",
+			"description": "Anthropology: Archaeology Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "861",
+			"description": "Anthropology: Archaeology/Physical Anthropol",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "864",
+			"description": "Anthropology: Biocultural Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "855",
+			"description": "Anthropology: Cultural/Linguistic Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "863",
+			"description": "Anthropology: General Anthropology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "892",
+			"description": "Applied Visual Arts: Photography Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "887",
+			"description": "Art BFA: Fine Arts",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "881",
+			"description": "Art: Art History",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "879",
+			"description": "Art: Fine Arts",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "829",
+			"description": "Art: Photography and Digital Studio",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "831",
+			"description": "Art: Photography and Digital Studio - BFA",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "884",
+			"description": "Art: Photography Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "828",
+			"description": "Art: Studio Art",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "830",
+			"description": "Art: Studio Art - BFA",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "927",
+			"description": "Biochem & Biophys: Advanced Biophysics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "926",
+			"description": "Biochem & Biophys: Neuroscience",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "928",
+			"description": "BioChem & Biophys: Pre-Medicine/Biochem and Biophy",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "972",
+			"description": "BioChem & Molecular: Advanced Molecular Biology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "973",
+			"description": "BioChem & Molecular: Computational Molecular Biol",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "974",
+			"description": "BioChem & Molecular: Pre-Medicine",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "918",
+			"description": "BioData: Computational Biology Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "917",
+			"description": "BioData: Ecological & Environ Informatics Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "914",
+			"description": "BioData: Genomics Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "576",
+			"description": "BioHealth: Pre-Clinical Lab Sci",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "595",
+			"description": "BioHealth: Pre-Dentistry",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "600",
+			"description": "BioHealth: Pre-Medicine",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "775",
+			"description": "BioHealth: Pre-Medicine/Pre-Podiatry",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "603",
+			"description": "BioHealth: Pre-Optometry",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "583",
+			"description": "BioHealth: Pre-Pharmacy",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "585",
+			"description": "BioHealth: Pre-Physical Therapy",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "597",
+			"description": "BioHealth: Pre-Physician Assistant",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "604",
+			"description": "BioHealth: Pre-Podiatry",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "715",
+			"description": "Biology: Ecology Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "517",
+			"description": "Biology: Genetics Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "027",
+			"description": "Biology: Marine Biology and Ecology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "572",
+			"description": "Biology: Marine Biology Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "743",
+			"description": "Biology: Physiology and Behavior Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "713",
+			"description": "Biology: Pre-Dentistry/Biology Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "226",
+			"description": "Biology: Pre-Education Biology Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "714",
+			"description": "Biology: Pre-Medicine/Biology Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "584",
+			"description": "Biology: Pre-Veterinary Medicine Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "127",
+			"description": "Bioresource Res: Animal Repro & Develpmt",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "114",
+			"description": "Bioresource Res: Applied Genetics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "815",
+			"description": "Bioresource Res: Bioproducts & Bioenergy",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "116",
+			"description": "Bioresource Res: Biotechnology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "816",
+			"description": "Bioresource Res: Climate & Biosys Model",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "117",
+			"description": "Bioresource Res: Environmental Chemistry",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "138",
+			"description": "Bioresource Res: Food Quality",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "627",
+			"description": "Bioresource Res: Genomics/Bioinformatics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "118",
+			"description": "Bioresource Res: Pest Bio & Mgmt",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "149",
+			"description": "Bioresource Res: Plant Growth & Development",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "142",
+			"description": "Bioresource Res: Sustainable Ecosystems",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "993",
+			"description": "Bioresource Res: Toxicology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "626",
+			"description": "Bioresource Res: Water Resources",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "008",
+			"description": "Bot: Mycology and Plant Pathology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "932",
+			"description": "Botany: Comprehensive Botany",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "931",
+			"description": "Botany: Customizable Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "934",
+			"description": "Botany: Ecology, Evolution, and Conservation",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "512",
+			"description": "Botany: Fungal Biology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "935",
+			"description": "Botany: Molecular, Cellular, and Genomic",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "514",
+			"description": "Botany: Plant Molecular Genetics & Bio",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "933",
+			"description": "Botany: Plant Pathology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "903",
+			"description": "Bus Analytics: Digital Marketing Analytics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "902",
+			"description": "Bus Analytics: Human Resource Analytics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "904",
+			"description": "Bus Analytics: Market Research and Consumer Analyt",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "749",
+			"description": "Business: Digital Marketing",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "624",
+			"description": "Business: Entrepreneurship Bus Majors",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "786",
+			"description": "Business: Family Business",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "201",
+			"description": "Business: General Business",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "491",
+			"description": "Business: Hospitality Management",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "043",
+			"description": "Business: Innovation and Entrepreneurship Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "190",
+			"description": "Business: International Business",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "753",
+			"description": "Business: Marketing",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "020",
+			"description": "Business: Sports Business Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "488",
+			"description": "Chem Engr: Biochemical Processes",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "489",
+			"description": "Chem Engr: Environmental Processes",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "487",
+			"description": "Chem Engr: Microelec Proc & Materials Sci",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "636",
+			"description": "Chem Engr: Nanotechnology Processes",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "519",
+			"description": "Chemistry: Advanced Biochemistry Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "521",
+			"description": "Chemistry: Advanced Chemistry Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "518",
+			"description": "Chemistry: Biochemistry Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "523",
+			"description": "Chemistry: Business Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "303",
+			"description": "Chemistry: Chemical Engineering Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "516",
+			"description": "Chemistry: Chemistry Education Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "504",
+			"description": "Chemistry: Environmental Chemistry",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "505",
+			"description": "Chemistry: Forensic Science Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "522",
+			"description": "Chemistry: Materials Science Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "690",
+			"description": "Chemistry: Pre-Medicine Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "354",
+			"description": "Computer Sci: Applied Computer Science",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "334",
+			"description": "Computer Sci: Computer Systems Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "004",
+			"description": "Computer Sci: Cybersecurity",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "297",
+			"description": "Computer Sci: Double Degree Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "344",
+			"description": "Computer Sci: Information Systems Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "784",
+			"description": "Crop & Soil Sci: Agronomy",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "160",
+			"description": "Crop & Soil Science: Soil Science",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "780",
+			"description": "Dsgn and Innovation Mgmt: Apparel Design",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "781",
+			"description": "Dsgn and Innovation Mgmt: Design Management",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "836",
+			"description": "Earth Sci: Climate Science Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "262",
+			"description": "Earth Sci: Geology Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "659",
+			"description": "Earth Sci: Ocean Science Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "898",
+			"description": "Economics: General Economics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "889",
+			"description": "Economics: Law, Economics and Policy",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "886",
+			"description": "Economics: Managerial Economics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "888",
+			"description": "Economics: Mathematical Economics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "60",
+			"description": "Educ: Advanced Mathematics Teaching",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "61",
+			"description": "Educ: Basic Mathematics Teaching",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "62",
+			"description": "Educ: Biology Teaching",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "63",
+			"description": "Educ: Chemistry Teaching",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "64",
+			"description": "Educ: Early Childhood/Elementary Teaching",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "58",
+			"description": "Educ: Elementary Teaching",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "65",
+			"description": "Educ: Family and Consumer Sciences Teaching",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "59",
+			"description": "Educ: Foundational Mathematics Teaching",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "66",
+			"description": "Educ: Health Teaching",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "67",
+			"description": "Educ: Integrated Science Teaching",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "68",
+			"description": "Educ: Language Arts Teaching",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "69",
+			"description": "Educ: Physics Teaching",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "70",
+			"description": "Educ: Social Studies Teaching",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "040",
+			"description": "Engr Sci: Energy Systems Engineering Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "842",
+			"description": "Env Sci: Alternative Energy Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "845",
+			"description": "Env Sci: Applied Ecology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "501",
+			"description": "Env Sci: Aquatic Biology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "916",
+			"description": "Env Sci: Chemistry and the Environment",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "843",
+			"description": "Env Sci: Conservation, Resources and Sustainablty",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "848",
+			"description": "Env Sci: Earth Systems",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "846",
+			"description": "Env Sci: Enviro Science Education",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "849",
+			"description": "Env Sci: Environmental Agriculture",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "844",
+			"description": "Env Sci: Environmental Policy and Economics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "847",
+			"description": "Env Sci: Environmental Water Resources",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "720",
+			"description": "EXSS: Applied Exercise & Sport Sci",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "766",
+			"description": "EXSS: Fitness and Nutrition",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "272",
+			"description": "EXSS: Physical Education Teacher Ed",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "029",
+			"description": "Finance: Financial Planning Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "635",
+			"description": "Food Sci & Tech: Enology and Viticulture",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "141",
+			"description": "Food Sci & Tech: Fermentation Science",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "136",
+			"description": "Food Sci & Tech: Food Science",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "646",
+			"description": "Forest Mgmt: Forest Ecosystem Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "648",
+			"description": "Forest Mgmt: Forest Environmental Consult",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "651",
+			"description": "Forest Mgmt: Human-Forest Interactions",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "644",
+			"description": "Forest Mgmt: International Forestry",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "647",
+			"description": "Forest Mgmt: Plantation Silviculture",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "645",
+			"description": "Forest Mgmt: Restoration Forested Landscape",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "649",
+			"description": "Forest Mgmt: Wildland Fire Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "821",
+			"description": "Forestry: Forest Landscape Processes & Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "822",
+			"description": "Forestry: Forest Management Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "823",
+			"description": "Forestry: Forest Operations Management Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "824",
+			"description": "Forestry: Forest Restoration and Fire Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "228",
+			"description": "HDFS: Child Development Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "838",
+			"description": "HDFS: Early Childhood",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "441",
+			"description": "HDFS: General Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "430",
+			"description": "HDFS: Human Services Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "007",
+			"description": "HORT/CSS: Plant Breeding, Genetics, and Genomics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "792",
+			"description": "Hort: Ecological Mgmt Turf, Landscape, Urban Hort",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "089",
+			"description": "Horticulture: Environmental Landscape",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "240",
+			"description": "Horticulture: General Horticulture",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "614",
+			"description": "Horticulture: Horticultural Research",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "798",
+			"description": "Horticulture: Sustainable Horticultural Production",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "632",
+			"description": "Horticulture: Therapeutic Horticulture",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "613",
+			"description": "Horticulture: Viticulture and Enology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "016",
+			"description": "Ind Engr: Healthcare Systems Engineering Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "015",
+			"description": "Ind Engr: Industrial Automation Engineering Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "355",
+			"description": "Industrial Engr: Business Engineering",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "051",
+			"description": "Information Security, Assurance, and Analytics Opt",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "227",
+			"description": "Interior Design: Housing Studies",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "732",
+			"description": "KIN: Pre-Therapy & Allied Health",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "922",
+			"description": "Liberal Studies: Pre-Education",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "692",
+			"description": "Mathematics: Applied and Computational Mathematics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "737",
+			"description": "Mathematics: Mathematical Biology Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "234",
+			"description": "Mathematics: Secondary Teaching Emphasis",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "658",
+			"description": "Mathematics: Statistics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "A006",
+			"description": "ME: Aerospace Engineering Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "A001",
+			"description": "ME: Computational Engineering Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "A002",
+			"description": "ME: Energy and Fluid Systems Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "A003",
+			"description": "ME: Material Dsgn & Manufacturing Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "A005",
+			"description": "ME: Mechanical Engineering Science Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "A004",
+			"description": "ME: Product Design & Manufacturing Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "A007",
+			"description": "ME: Robotic Control Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "957",
+			"description": "MfgE: Manufacturing Systems",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "833",
+			"description": "MfgE: Product Development",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "736",
+			"description": "Microbiology: Aquatic Microbiology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "607",
+			"description": "Microbiology: Pre-Medicine/Microbiology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "095",
+			"description": "Music Std: Instrumental Performance",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "096",
+			"description": "Music Std: Music Education",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "097",
+			"description": "Music Std: Piano Performance",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "098",
+			"description": "Music Std: Piano Performance & Pedagogy",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "094",
+			"description": "Music Std: Vocal Performance, Pedagogy & Literatur",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "901",
+			"description": "Music: Instrumental Performance",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "944",
+			"description": "Music: Music Education",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "937",
+			"description": "Music: Music Production",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "951",
+			"description": "Music: Piano Performance",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "954",
+			"description": "Music: Vocal Performance",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "082",
+			"description": "Natural Res: Arid Land Ecology Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "688",
+			"description": "Natural Res: Conservation and Technology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "787",
+			"description": "Natural Res: Conservation Law Enforcement",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "663",
+			"description": "Natural Res: Ecological Restoration",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "672",
+			"description": "Natural Res: Fish and Wildlife Conservation",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "673",
+			"description": "Natural Res: Forest Ecosystems Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "675",
+			"description": "Natural Res: Human Dimensions in Nat. Res.",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "676",
+			"description": "Natural Res: Individualized Specialty Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "735",
+			"description": "Natural Res: Integrated Conservation Analysis",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "689",
+			"description": "Natural Res: Landscape Analysis",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "677",
+			"description": "Natural Res: Law Enforcement Nat Res",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "679",
+			"description": "Natural Res: Natural Resource Education Opt",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "680",
+			"description": "Natural Res: Natural Resource Policy & Mgt Opt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "664",
+			"description": "Natural Res: NR Conservation and Technology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "791",
+			"description": "Natural Res: Policy and Management Undergrad Opt",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "681",
+			"description": "Natural Res: Recreation and Toursim Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "682",
+			"description": "Natural Res: Resource Conservation Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "684",
+			"description": "Natural Res: Sustainable Agroforestry",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "685",
+			"description": "Natural Res: Urban Forest Landscapes",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "686",
+			"description": "Natural Res: Watershed Management Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "687",
+			"description": "Natural Res: Wildland Fire Ecology",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "091",
+			"description": "Nutr in Food Service,Culinary, and Food Systems",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "419",
+			"description": "Nutrition: Dietetics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "261",
+			"description": "Nutrition: Nutrition and Foodservice Systems",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "467",
+			"description": "Nutrition: Nutrition and Health Sciences",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "652",
+			"description": "Nutrition: Pre-Dietetics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "438",
+			"description": "Nutrition: Restaurant/Foodservice Mgt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "589",
+			"description": "Physics: Applied Physics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "586",
+			"description": "Physics: Biological Physics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "588",
+			"description": "Physics: Chemical Physics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "592",
+			"description": "Physics: Computational Physics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "593",
+			"description": "Physics: Geophysics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "587",
+			"description": "Physics: Mathematical Physics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "594",
+			"description": "Physics: Optical Physics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "777",
+			"description": "Physics: Physics Teaching/Physics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "691",
+			"description": "Political Sci: Environmental and Energy Politics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "471",
+			"description": "Political Science: International Affairs",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "634",
+			"description": "Political Science: Law and Politics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "022",
+			"description": "Public Health: General Public Health Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "242",
+			"description": "Public Health: Health Mgmt and Policy",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "241",
+			"description": "Public Health: Health Promo and Health Behavior",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "602",
+			"description": "Radiation Health Physics: Pre-Medicine",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "171",
+			"description": "Range: Law Enforcement Nat Res",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "392",
+			"description": "Rec Resource Mgmt: Cultural Resource Mgmt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "393",
+			"description": "Rec Resource Mgmt: Environment Res Intrp",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "388",
+			"description": "Rec Resource Mgmt: Forest Resources",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "474",
+			"description": "Rec Resource Mgmt: Individualized Specialty",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "396",
+			"description": "Rec Resource Mgmt: Law Enforcement",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "633",
+			"description": "Rec Resource Mgmt: Park Landscapes Opt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "621",
+			"description": "Rec Resource Mgmt: Public Policy Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "111",
+			"description": "Rec Resource Mgmt: Resource Planning",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "980",
+			"description": "Rec Resource Mgmt: Sociology Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "372",
+			"description": "Rec Resource Mgmt: Tourism",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "279",
+			"description": "Social Science: Community Devl. & Leadeship",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "050",
+			"description": "Social Science: Cultures and Identities Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "047",
+			"description": "Social Science: General Social Science Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "048",
+			"description": "Social Science: Humans and the Environment Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "049",
+			"description": "Social Science: Law and Society Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "995",
+			"description": "Sociology: Crime and Justice",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "642",
+			"description": "Sociology: Environmental and Nat Res Soc",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "014",
+			"description": "Sociology: Social Service and Advocacy Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "054",
+			"description": "Teaching: Clinically Based Elementary Education Op",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "053",
+			"description": "Teaching: Elementary Education Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "875",
+			"description": "Tour Adv Lead: Adventure Leadership Education",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "876",
+			"description": "Tour Adv Lead: Nature, Eco, and Adventure Tourism",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "873",
+			"description": "Tour Adv Lead: Outdoor Recreation Management",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "874",
+			"description": "Tour Adv Lead: Sustainable Tourism Management",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "478",
+			"description": "WIS: Art and Design",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "288",
+			"description": "WIS: Management & Marketing Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "289",
+			"description": "WIS: Science & Engineering Option",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "2070",
+			"description": "~Adult Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "1000",
+			"description": "~Agricultural & Resource Econom",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "1050",
+			"description": "~Agricultural Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "1250",
+			"description": "~Animal Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "8600",
+			"description": "~Anthropology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "8640",
+			"description": "~Applied Anthropology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "8800",
+			"description": "~Art",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5000",
+			"description": "~Atmospheric Sciences",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5060",
+			"description": "~Biochemistry and Biophysics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5160",
+			"description": "~Botany and Plant Pathology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2058",
+			"description": "~Bus Admin: Accounting",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2059",
+			"description": "~Bus Admin: Business Analytics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2063",
+			"description": "~Bus Admin: Corporate Finance",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2052",
+			"description": "~Bus Admin: Executive Leadership",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2053",
+			"description": "~Bus Admin: Global Operations",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2065",
+			"description": "~Bus Admin: Human Resources Mgmt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2062",
+			"description": "~Bus Admin: Innovation Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2055",
+			"description": "~Bus Admin: Innovation/Commercialization",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2054",
+			"description": "~Bus Admin: Marketing",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2061",
+			"description": "~Bus Admin: Organizational Leadership",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2056",
+			"description": "~Bus Admin: Research Thesis",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2060",
+			"description": "~Bus Admin: Supply Chain and Logistics Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2050",
+			"description": "~Business Administration",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3030",
+			"description": "~Chemical Engineering",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5200",
+			"description": "~Chemistry",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "310",
+			"description": "~Civil Eng: Environmental Engineering",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3060",
+			"description": "~Civil Engineering",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2200",
+			"description": "~College Student Services Admin",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2117",
+			"description": "~Community College Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "7180",
+			"description": "~Community Health",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "9960",
+			"description": "~Comparative Veterinary Medicin",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3070",
+			"description": "~Computer Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2970",
+			"description": "~Counseling",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "1200",
+			"description": "~Crop Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "4410",
+			"description": "~Design and Human Environment",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2310",
+			"description": "~Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3110",
+			"description": "~Electrical and Computer Engr",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "8900",
+			"description": "~English",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5350",
+			"description": "~Entomology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5420",
+			"description": "~Environmental Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "8940",
+			"description": "~Ethnic Studies",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "1300",
+			"description": "~Fisheries Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "1350",
+			"description": "~Food Science and Technology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "8950",
+			"description": "~Foreign Languages & Literature",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3800",
+			"description": "~Forest Engineering",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3880",
+			"description": "~Forest Resources",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3950",
+			"description": "~Forest Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5450",
+			"description": "~Geography",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5500",
+			"description": "~Geology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "6500",
+			"description": "~Geophysics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "4370",
+			"description": "~Gerontology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "9000",
+			"description": "~History",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5440",
+			"description": "~History of Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "1450",
+			"description": "~Horticulture",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "617",
+			"description": "~Horticulture: Horticultural Communication",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "656",
+			"description": "~Horticulture: Turf Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "4470",
+			"description": "~Human Development & Family Stu",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3190",
+			"description": "~Industrial Engineering",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "1070",
+			"description": "~Int'l Agricultural Development",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "6550",
+			"description": "~Marine Resource Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3200",
+			"description": "~Materials Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5600",
+			"description": "~Mathematics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5620",
+			"description": "~Mathematics Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3210",
+			"description": "~Mechanical Engineering",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5700",
+			"description": "~Microbiology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "9950",
+			"description": "~Molecular and Cellular Biology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2045",
+			"description": "~MSB: Finance",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2046",
+			"description": "~MSB: Finance Analytics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2047",
+			"description": "~MSB: Marketing Insights and Analytics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2069",
+			"description": "~MSB: Supply Chain Analytics",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "9500",
+			"description": "~Music",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "674",
+			"description": "~Natural Res: Geosciences & Natural Resor",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "683",
+			"description": "~Natural Res: Soil Resources Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3270",
+			"description": "~Nuclear Engineering",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "6600",
+			"description": "~Oceanography",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "4700",
+			"description": "~Pharmacy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "9550",
+			"description": "~Philosophy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "5900",
+			"description": "~Physics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "598",
+			"description": "~Physics: Physics Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "9600",
+			"description": "~Political Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "9650",
+			"description": "~Psychology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "7581",
+			"description": "~Pub Health: Biostatistics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "7582",
+			"description": "~Pub Health: Env and Occupational Health",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "7583",
+			"description": "~Pub Health: Epidemiology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "7587",
+			"description": "~Pub Health: Global Health",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "7584",
+			"description": "~Pub Health: Health Management and Policy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "7585",
+			"description": "~Pub Health: Health Promotion and Health Behavior",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "7591",
+			"description": "~Pub Health: Physical Activity",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "7589",
+			"description": "~Pub Health: Public Health Practice",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "7580",
+			"description": "~Public Health",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3750",
+			"description": "~Radiation Health Physics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "6220",
+			"description": "~Rangeland Ecology & Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "6100",
+			"description": "~Science Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "9800",
+			"description": "~Sociology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "1600",
+			"description": "~Soil Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "9850",
+			"description": "~Speech Communication",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "6150",
+			"description": "~Statistics (Graduate)",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "9930",
+			"description": "~Toxicology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "9307",
+			"description": "~Veterinary Medicine",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "9980",
+			"description": "~Veterinary Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3990",
+			"description": "~Water Resources",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "1750",
+			"description": "~Wildlife Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "8670",
+			"description": "~Women Studies",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "3690",
+			"description": "~Wood Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "6200",
+			"description": "~Zoology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "177",
+			"description": "~~Ag Business Mgmt: Agri Marketing & Trade",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "176",
+			"description": "~~Ag Business Mgmt: Agribusiness Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "101",
+			"description": "~~Ag Business Mgmt: Agricultural Economics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "173",
+			"description": "~~Ag Business Mgmt: Agricultural Finance",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "108",
+			"description": "~~Animal Sci: Agribusiness Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "625",
+			"description": "~~Animal Sci: Animal Behavior/Bioethics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "124",
+			"description": "~~Animal Sci: Animal Production/Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "168",
+			"description": "~~Animal Sci: Animal Products Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "163",
+			"description": "~~Animal Sci: Beef Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "982",
+			"description": "~~Animal Sci: Comm, Lead, Indus, & Policy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "164",
+			"description": "~~Animal Sci: Dairy Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "122",
+			"description": "~~Animal Sci: Equine Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "165",
+			"description": "~~Animal Sci: Poultry Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "126",
+			"description": "~~Animal Sci: Pre-Veterinary Medicine-AS",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "265",
+			"description": "~~Animal Sci: Pre-Veterinary Medicine/Sci",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "166",
+			"description": "~~Animal Sci: Sheep Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "705",
+			"description": "~~Animal Sciences: Animal Management Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "862",
+			"description": "~~Anthropology: Cultural Anthropology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "883",
+			"description": "~~Art BFA: Graphic Design",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "882",
+			"description": "~~Art: Studio",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "580",
+			"description": "~~BioHealth or GenSci: Pre-Nursing Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "596",
+			"description": "~~BioHealth or GenSci: Pre-Occupational Therapy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "511",
+			"description": "~~Biology: Biotechnology Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "767",
+			"description": "~~Bioresource Res: Bioenergy Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "768",
+			"description": "~~Bioresource Res: Bioproducts Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "510",
+			"description": "~~Botany: Botanical Research",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "513",
+			"description": "~~Botany: Plant Ecology & Systematics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "559",
+			"description": "~~Botany: Pre-Professional Teach Botany",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "115",
+			"description": "~~BRR: Biosystems Modeling",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "191",
+			"description": "~~Business: Accounting",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "182",
+			"description": "~~Business: Finance",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "196",
+			"description": "~~Business: Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "202",
+			"description": "~~Business: Management Information Systems",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "199",
+			"description": "~~Business: Marketing Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "782",
+			"description": "~~Business: Merchandising Management",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "744",
+			"description": "~~Business: Retail Management",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "694",
+			"description": "~~Business: Supply Chain and Logistics Management",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "340",
+			"description": "~~Chem Engr: Chem Proc Cont & Data Mgt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "341",
+			"description": "~~Chem Engr: Chemical Process Engineering",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "347",
+			"description": "~~Chem Engr: Materials Science & Engineer",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "358",
+			"description": "~~Crop & Soil Sci: Crop Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "119",
+			"description": "~~Crop & Soil Sci: Crop Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "184",
+			"description": "~~Crop & Soil Sci: Soil Resource Mgmt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "359",
+			"description": "~~Crop&Soil: Ecosystem Analysis and Policy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "209",
+			"description": "~~Crop&Soil: Plant Breeding and Genetics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "210",
+			"description": "~~Crop&Soil: Seed Systems",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "224",
+			"description": "~~Dsgn and Innovation Mgmt: Interior Design",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "376",
+			"description": "~~Earth Information Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "631",
+			"description": "~~Earth Sci: Applied Earth Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "611",
+			"description": "~~Earth Sci: Earth Science Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "630",
+			"description": "~~Earth Sci: Earth System Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "628",
+			"description": "~~Earth Sci: Public Interpretation",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "264",
+			"description": "~~Earth Sciences: Earth Systems Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "263",
+			"description": "~~Earth Sciences: Geography Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "250",
+			"description": "~~EEP: Environmental Economics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "252",
+			"description": "~~EEP: Environmental Policy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "251",
+			"description": "~~EEP: General Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "556",
+			"description": "~~ENSC/Geol: Environmental Geosciences",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "169",
+			"description": "~~Env Sci: Applied Ecology & Res Mgt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "577",
+			"description": "~~Env Sci: Env Conserv and Sust",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "527",
+			"description": "~~Env Sci: Environmental Policy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "502",
+			"description": "~~Enviro Sci: Aquatic Chemistry",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "503",
+			"description": "~~Enviro Sci: Aquatic Physics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "526",
+			"description": "~~Enviro Sci: Atmospheric Processes",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "490",
+			"description": "~~Enviro Sci: Environmental Chemistry",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "528",
+			"description": "~~Enviro Sci: Environmental Communications",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "531",
+			"description": "~~Enviro Sci: Environmental Sociology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "533",
+			"description": "~~Enviro Sci: Forest Ecology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "486",
+			"description": "~~Enviro Sci: Land-Air Interaction",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "573",
+			"description": "~~Enviro Sci: Land-Atmosphere",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "537",
+			"description": "~~Enviro Sci: Pest Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "507",
+			"description": "~~Enviro Sci: Pre-Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "529",
+			"description": "~~Enviro Sci: Terrestrial Ecosystems",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "353",
+			"description": "~~Enviro Sci: Water Science & Resources",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "099",
+			"description": "~~Environment Econ, Policy & Mgt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "750",
+			"description": "~~EXSS/HPHB: Undecided Health or Human Perf",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "722",
+			"description": "~~EXSS: Athletic Training",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "765",
+			"description": "~~EXSS: Exercise Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "728",
+			"description": "~~EXSS: Physical Activity for the Olde",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "724",
+			"description": "~~EXSS: Pre-Therapy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "730",
+			"description": "~~EXSS: Pre-Therapy & Allied Health",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "726",
+			"description": "~~EXSS: Sports Leadership",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "130",
+			"description": "~~Fisheries Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "394",
+			"description": "~~Forest Biology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "397",
+			"description": "~~Forest Recreation Resources",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "384",
+			"description": "~~Forest Soils",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "741",
+			"description": "~~General Health Care Administra",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "530",
+			"description": "~~General Sci: Pre-Dental Hygiene",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "534",
+			"description": "~~General Sci: Pre-Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "605",
+			"description": "~~General Sci: Pre-Veterinary Medicine",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "637",
+			"description": "~~Geography: Climate and Water Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "638",
+			"description": "~~Geography: Geographic Haz & Sus Comm",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "639",
+			"description": "~~Geography: International Dev, Peace, Sec",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "551",
+			"description": "~~Geology: Earth Materials",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "552",
+			"description": "~~Geology: Geomorphology/Engineer Geology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "553",
+			"description": "~~Geology: Sedimentary Geology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "554",
+			"description": "~~Geology: Structure/Tectonics/Geophysics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "407",
+			"description": "~~HDFS: Early Childhood Develop & Educ",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "431",
+			"description": "~~HDFS: Family and Consumer Sciences",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "437",
+			"description": "~~HDFS: Gerontology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "432",
+			"description": "~~HDFS: Home Economics Communications",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "731",
+			"description": "~~Health P&HB: Allied Health",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "718",
+			"description": "~~Health P&HB: Community Health",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "616",
+			"description": "~~HORT: Integrated Horticultural Prod",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "789",
+			"description": "~~Horticulture: Eco Landscape & Urban Forestry",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "601",
+			"description": "~~Horticulture: Ecolog & Sustainable Hort",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "147",
+			"description": "~~Horticulture: Turf and Landscape Mgmt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "002",
+			"description": "~~Humanities",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "324",
+			"description": "~~Industrial Engr: Information Systems Engineer",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "346",
+			"description": "~~Information Tech Engineering",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "619",
+			"description": "~~Liberal Studies: New Media Communications",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "867",
+			"description": "~~Liberal Studies: Women Studies",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "742",
+			"description": "~~Long Term Health Care",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "655",
+			"description": "~~Marine Resource Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "404",
+			"description": "~~Merch Mgmt: Historic & Cultural Studies",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "406",
+			"description": "~~Merch Mgmt: Market Analysis & Research",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "416",
+			"description": "~~Merch Mgmt: Merchandising Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "350",
+			"description": "~~Micro-energy & Chem Sys Engin",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "2068",
+			"description": "~~MSB: Financial Planning",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "946",
+			"description": "~~Music: Composition",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "964",
+			"description": "~~Music: Composition Recording Editing",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "947",
+			"description": "~~Music: Conducting",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "952",
+			"description": "~~Music: Conducting / Choral",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "953",
+			"description": "~~Music: Conducting / Instrumental",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "948",
+			"description": "~~Music: Music History",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "949",
+			"description": "~~Music: Performance",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "480",
+			"description": "~~Nat Res: Human Dimensions in Nat. Res.",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "429",
+			"description": "~~Nat Res: Native Americans & Natural Res",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "086",
+			"description": "~~Nat Res: Natural Resource Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "667",
+			"description": "~~Nat Res: Urban Forest Landscapes",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "178",
+			"description": "~~Nat Res: Watershed Management Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "668",
+			"description": "~~Nat Res: Wildland Fire Ecology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "258",
+			"description": "~~Nat Res:Individualized Specialty Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "662",
+			"description": "~~Nat Res:Natural Resource Policy and Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "362",
+			"description": "~~Nat. Res: Fish and Wildlife Conservation",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "371",
+			"description": "~~Nat. Res: Forest Ecosystems Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "084",
+			"description": "~~Nat. Res: Geosciences & Natural Resor",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "665",
+			"description": "~~Nat. Res: Recreation and Toursim Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "172",
+			"description": "~~Nat. Res: Resource Conservation Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "599",
+			"description": "~~Nat. Res: Soil Resources Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "661",
+			"description": "~~Nat. Res: Sustainable Agroforestry",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "403",
+			"description": "~~Native American Use of Natural",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "080",
+			"description": "~~Natural Res: Agroforestry Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "669",
+			"description": "~~Natural Res: Arid Land Ecology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "085",
+			"description": "~~Natural Res: Human Dimensions in Natural Res Opt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "678",
+			"description": "~~Natural Res: Native Americans & Natural Res",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "440",
+			"description": "~~Natural Res: Natural Resource Policy Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "174",
+			"description": "~~Natural Res: Natural Resource Technology Opt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "103",
+			"description": "~~Natural Res: Resource Economics Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "087",
+			"description": "~~Natural Res: Resource Reuse & Waste Mngt Op",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "930",
+			"description": "~~Natural Res: Sustainable Agroforestry",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "088",
+			"description": "~~Natural Res: Water Quality Optio",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "936",
+			"description": "~~Natural Res: Wildland Fire Ecology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "417",
+			"description": "~~NFM: Nutrition Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "418",
+			"description": "~~Nutrition: Foods in Business",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "591",
+			"description": "~~Physics: Biophysics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "276",
+			"description": "~~Political Sci: Environmental Politics & Policy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "475",
+			"description": "~~Political Science: Law, Politics & Society",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "581",
+			"description": "~~Pre-Radiation Therapy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "853",
+			"description": "~~Range: Habitat Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "852",
+			"description": "~~Range: Pastoral Systems of the World",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "850",
+			"description": "~~Range: Sustainable Livestock Ranching Option",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "856",
+			"description": "~~Range: Sustainable Rangeland Ecosystem Steward",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "254",
+			"description": "~~Rangeland Eco&Mgmt: General Range Eco&Mgmt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "157",
+			"description": "~~Rangeland Eco&Mgmt: Range Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "158",
+			"description": "~~Rangeland Eco&Mgmt: Range Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "156",
+			"description": "~~Rangeland Eco&Mgmt: Range/Forestry/Fire Mgmt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "159",
+			"description": "~~Rangeland Eco&Mgmt: Range/Soils",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "161",
+			"description": "~~Rangeland Eco&Mgmt: Range/Wildlife",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "162",
+			"description": "~~Rangeland Eco&Mgmt: Wildland Ecology",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "154",
+			"description": "~~Rangeland: General Rangeland Resources",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "956",
+			"description": "~~Rec Res Mgmt:Public Administration",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "206",
+			"description": "~~Rec Resource Mgmt: Tourism Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "148",
+			"description": "~~Rec Resrce Mgmt: Landscape Design",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "793",
+			"description": "~~Renewable Matr: Advanced Wood Manufacturing",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "286",
+			"description": "~~Social Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "983",
+			"description": "~~Speech Comm: Communication",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "987",
+			"description": "~~Speech Comm: Theater Arts",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "615",
+			"description": "~~Statistics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "493",
+			"description": "~~Tour&Outdoor: Adventure Leader & Educ",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "492",
+			"description": "~~Tour&Outdoor: Eco and Adventure Tourism",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "483",
+			"description": "~~Tour&Outdoor: International Ecotourism",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "484",
+			"description": "~~Tour&Outdoor: Outdoor & Experiential Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "243",
+			"description": "~~Tour&Outdoor: Recreation Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "485",
+			"description": "~~Tour&Outdoor: Tourism & Commercial Rec Mgmt",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "175",
+			"description": "~~Wildlife Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "387",
+			"description": "~~Wood Sci&Tech: Wood Engineering & Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "389",
+			"description": "~~Wood Sci&Tech: Wood Industry Management",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "364",
+			"description": "~~WSE: Bio-Based Composites Manufact",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "365",
+			"description": "~~WSE: Forest Products Marketing",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "367",
+			"description": "~~WSE: Wood Indus Prod Plan & Quality",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "609",
+			"description": "~~Zoology: Pre-Veterinary Medicine",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		}
+	]
+}

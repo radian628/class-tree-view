@@ -1,0 +1,649 @@
+{
+	"minors": [
+		{
+			"key": "563",
+			"description": "Actuarial Science",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "905",
+			"description": "Aerospace Engineering",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "804",
+			"description": "Aerospace Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "959",
+			"description": "Agricultural and Food Business Management",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "104",
+			"description": "Agricultural Business Manageme",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "077",
+			"description": "Agricultural Education",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "857",
+			"description": "Agricultural Sci & Natural Resources Communication",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "106",
+			"description": "Agricultural Sciences",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "125",
+			"description": "Animal Sciences",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "860",
+			"description": "Anthropology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "796",
+			"description": "Applied Journalism",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "881",
+			"description": "Art History",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "913",
+			"description": "Arts, Media, and Technology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "939",
+			"description": "Asian Languages and Cultures",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "938",
+			"description": "Asian Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "046",
+			"description": "Biochemistry and Molecular Biology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "929",
+			"description": "Biological Data Sciences",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "509",
+			"description": "Biology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "515",
+			"description": "Botany",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "803",
+			"description": "Business",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "574",
+			"description": "Business and Entrepreneurship",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "044",
+			"description": "Business Information Systems",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "520",
+			"description": "Chemistry",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "983",
+			"description": "Communication",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "477",
+			"description": "Comparative International Agriculture",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "249",
+			"description": "Computer Science",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "802",
+			"description": "Contemplative Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "119",
+			"description": "Crop Science",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "A008",
+			"description": "Cybersecurity Management",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "052",
+			"description": "Design and Innovation Management",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "776",
+			"description": "Digital Communication Arts",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "835",
+			"description": "Earth Sciences",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "885",
+			"description": "Economics",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "495",
+			"description": "Education",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "890",
+			"description": "English",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "472",
+			"description": "Entomology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "809",
+			"description": "Entrepreneurship",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "747",
+			"description": "Environmental and Occupational Health",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "962",
+			"description": "Environmental Economics and Policy",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "310",
+			"description": "Environmental Engineering",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "961",
+			"description": "Environmental Law and Policy",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "704",
+			"description": "Environmental Safety & Health",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "758",
+			"description": "Environmental Sciences",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "894",
+			"description": "Ethnic Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "752",
+			"description": "Exercise Physiology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "783",
+			"description": "Family Business",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "141",
+			"description": "Fermentation Science",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "268",
+			"description": "Film Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "813",
+			"description": "Finance",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "734",
+			"description": "Fisheries and Wildlife Sciences",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "797",
+			"description": "Food Manufacturing",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "136",
+			"description": "Food Science",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "137",
+			"description": "Food Technology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "706",
+			"description": "Forestry",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "925",
+			"description": "French",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "545",
+			"description": "Geography",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "550",
+			"description": "Geology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "013",
+			"description": "Geomatics Engineering Minor",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "930",
+			"description": "German",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "711",
+			"description": "Global Development Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "079",
+			"description": "Global Health",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "999",
+			"description": "Graphic Design",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "906",
+			"description": "Guitar",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "465",
+			"description": "Health Management & Policy",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "900",
+			"description": "History",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "145",
+			"description": "Horticulture",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "839",
+			"description": "Human Development and Family Sciences",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "769",
+			"description": "Humanitarian Engineering",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "024",
+			"description": "Indigenous Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "076",
+			"description": "Industrial Engineering",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "042",
+			"description": "Innovation and Entrpreneurship",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "107",
+			"description": "International Agricultural Dev",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "476",
+			"description": "International Engineering",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "304",
+			"description": "Irrigation Engineering",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "A009",
+			"description": "Latinx/a/o Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "267",
+			"description": "Leadership",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "031",
+			"description": "Marine Biology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "788",
+			"description": "Marine Conservation and Management",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "A010",
+			"description": "Marine Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "814",
+			"description": "Marketing",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "764",
+			"description": "Materials Science",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "560",
+			"description": "Mathematics",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "055",
+			"description": "Merchandising Management",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "416",
+			"description": "Merchandising Management",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "570",
+			"description": "Microbiology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "909",
+			"description": "Military History",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "805",
+			"description": "Military Science",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "950",
+			"description": "Music",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "936",
+			"description": "Music Performance",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "643",
+			"description": "Natural Resources",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "806",
+			"description": "Naval Science",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "619",
+			"description": "New Media Communications",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "327",
+			"description": "Nuclear Engineering",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "426",
+			"description": "Nutrition",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "660",
+			"description": "Oceanography",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "818",
+			"description": "Organizational Leadership",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "083",
+			"description": "Outdoor Products",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "955",
+			"description": "Philosophy",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "893",
+			"description": "Photography",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "590",
+			"description": "Physics",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "960",
+			"description": "Political Science",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "253",
+			"description": "Popular Music Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "817",
+			"description": "Professional Sales",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "965",
+			"description": "Psychology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "496",
+			"description": "Public Health",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "877",
+			"description": "Queer Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "326",
+			"description": "Radiation Health Physics",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "794",
+			"description": "Rangeland Science",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "978",
+			"description": "Religious Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "103",
+			"description": "Resource Economics",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "271",
+			"description": "Social Justice",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "980",
+			"description": "Sociology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "160",
+			"description": "Soil Science",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "940",
+			"description": "Spanish",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "010",
+			"description": "Sports Business",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "615",
+			"description": "Statistics",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "045",
+			"description": "Supply Chain and Logistics Management",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "871",
+			"description": "Sustainability",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "032",
+			"description": "Theatre Arts",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "958",
+			"description": "Tourism, Recreation, and Adventure Leadership",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "618",
+			"description": "Toxicology",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "147",
+			"description": "Turf and Landscape Management",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "073",
+			"description": "User Experience Research",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "878",
+			"description": "Visual Arts",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "908",
+			"description": "Women, Gender, and Sexuality Studies",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "009",
+			"description": "Wood Innovation for Sustainability",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "023",
+			"description": "Wood Products Sales",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "891",
+			"description": "Writing",
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "BACC",
+			"description": "~~Baccalaureate Core and CLA Core Checker",
+			"isVisibleInWhatif": true
+		}
+	]
+}

@@ -1,0 +1,256 @@
+{
+	"degrees": [
+		{
+			"key": "00",
+			"description": "Any Degree",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "BA",
+			"description": "Bachelor of Arts",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "BFA",
+			"description": "Bachelor of Fine Arts",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "BM",
+			"description": "Bachelor of Music",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "BS",
+			"description": "Bachelor of Science",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "CERT",
+			"description": "Certificate in",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "ENDOR2",
+			"description": "Continuing Licensure",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "ENDOR3",
+			"description": "Continuing Professional Development",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "EDD",
+			"description": "Doctor of Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "D PHAR",
+			"description": "Doctor of Pharmacy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "PHD",
+			"description": "Doctor of Philosophy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "DVM",
+			"description": "Doctor of Veterinary Medicine",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "XD",
+			"description": "Doctoral Level Degree",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "HBA",
+			"description": "Honors Bachelor of Arts",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "HBFA",
+			"description": "Honors Bachelor of Fine Arts",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "HBM",
+			"description": "Honors Bachelor of Music",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "HBS",
+			"description": "Honors Bachelor of Science",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "ENDOR1",
+			"description": "Initial Licensure",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MAG",
+			"description": "Master of Agriculture",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MA",
+			"description": "Master of Arts",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MAT",
+			"description": "Master of Arts Teaching",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MAIS",
+			"description": "Master of Arts/Interdis Stud",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MBE",
+			"description": "Master of Business & Engr",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MBAA",
+			"description": "Master of Business Admin and Accountancy",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "MBA",
+			"description": "Master of Business Admin.",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "EDM",
+			"description": "Master of Education",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MENG",
+			"description": "Master of Engineering",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MFA",
+			"description": "Master of Fine Arts",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MF",
+			"description": "Master of Forestry",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MHP",
+			"description": "Master of Health Physics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MMP",
+			"description": "Master of Medical Physics",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MNR",
+			"description": "Master of Natural Resources",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MOCE",
+			"description": "Master of Ocean Engineering",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "PSM",
+			"description": "Master of Professional Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MPH",
+			"description": "Master of Public Health",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MPP",
+			"description": "Master of Public Policy",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MS",
+			"description": "Master of Science",
+			"isShowInAdvancedSearch": false,
+			"isVisibleInWhatif": false
+		},
+		{
+			"key": "MSB",
+			"description": "Master of Science in Business",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "XM",
+			"description": "Masters Level Degree",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "000000",
+			"description": "Not Declared/Not Seeking Degre",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "PBCERT",
+			"description": "PB Certificate in",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		},
+		{
+			"key": "CRED",
+			"description": "PBac/Credential",
+			"isShowInAdvancedSearch": true,
+			"isVisibleInWhatif": true
+		}
+	]
+}
