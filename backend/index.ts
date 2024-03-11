@@ -26,7 +26,6 @@ async function main() {
   // Create courses table if it doesn't exist
   const createTableQuery = `
     CREATE TABLE IF NOT EXISTS Courses (
-        id INT AUTO_INCREMENT PRIMARY KEY,
         term VARCHAR(255) NOT NULL,
         courseReferenceNumber VARCHAR(255) NOT NULL,
         courseNumber VARCHAR(255) NOT NULL,
@@ -34,7 +33,8 @@ async function main() {
         courseTitle VARCHAR(255) NOT NULL,
         subjectCourse VARCHAR(255) NOT NULL,
         scheduleTypeDescription VARCHAR(255) NOT NULL,
-        subjectDescription VARCHAR(255) NOT NULL
+        subjectDescription VARCHAR(255) NOT NULL,
+        PRIMARY KEY (term, courseReferenceNumber)
     );`;
 
   // remove this
@@ -52,23 +52,23 @@ async function main() {
     .map((e: any) => e.data)
     .flat(1);
 
-  const insertQuery = `
-    INSERT INTO 
-      Courses (term, courseReferenceNumber, courseNumber, subject, courseTitle, subjectCourse, scheduleTypeDescription, subjectDescription)
-    VALUES ?;`;
+  // const insertQuery = `
+  //   INSERT INTO
+  //     Courses (term, courseReferenceNumber, courseNumber, subject, courseTitle, subjectCourse, scheduleTypeDescription, subjectDescription)
+  //   VALUES ?;`;
 
-  await connection.query(insertQuery, [
-    courses.map((course: any) => [
-      course.term,
-      course.courseReferenceNumber,
-      course.courseNumber,
-      course.subject,
-      course.courseTitle.replace(/&amp;/g, "&"),
-      course.subjectCourse,
-      course.scheduleTypeDescription,
-      course.subjectDescription,
-    ]),
-  ]);
+  // await connection.query(insertQuery, [
+  //   courses.map((course: any) => [
+  //     course.term,
+  //     course.courseReferenceNumber,
+  //     course.courseNumber,
+  //     course.subject,
+  //     course.courseTitle.replace(/&amp;/g, "&"),
+  //     course.subjectCourse,
+  //     course.scheduleTypeDescription,
+  //     course.subjectDescription,
+  //   ]),
+  // ]);
 
   console.log("Courses have been inserted successfully.");
 

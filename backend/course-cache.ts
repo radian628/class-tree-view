@@ -67,7 +67,7 @@ export class CourseCache {
 
         // insert course data into DB
         const insertQuery = `
-      INSERT INTO 
+      REPLACE INTO 
         Courses (term, courseReferenceNumber, courseNumber, subject, courseTitle, subjectCourse, scheduleTypeDescription, subjectDescription)
       VALUES ?;`;
         await this.conn.query(insertQuery, [
