@@ -6,6 +6,8 @@ import mysql from "mysql2/promise";
 import { readFile } from "fs/promises";
 import { fileURLToPath } from "url";
 import path from "path";
+import { PrereqTreeCache } from "./prereq-tree-cache.js";
+import { TermsCache } from "./terms-cache.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -45,7 +47,7 @@ async function main() {
     path.join(__dirname, "../scraper/cached_spring2024.json"),
     "utf8"
   );
-  const courses = JSON.parse(courseJSONCache)
+  const courses: any = JSON.parse(courseJSONCache)
     .map((e) => e.data)
     .flat(1);
 
@@ -55,7 +57,7 @@ async function main() {
     VALUES ?;`;
 
   await connection.query(insertQuery, [
-    courses.map((course) => [
+    courses.map((course: any) => [
       course.term,
       course.courseReferenceNumber,
       course.courseNumber,
@@ -73,6 +75,9 @@ async function main() {
   const [rows] = await connection.execute(testQuery);
   console.log("Test Query Result:", rows);
 
+  const prereqTreeCache = new PrereqTreeCache(connection);
+  const termsCache = new TermsCache();
+
   // create express server
   const app = express();
 
@@ -83,7 +88,10 @@ async function main() {
   app.use(
     "/api",
     trpcExpress.createExpressMiddleware({
-      router: createAPI(connection),
+      router: createAPI(connection, {
+        prereqTreeCache,
+        termsCache,
+      }),
     })
   );
 

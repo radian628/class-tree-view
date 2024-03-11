@@ -6,9 +6,14 @@ import { TermsCache } from "./terms-cache.js";
 
 const t = initTRPC.create();
 
-export function createAPI(conn: Connection) {
-  const prereqTreeCache = new PrereqTreeCache(conn);
-  const termsCache = new TermsCache();
+export function createAPI(
+  conn: Connection,
+  caches: {
+    prereqTreeCache: PrereqTreeCache;
+    termsCache: TermsCache;
+  }
+) {
+  const { prereqTreeCache, termsCache } = caches;
 
   const api = t.router({
     prereq: t.procedure.input(z.string()).query(async (opts) => {
