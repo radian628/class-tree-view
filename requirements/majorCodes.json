@@ -1,0 +1,785 @@
+{
+    "majors": [
+        {
+            "key": "C305",
+            "description": "Mechatronics for Manufacturing Engineering Cert",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C825",
+            "description": "20th Century Studies Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "UD-CHECK",
+            "description": "60 Credit Upper-Division Requirement",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "641",
+            "description": "Accountancy",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "897",
+            "description": "Agricultural and Food Business Management",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "104",
+            "description": "Agricultural Business Manageme",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "259",
+            "description": "Agricultural Sciences",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "865",
+            "description": "American Studies",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "125",
+            "description": "Animal Sciences",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "860",
+            "description": "Anthropology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "400",
+            "description": "Apparel Design",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "026",
+            "description": "Applied Humanities",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "859",
+            "description": "Applied Visual Arts",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "826",
+            "description": "Architectural Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "880",
+            "description": "Art",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "907",
+            "description": "Arts, Media and Technology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "916",
+            "description": "Arts, Media, and Technology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "244",
+            "description": "Athletic Training",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "506",
+            "description": "Biochemistry and Biophysics",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "971",
+            "description": "Biochemistry and Molecular Biology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "298",
+            "description": "Bioengineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "606",
+            "description": "BioHealth Sciences",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "858",
+            "description": "Biological Data Sciences",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "509",
+            "description": "Biology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "113",
+            "description": "Bioresource Research",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "515",
+            "description": "Botany",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "2050",
+            "description": "Business Admininstration",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "181",
+            "description": "Business Administration",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "899",
+            "description": "Business Analytics",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "183",
+            "description": "Business Information Systems",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "303",
+            "description": "Chemical Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "520",
+            "description": "Chemistry",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "306",
+            "description": "Civil Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "090",
+            "description": "Climate Science",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "307",
+            "description": "Computer Science",
+            "isVisibleInWhatif": true,
+            "options": ["354", "334", "004", "297", "344"]
+        },
+        {
+            "key": "338",
+            "description": "Construction Engineering Mgt",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "028",
+            "description": "Contemporary Music Industry",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "092",
+            "description": "Creative Writing",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "120",
+            "description": "Crop and Soil Science",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C300",
+            "description": "Cybersecurity Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "912",
+            "description": "Design and Innovation Management",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C400",
+            "description": "Design for Social Impact Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "473",
+            "description": "Digital Communication Arts",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "450",
+            "description": "Ecological Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "885",
+            "description": "Economics",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "233",
+            "description": "Education",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "039",
+            "description": "Elect & Computer Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "923",
+            "description": "Elementary Education",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "293",
+            "description": "Energy Systems Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "072",
+            "description": "Engineering Science",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "890",
+            "description": "English",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "237",
+            "description": "Environmental Economics and Policy",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "311",
+            "description": "Environmental Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "657",
+            "description": "Environmental Sciences",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "894",
+            "description": "Ethnic Studies",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "182",
+            "description": "Finance",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "018",
+            "description": "Fisheries, Wildlife, and Conservation Sciences",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C315",
+            "description": "Food in Culture and Social Justice Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "033",
+            "description": "Food Science and Sustainable Technologies",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "135",
+            "description": "Food Science and Technology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "381",
+            "description": "Forest - Civil Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "380",
+            "description": "Forest Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "623",
+            "description": "Forest Operations Management",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "820",
+            "description": "Forestry",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "925",
+            "description": "French",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C540",
+            "description": "Geographic Information Science Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "896",
+            "description": "Geography and Geospatial Science",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "034",
+            "description": "Geology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "930",
+            "description": "German",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C437",
+            "description": "Gerontology Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C800",
+            "description": "Global Learning Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "779",
+            "description": "Graphic Design",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "900",
+            "description": "History",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "012",
+            "description": "Honors Associate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "011",
+            "description": "Honors Scholar",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "145",
+            "description": "Horticulture",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "291",
+            "description": "Hospitality Management",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "447",
+            "description": "Human Devel and Family Science",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C302",
+            "description": "Humanitarian Engineering Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "323",
+            "description": "Industrial Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "043",
+            "description": "Innovation and Entrpreneurship",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "851",
+            "description": "Innovation Management",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "458",
+            "description": "Interior Design",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "910",
+            "description": "International Studies",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "840",
+            "description": "Kinesiology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C700",
+            "description": "Language in Culture Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C810",
+            "description": "Latin American Affairs Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "920",
+            "description": "Liberal Studies",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "196",
+            "description": "Management",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "317",
+            "description": "Manufacturing Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "074",
+            "description": "Marine Studies",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "799",
+            "description": "Marketing",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "560",
+            "description": "Mathematics",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "321",
+            "description": "Mechanical Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C868",
+            "description": "Medical Humanities Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "416",
+            "description": "Merchandising Management",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "570",
+            "description": "Microbiology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "950",
+            "description": "Music",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "093",
+            "description": "Music Studies",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "671",
+            "description": "Natural Resources",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "327",
+            "description": "Nuclear Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "466",
+            "description": "Nutrition",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "025",
+            "description": "Oceanography",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C600",
+            "description": "Organic Farming Systems Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C190",
+            "description": "Organizational Leadership Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "081",
+            "description": "Outdoor Products",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C815",
+            "description": "Peace Studies Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "955",
+            "description": "Philosophy",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "590",
+            "description": "Physics",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "960",
+            "description": "Political Science",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "911",
+            "description": "Pre Design and Innovation Management",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "825",
+            "description": "Pre Forest Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "770",
+            "description": "Pre-Accountancy",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "453",
+            "description": "Pre-Apparel",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "771",
+            "description": "Pre-Business Information Systems",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "924",
+            "description": "Pre-Elementary Education",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "772",
+            "description": "Pre-Finance",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "361",
+            "description": "Pre-Forest/Civil Engineering",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "810",
+            "description": "Pre-Forestry",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "479",
+            "description": "Pre-Graphic Design",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "454",
+            "description": "Pre-Interior Design",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "773",
+            "description": "Pre-Management",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "774",
+            "description": "Pre-Marketing",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "205",
+            "description": "Pre-MBA",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "277",
+            "description": "Pre-Merchandising Management",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "965",
+            "description": "Psychology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "239",
+            "description": "Public Health",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "801",
+            "description": "Public Policy",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "326",
+            "description": "Radiation Health Physics",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "292",
+            "description": "Rangeland Sciences",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "977",
+            "description": "Religious Studies",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "238",
+            "description": "Renewable Materials",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C605",
+            "description": "Sci & Tech of Alcohol Beverage Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C750",
+            "description": "Scientific, Technical, and Professional Comm Cert",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "286",
+            "description": "Social Science",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "980",
+            "description": "Sociology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "940",
+            "description": "Spanish",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "985",
+            "description": "Speech Communication",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "075",
+            "description": "Supply Chain and Logistics Management",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "870",
+            "description": "Sustainability",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "057",
+            "description": "Teaching",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "041",
+            "description": "Theatre Arts",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "653",
+            "description": "Tourism and Outdoor Leadership",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "872",
+            "description": "Tourism, Recreation, and Adventure Leadership",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C610",
+            "description": "Urban Agriculture Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "808",
+            "description": "Women, Gender, and Sexuality Studies",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C808",
+            "description": "Women, Gender, and Sexuality Studies Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "017",
+            "description": "Wood Innovation for Sustainability",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "C310",
+            "description": "Yoga Studies and Yoga Teacher Training Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "620",
+            "description": "Zoology",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "CG14",
+            "description": "~Bus Adm: Business Analytics Grad Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "2067",
+            "description": "~Business",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "6410",
+            "description": "~Business Administration and Accountancy",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "CG08",
+            "description": "~Fisheries Management Grad Certificate",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "7580",
+            "description": "~Public Health",
+            "isVisibleInWhatif": true
+        },
+        {
+            "key": "CG12",
+            "description": "~Wildlife Management Grad Certificate",
+            "isVisibleInWhatif": true
+        }
+    ]
+}
