@@ -4,7 +4,7 @@ import { ForceDirectedGraph } from "../fdg/fdg.js";
 import React from "react";
 import "./app.less";
 import { TreeItem } from "./tree-item.js";
-import { ClassSectionSearch } from "../search/ClassSectionSearch.js";
+import { ClassSearch } from "../search/ClassSearch.js";
 
 const defaultFDGNodeSettings = {
   repulsionRadius: 50,
@@ -76,10 +76,7 @@ export function App() {
         graph={graph}
         setGraph={setGraph}
       ></ForceDirectedGraph> */}
-      <ClassSectionSearch
-        results={[]}
-        setResults={() => {}}
-      ></ClassSectionSearch>
+      <ClassSearch results={[]} setResults={() => {}}></ClassSearch>
     </div>
   );
 }

@@ -1,5 +1,29 @@
+:root {
+  --bg: #ffffff;
+  --border: #666666;
+  --border-subtle: #aaaaaa;
+  --text: #000000;
+  --text-invert: #ffffff;
+  --bg-2: #eeeeee;
+  --bg-button: #333333;
+  --shadow: #00000055;
+}
+
+button {
+  background-color: var(--bg-button);
+  border: none;
+  color: var(--text-invert);
+  padding: 0.3em;
+}
+
+input {
+  border: 1px solid var(--border);
+}
+
 body {
+  color: var(--text);
   margin: 0;
+  font-family: sans-serif;
 }
 
 .tree-container {
@@ -7,7 +31,6 @@ body {
   height: 50vh;
   margin-left: 25vw;
   margin-top: 25vh;
-  border: 1px solid black;
 }
 
 :root:root:root:root .tree-item {

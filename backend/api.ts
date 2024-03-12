@@ -48,7 +48,7 @@ export function createAPI(
           opts.input.offset,
         ]);
 
-        return rows as { subjectCourse: string }[];
+        return rows as CourseRaw[];
       }),
     courseSections: t.procedure
       .input(
