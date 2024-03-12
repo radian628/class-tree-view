@@ -46,6 +46,7 @@ async function getBlockArray(major) {
 }
 export async function parseRequirements(major) {
     const blocks = await getBlockArray(major);
+    // console.log(JSON.stringify(blocks));
     const parsedBlocks = [];
 
     blocks.forEach((block) => {
@@ -61,13 +62,23 @@ export async function parseRequirements(major) {
 
         block.ruleArray.forEach((rule) => {
             if (!rule.requirement.courseArray) {
-                console.log("skipped requirement in", block.title);
-                return; // Skip rules without courseArray
+                if (rule.ruleArray) {
+                    // Assumes OSU course is at idx length-1
+                    const courses = rule.ruleArray[rule.ruleArray.length-1].requirement.courseArray.map(course => course);
+                    const requirements = courses.map(course => course.discipline + course.number);
+                    newBlock.requirements.push(requirements);
+                }
+                else {
+                    console.log("skipped requirement in", block.title);
+                    // console.log(JSON.stringify(rule));
+                    return;
+                }
             }
-
-            const courses = rule.requirement.courseArray.map(course => course);
-            const requirements = courses.map(course => course.discipline + course.number);
-            newBlock.requirements.push(requirements);
+            else {
+                const courses = rule.requirement.courseArray.map(course => course);
+                const requirements = courses.map(course => course.discipline + course.number);
+                newBlock.requirements.push(requirements);
+            }
         });
 
         parsedBlocks.push(newBlock);
