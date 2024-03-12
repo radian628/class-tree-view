@@ -39,7 +39,7 @@ async function main() {
 
   // remove this
   console.log("Removing old courses table (REMOVE THIS FOR PROD)");
-  await connection.execute("DROP TABLE Courses;");
+  await connection.execute("DROP TABLE IF EXISTS Courses;");
 
   console.log("Creating courses table...");
   await connection.execute(createTableQuery);
