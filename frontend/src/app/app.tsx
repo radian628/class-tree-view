@@ -5,6 +5,11 @@ import React from "react";
 import "./app.less";
 import { TreeItem } from "./tree-item.js";
 import { ClassSearch } from "../search/ClassSearch.js";
+import { createTRPCReact, httpBatchLink } from "@trpc/react-query";
+import { AppRouter } from "../../../backend/api.js";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { trpc } from "../api/index.js";
+import { grabAllPrereqs } from "./generate-tree.js";
 
 const defaultFDGNodeSettings = {
   repulsionRadius: 50,
@@ -69,14 +74,37 @@ export function App() {
     new Map<string, FDGNode<string>>([nodeA, nodeB, nodeC])
   );
 
+  const [queryClient] = useState(() => new QueryClient());
+  const [trpcClient] = useState(() =>
+    trpc.createClient({
+      links: [
+        httpBatchLink({
+          url: "/api",
+          // You can pass any HTTP headers you wish here
+        }),
+      ],
+    })
+  );
+
   return (
-    <div className="tree-container">
-      {/* <ForceDirectedGraph
-        itemTemplate={TreeItem}
-        graph={graph}
-        setGraph={setGraph}
-      ></ForceDirectedGraph> */}
-      <ClassSearch results={[]} setResults={() => {}}></ClassSearch>
-    </div>
+    <trpc.Provider client={trpcClient} queryClient={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <div className="app-container">
+          <div className="tree-container">
+            <ForceDirectedGraph
+              itemTemplate={TreeItem}
+              graph={graph}
+              setGraph={setGraph}
+            ></ForceDirectedGraph>
+          </div>
+          <div className="class-search-container">
+            <ClassSearch addCourse={() => {}}></ClassSearch>
+          </div>
+        </div>
+      </QueryClientProvider>
+    </trpc.Provider>
   );
 }
+
+// @ts-ignore
+window.grabAllPrereqs = grabAllPrereqs;

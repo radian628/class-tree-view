@@ -1,5 +1,6 @@
 import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
 import type { AppRouter } from "../../../backend/api.js";
+import { createTRPCReact } from "@trpc/react-query";
 
 export const api = createTRPCProxyClient<AppRouter>({
   links: [
@@ -8,3 +9,5 @@ export const api = createTRPCProxyClient<AppRouter>({
     }),
   ],
 });
+
+export const trpc = createTRPCReact<AppRouter>();

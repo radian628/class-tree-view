@@ -5,34 +5,51 @@
   border: 1px solid var(--border);
   border-radius: 1em;
   overflow: hidden;
+  background-color: var(--bg);
 
   .class-search-results {
     overflow: auto;
     list-style: none;
     padding: 0;
-    box-shadow: inset 0 0 0.3em var(--shadow);
     margin: 0;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
     flex-grow: 1;
 
-    .class-search-result {
+    .class-search-result,
+    .class-search-result-header {
       border-bottom: 1px solid var(--border-subtle);
-      margin: 0.5em 0.5em;
-      padding-bottom: 0.5em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      margin: 0 0.5em;
+      padding: 0.5em;
+      display: grid;
 
-      .class-subject-course {
+      cursor: pointer;
+
+      grid-template-columns: 1fr 2fr 1fr;
+
+      .class-subject-course,
+      .class-title {
         padding-right: 0.5em;
         border-right: 1px solid var(--border-subtle);
         margin-right: 0.5em;
       }
+    }
 
-      .class-title {
-        text-align: right;
-      }
+    .class-search-result-header {
+      cursor: default;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      background-color: white;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 1em;
+      padding-right: 1em;
+      top: 0;
+      font-weight: bold;
+    }
+
+    .class-search-result:hover {
+      background-color: var(--bg-2);
     }
   }
 
@@ -45,9 +62,8 @@
   }
 
   .class-search-header {
-    border-bottom: 1px solid var(--border);
     background-color: var(--bg);
-    padding: 0.5em;
+    padding: 0;
     display: flex;
     justify-content: space-between;
     border-top-left-radius: 1em;
@@ -55,14 +71,14 @@
 
     input {
       flex-grow: 1;
-      border-top-left-radius: 1em;
-      border-bottom-left-radius: 1em;
+      border-top-left-radius: 1.1em;
+      padding-left: 0.6em;
       background-color: var(--bg-2);
+      border: none;
     }
 
     button {
       border-top-right-radius: 1em;
-      border-bottom-right-radius: 1em;
       padding-right: 0.6em;
     }
   }

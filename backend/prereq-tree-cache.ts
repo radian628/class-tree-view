@@ -110,9 +110,11 @@ export class PrereqTreeCache {
     WHERE subjectCourse = ?
     AND (scheduleTypeDescription = "Lecture"
         OR scheduleTypeDescription = "Online")
+    ORDER BY term DESC
     LIMIT 1;`,
       [subjectCourse]
     );
+    console.log("prereq", subjectCourse, courseInfo);
     if (!courseInfo) return this.setDNE(subjectCourse);
 
     // query banner for course prereq info
@@ -120,6 +122,7 @@ export class PrereqTreeCache {
       courseInfo.term,
       courseInfo.courseReferenceNumber
     )) as PrereqTreeFromBanner | undefined;
+    console.log("bannerData", subjectCourse, dataFromBanner);
     if (!dataFromBanner) return this.setDNE(subjectCourse);
 
     // convert tree and use newly-generated cache entry
