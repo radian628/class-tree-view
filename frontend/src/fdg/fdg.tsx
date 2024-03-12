@@ -37,102 +37,121 @@ export function ForceDirectedGraph<T>(props: {
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const container = containerRef.current;
-
-    if (!canvas || !container) return;
-
-    // resize canvas if necessary
-    const containerRect = container.getBoundingClientRect();
-    if (canvas.width !== containerRect.width)
-      canvas.width = containerRect?.width;
-    if (canvas.height !== containerRect.height)
-      canvas.height = containerRect?.height;
-
     let keepLooping = true;
 
     // run per-frame stuff
     function frame() {
+      const canvas = canvasRef.current;
+      const container = containerRef.current;
+
+      if (!canvas || !container) return;
+
       // update canvas
       if (!canvas) return;
 
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
-      const containerRect = containerRef.current?.getBoundingClientRect();
-      const offsetX = containerRect?.left ?? 0;
-      const offsetY = containerRect?.top ?? 0;
-      ctx.save();
-      ctx.translate(-offsetX, -offsetY);
-
-      // draw all connections on canvas
-      for (const [keyA, node] of props.graph.entries()) {
-        for (const [keyB, connection] of node.connections.entries()) {
-          const elementB = innerElementsRef.current.get(keyA);
-          const elementA = innerElementsRef.current.get(keyB);
-
-          if (!elementA || !elementB) continue;
-
-          const rect1 = elementA.getBoundingClientRect();
-          const rect2 = elementB.getBoundingClientRect();
-
-          const xCenter1 = rect1.width / 2 + rect1.left;
-          const xCenter2 = rect2.width / 2 + rect2.left;
-          const yCenter1 = rect1.height / 2 + rect1.top;
-          const yCenter2 = rect2.height / 2 + rect2.top;
-
-          const p2 = intersectLineSegmentStartingAtBoxCenter(
-            rect1.left,
-            rect1.top,
-            rect1.left + rect1.width,
-            rect1.top + rect1.height,
-            xCenter2,
-            yCenter2
-          );
-          const p1 = intersectLineSegmentStartingAtBoxCenter(
-            rect2.left,
-            rect2.top,
-            rect2.left + rect2.width,
-            rect2.top + rect2.height,
-            xCenter1,
-            yCenter1
-          );
-
-          const dir = Math.atan2(p2.y - p1.y, p2.x - p1.x);
-          const arrowLen = 20 * scale;
-          const arrowAngle = (Math.PI * 2.5) / 3;
-
-          ctx.lineWidth = 6 * scale;
-          ctx.lineCap = "round";
-          ctx.lineJoin = "round";
-          ctx.strokeStyle = "#888888";
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.moveTo(
-            p2.x + Math.cos(dir + arrowAngle) * arrowLen,
-            p2.y + Math.sin(dir + arrowAngle) * arrowLen
-          );
-          ctx.lineTo(p2.x, p2.y);
-          ctx.lineTo(
-            p2.x + Math.cos(dir - arrowAngle) * arrowLen,
-            p2.y + Math.sin(dir - arrowAngle) * arrowLen
-          );
-          ctx.stroke();
-        }
-      }
-      ctx.restore();
-
       // modify graph
-      props.setGraph((graph) =>
-        mapMapValues(graph, (aKey, a) => {
+      props.setGraph((graph) => {
+        // resize canvas if necessary
+        const containerRect = container.getBoundingClientRect();
+        const containerRectWidthRounded = Math.round(containerRect.width);
+        const containerRectHeightRounded = Math.round(containerRect.height);
+
+        if (canvas.width !== containerRectWidthRounded)
+          canvas.width = containerRectWidthRounded;
+        if (canvas.height !== containerRectHeightRounded)
+          canvas.height = containerRectHeightRounded;
+
+        const offsetX = containerRect?.left ?? 0;
+        const offsetY = containerRect?.top ?? 0;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.save();
+        ctx.translate(-offsetX, -offsetY);
+
+        // draw all connections on canvas
+        for (const [keyA, node] of graph.entries()) {
+          for (const [keyB, connection] of node.connections.entries()) {
+            const elementB = innerElementsRef.current.get(keyA);
+            const elementA = innerElementsRef.current.get(keyB);
+
+            if (!elementA || !elementB) continue;
+
+            const rect1 = elementA.getBoundingClientRect();
+            const rect2 = elementB.getBoundingClientRect();
+
+            const xCenter1 = rect1.width / 2 + rect1.left;
+            const xCenter2 = rect2.width / 2 + rect2.left;
+            const yCenter1 = rect1.height / 2 + rect1.top;
+            const yCenter2 = rect2.height / 2 + rect2.top;
+
+            const p2 = intersectLineSegmentStartingAtBoxCenter(
+              rect1.left,
+              rect1.top,
+              rect1.left + rect1.width,
+              rect1.top + rect1.height,
+              xCenter2,
+              yCenter2
+            );
+            const p1 = intersectLineSegmentStartingAtBoxCenter(
+              rect2.left,
+              rect2.top,
+              rect2.left + rect2.width,
+              rect2.top + rect2.height,
+              xCenter1,
+              yCenter1
+            );
+
+            const dir = Math.atan2(p2.y - p1.y, p2.x - p1.x);
+            const arrowLen = 20 * scale;
+            const arrowAngle = (Math.PI * 2.5) / 3;
+
+            ctx.lineWidth = 6 * scale;
+            ctx.lineCap = "round";
+            ctx.lineJoin = "round";
+            ctx.strokeStyle = "#888888";
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.moveTo(
+              p2.x + Math.cos(dir + arrowAngle) * arrowLen,
+              p2.y + Math.sin(dir + arrowAngle) * arrowLen
+            );
+            ctx.lineTo(p2.x, p2.y);
+            ctx.lineTo(
+              p2.x + Math.cos(dir - arrowAngle) * arrowLen,
+              p2.y + Math.sin(dir - arrowAngle) * arrowLen
+            );
+            ctx.stroke();
+          }
+        }
+        ctx.restore();
+
+        return mapMapValues(graph, (aKey, a, i) => {
           return produce(a, (a) => {
-            mapMapValues(graph, (bKey, b) => {
+            mapMapValues(graph, (bKey, b, j) => {
               if (aKey === bKey || !a.applyForces) return;
 
-              const dist = Math.hypot(a.x - b.x, a.y - b.y);
+              let dist = Math.hypot(a.x - b.x, a.y - b.y);
+
+              if (dist < 0.000001) {
+                if (i > j) a.x -= 10;
+                dist += 10;
+              }
+
               const dx = (b.x - a.x) / dist;
               const dy = (b.y - a.y) / dist;
+
+              if (
+                isNaN(a.x) ||
+                isNaN(a.y) ||
+                isNaN(dx) ||
+                isNaN(dy) ||
+                isNaN(dist)
+              )
+                console.log(a.x, a.y, dx, dy, dist);
 
               const conn = b.connections.get(aKey);
 
@@ -157,13 +176,18 @@ export function ForceDirectedGraph<T>(props: {
               }
             });
           });
-        })
-      );
+        });
+      });
+      if (keepLooping) requestAnimationFrame(frame);
     }
 
     // run single frame
     requestAnimationFrame(frame);
-  });
+
+    return () => {
+      keepLooping = false;
+    };
+  }, [positionOffset, scale]);
 
   useEffect(() => {
     const mousemove = (e: MouseEvent) => {

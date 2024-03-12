@@ -101,7 +101,7 @@ AND_OR.setPattern(
     (left, [operator, right]) => {
       return {
         type: "operator",
-        operator: operator.text,
+        operator: operator.text.toLowerCase(),
         operands: [
           ...(left.operator === operator.text ? left.operands : [left]),
           right,

@@ -3,6 +3,7 @@ import { FDGNode } from "../fdg/fdg-types.js";
 import React from "react";
 import { DraggableTreeItem } from "../fdg/draggable-tree-item.js";
 import { CourseRaw } from "../../../backend/load-courses.js";
+import "./tree-item.less";
 
 export type TreeItem =
   | {
@@ -10,7 +11,7 @@ export type TreeItem =
     }
   | {
       type: "course";
-      course: CourseRaw;
+      course: CourseRaw | undefined;
     };
 
 // export function TreeItem(props: {
@@ -29,7 +30,7 @@ export type TreeItem =
 //   );
 // }
 
-export function TreeItem(props: {
+export function TreeItemView(props: {
   node: FDGNode<TreeItem>;
   setNode: (setter: (oldNode: FDGNode<TreeItem>) => FDGNode<TreeItem>) => void;
   scale: number;
@@ -44,16 +45,19 @@ export function TreeItem(props: {
       {(() => {
         const data = nodeData;
 
-        if (data.type === "and") {
+        if (data.type.toLowerCase() === "and") {
           return <div className="tree-item-and-or">And</div>;
         }
 
-        if (data.type === "or") {
+        if (data.type.toLowerCase() === "or") {
           return <div className="tree-item-and-or">Or</div>;
         }
 
         if (data.type === "course") {
-          return <div>{data.course.courseTitle}</div>;
+          if (!data.course)
+            return <div className="tree-item"> Course data not found.</div>;
+
+          return <div className="tree-item">{data.course.courseTitle}</div>;
         }
 
         return <></>;
