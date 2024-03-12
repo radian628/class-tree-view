@@ -44,8 +44,8 @@ async function getBlockArray(major) {
         console.error('Error:', error);
     }
 }
-export async function parseRequirements() {
-    const blocks = await getBlockArray();
+export async function parseRequirements(major) {
+    const blocks = await getBlockArray(major);
     const parsedBlocks = [];
 
     blocks.forEach((block) => {
