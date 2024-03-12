@@ -8,6 +8,7 @@ export const termsParser = z.array(
       description: z.string(),
     })
     .required()
+    .passthrough()
 );
 export type Terms = z.infer<typeof termsParser>;
 

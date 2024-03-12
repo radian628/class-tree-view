@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { FDGConnectionSettings, FDGNode } from "../fdg/fdg-types";
-import { ForceDirectedGraph } from "../fdg/fdg";
+import { FDGConnectionSettings, FDGNode } from "../fdg/fdg-types.js";
+import { ForceDirectedGraph } from "../fdg/fdg.js";
 import React from "react";
 import "./app.less";
-import { TreeItem } from "./tree-item";
+import { TreeItem } from "./tree-item.js";
+import { ClassSectionSearch } from "../search/ClassSectionSearch.js";
 
 const defaultFDGNodeSettings = {
   repulsionRadius: 50,
@@ -70,11 +71,15 @@ export function App() {
 
   return (
     <div className="tree-container">
-      <ForceDirectedGraph
+      {/* <ForceDirectedGraph
         itemTemplate={TreeItem}
         graph={graph}
         setGraph={setGraph}
-      ></ForceDirectedGraph>
+      ></ForceDirectedGraph> */}
+      <ClassSectionSearch
+        results={[]}
+        setResults={() => {}}
+      ></ClassSectionSearch>
     </div>
   );
 }

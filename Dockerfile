@@ -8,8 +8,9 @@ RUN npm install
 
 COPY . .
 
-RUN npm run writeDB
+# RUN npm run writeDB
 
-CMD ["npm", "run", "build-frontend"]
-CMD ["npm", "run", "backend"]
+CMD ["/bin/bash", "run.sh"]
+# CMD ["npm", "run", "build-frontend"]
+# CMD ["npm", "run", "backend"]
 # CMD ["npm", "run", "writeDB"]

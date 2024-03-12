@@ -12,6 +12,13 @@ async function exists(path: string) {
     .catch(() => false);
 }
 
+// async delay
+function delay(ms: number) {
+  return new Promise((res, rej) => {
+    setTimeout(res, ms);
+  });
+}
+
 export class CourseCache {
   conn: Connection;
   termsCache: TermsCache;
@@ -49,19 +56,18 @@ export class CourseCache {
           .flat(1);
 
         await fs.writeFile(path, JSON.stringify(courses));
+        console.log(`Wrote term ${terms[i].code} to file.`);
       }
-    }
 
-    // file cache -> db
-    for (const { code } of terms) {
-      const path = `/app/cache/courses-${code}.json`;
+      // reading to database
+      await fs.readFile(path).then(async (data: Buffer) => {
+        console.log(`Reading term ${terms[i].code} to database.`);
 
-      fs.readFile(path).then(async (data: Buffer) => {
         const courses: CourseRaw[] = JSON.parse(data.toString());
 
         // insert course data into DB
         const insertQuery = `
-      INSERT INTO 
+      REPLACE INTO 
         Courses (term, courseReferenceNumber, courseNumber, subject, courseTitle, subjectCourse, scheduleTypeDescription, subjectDescription)
       VALUES ?;`;
         await this.conn.query(insertQuery, [
@@ -76,7 +82,11 @@ export class CourseCache {
             course.subjectDescription,
           ]),
         ]);
+
+        console.log(`Finished reading term ${terms[i].code} to database.`);
       });
+
+      if (shouldRedo) await delay(1000 * 15);
     }
 
     // get data from banner once per day
