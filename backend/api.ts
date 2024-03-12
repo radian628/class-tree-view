@@ -33,6 +33,19 @@ export function createAPI(
     terms: t.procedure.query(async (opts) => {
       return await termsCache.getTerms();
     }),
+    getExactCourse: t.procedure.input(z.string()).query(async (opts) => {
+      const [rows] = await conn.execute<RowDataPacket[]>(
+        `
+          SELECT * from Courses
+            WHERE SubjectCourse = ?
+            ORDER BY term DESC
+            LIMIT 1
+        `,
+        [opts.input]
+      );
+
+      return rows[0] as CourseRaw | undefined;
+    }),
     latestCourse: t.procedure
       .input(
         z.object({

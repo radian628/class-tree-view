@@ -5,6 +5,7 @@
   --text: #000000;
   --text-invert: #ffffff;
   --bg-2: #eeeeee;
+  --bg-3: #dddddd;
   --bg-button: #333333;
   --shadow: #00000055;
 }
@@ -13,7 +14,7 @@ button {
   background-color: var(--bg-button);
   border: none;
   color: var(--text-invert);
-  padding: 0.3em;
+  padding: 0.3em 0.6em;
 }
 
 input {
@@ -27,10 +28,10 @@ body {
 }
 
 .tree-container {
-  width: 50vw;
-  height: 50vh;
-  margin-left: 25vw;
-  margin-top: 25vh;
+  flex-grow: 1;
+  border-radius: 1em;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
 }
 
 :root:root:root:root .tree-item {
@@ -38,3 +39,19 @@ body {
   cursor: grab;
   margin: 8px;
 }
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+
+  > div {
+    margin: 0.5em;
+  }
+
+  background-color: var(--bg-3);
+}
+
+// .class-search-container {
+//   flex-grow: 1;
+// }

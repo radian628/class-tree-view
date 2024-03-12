@@ -2,16 +2,33 @@ import { useEffect, useRef, useState } from "react";
 import { CourseRaw } from "../../../backend/load-courses.js";
 import { ReactSetter, StringInput } from "../util/inputs.js";
 import React from "react";
-import { api } from "../api/index.js";
+import { api, trpc } from "../api/index.js";
 import "./ClassSearch.less";
 
-export function ClassSectionSearchResult(props: { result: CourseRaw }) {
+export function ClassSectionSearchResult(props: {
+  result: CourseRaw;
+  addCourse: (course: CourseRaw) => void;
+}) {
+  const terms = trpc.terms.useQuery();
+
   return (
-    <li className="class-search-result">
+    <li
+      className="class-search-result"
+      onClick={(e) => {
+        props.addCourse(props.result);
+      }}
+    >
       <div className="class-subject-course">
         {props.result.subject}&nbsp;{props.result.courseNumber}
       </div>
       <div className="class-title">{props.result.courseTitle}</div>
+      <div className="class-last-offered">
+        {terms.data
+          ? terms.data
+              .find((t) => t.code === props.result.term)
+              ?.description.replace("(View Only)", "")
+          : "Loading..."}
+      </div>
     </li>
   );
 }
@@ -24,10 +41,7 @@ function isScrolledIntoView(elem: HTMLElement, parent: HTMLElement) {
 
 const NUMBER_TO_ADD = 30;
 
-export function ClassSearch(props: {
-  results: CourseRaw[];
-  setResults: ReactSetter<CourseRaw[]>;
-}) {
+export function ClassSearch(props: { addCourse: (course: CourseRaw) => void }) {
   const [localResults, setLocalResults] = useState<Record<string, CourseRaw>>(
     {}
   );
@@ -100,6 +114,7 @@ export function ClassSearch(props: {
         }}
       >
         <StringInput
+          placeholder="Enter your search here..."
           str={inputQuery}
           setStr={(q) => {
             setInputQuery(q);
@@ -120,8 +135,14 @@ export function ClassSearch(props: {
           loadMore();
         }}
       >
+        <li className="class-search-result-header">
+          <div className="class-subject-course">Class</div>
+          <div className="class-title">Title</div>
+          <div className="class-last-offered">Last Offered</div>
+        </li>
         {Object.values(localResults).map((r) => (
           <ClassSectionSearchResult
+            addCourse={props.addCourse}
             result={r}
             key={r.courseReferenceNumber + "-" + r.term}
           ></ClassSectionSearchResult>

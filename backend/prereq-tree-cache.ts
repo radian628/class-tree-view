@@ -110,6 +110,7 @@ export class PrereqTreeCache {
     WHERE subjectCourse = ?
     AND (scheduleTypeDescription = "Lecture"
         OR scheduleTypeDescription = "Online")
+    ORDER BY term DESC
     LIMIT 1;`,
       [subjectCourse]
     );

@@ -28,9 +28,11 @@ export function NumberInput(props: {
 export function StringInput(props: {
   str: string;
   setStr: ReactSetter<string>;
+  placeholder?: string;
 }) {
   return (
     <input
+      placeholder={props.placeholder}
       value={props.str}
       onInput={(e) => {
         props.setStr(e.currentTarget.value);

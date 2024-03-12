@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "@tanstack/react-query": "^4.18.0",
     "@trpc/client": "^10.45.2",
+    "@trpc/react-query": "^10.45.2",
     "immer": "^10.0.3",
     "less": "^4.2.0",
     "mysql2": "^3.9.2",
