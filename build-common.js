@@ -1,3 +1,7 @@
+import * as esbuild from "esbuild";
+import { lessLoader } from "esbuild-plugin-less";
+import { copy } from "esbuild-plugin-copy";
+
 export async function createBuildContext() {
   return await esbuild.context({
     entryPoints: ["./frontend/src/index.tsx"],

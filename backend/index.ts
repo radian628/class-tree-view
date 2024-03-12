@@ -26,14 +26,14 @@ async function main() {
   // Create courses table if it doesn't exist
   const createTableQuery = `
     CREATE TABLE IF NOT EXISTS Courses (
-        term VARCHAR(255) NOT NULL,
-        courseReferenceNumber VARCHAR(255) NOT NULL,
-        courseNumber VARCHAR(255) NOT NULL,
-        subject VARCHAR(255) NOT NULL,
-        courseTitle VARCHAR(255) NOT NULL,
-        subjectCourse VARCHAR(255) NOT NULL,
-        scheduleTypeDescription VARCHAR(255) NOT NULL,
-        subjectDescription VARCHAR(255) NOT NULL,
+        term VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci,
+        courseReferenceNumber VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci,
+        courseNumber VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci,
+        subject VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci,
+        courseTitle VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci,
+        subjectCourse VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci,
+        scheduleTypeDescription VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci,
+        subjectDescription VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci,
         PRIMARY KEY (term, courseReferenceNumber)
     );`;
 

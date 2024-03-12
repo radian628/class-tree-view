@@ -1,6 +1,4 @@
-import * as esbuild from "esbuild";
-import { lessLoader } from "esbuild-plugin-less";
-import { copy } from "esbuild-plugin-copy";
+import { createBuildContext } from "./build-common.js";
 
 const ctx = await createBuildContext();
 
