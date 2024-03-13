@@ -22,6 +22,7 @@ services:
       - ./frontend/src:/app/frontend/src
       - ./backend:/app/backend
       - ./cache:/app/cache
+      - ${CERT_PATH}:${CERT_PATH}
 
   mysql:
     image: mysql:latest
@@ -43,7 +44,7 @@ services:
           "CMD-SHELL",
           "mysql -h localhost -u mysql-user -pmysql-password-insecure -e 'SELECT 1'",
         ]
-      interval: 5s
+      interval: 10s
       timeout: 3s
       retries: 5
 
