@@ -1,11 +1,21 @@
 // TODO match 
 import fs from "node:fs/promises";
 import fetch from "node-fetch";
-import cookies from "../.cookies.json" with { type: "json" };
-import majors from "../requirements/majorCodes.json" with { type: "json" };
-
+const cookies = JSON.parse(await fs.readFile("./.cookies.json", { encoding: "utf-8" }));
+const majors = JSON.parse(await fs.readFile("./requirements/majorCodes.json", { encoding: "utf-8" }));
 
 let supported = ["Elect & Computer Engineering", "Computer Science", "Accountancy"];
+
+export function getSupportedMajors() {
+    return supported;
+}
+
+export async function getSupportedOptions(major) {
+    const matchedMajor = majors.majors.find(item => item.description === major);
+    console.log(major);
+    console.log(matchedMajor);
+    return matchedMajor.options;
+}
 
 async function getBlockArray(major, option) {
     try {
@@ -16,9 +26,9 @@ async function getBlockArray(major, option) {
                 { catalogYear: "", code: "MAJOR", value: matchedMajor.key},
                 { catalogYear: "", code: "COLLEGE", value: "16" } // College of Engineering
         ];
-        if (matchedMajor.options) {
+        if (option) {
             goals.push(
-                { catalogYear: "", code: "CONC", value: matchedMajor.options[0] } // Just pick first option for now
+                { catalogYear: "", code: "CONC", value: option }
             );
         }
 
@@ -52,10 +62,11 @@ async function getBlockArray(major, option) {
         console.error('Error:', error);
     }
 }
-export async function parseRequirements(major) {
-    const blocks = await getBlockArray(major);
+export async function getMajorRequirements(major, option) {
+    const blocks = await getBlockArray(major, option);
     // console.log(JSON.stringify(blocks));
     const parsedBlocks = [];
+    console.log(blocks);
 
     blocks.forEach((block) => {
         if (!block.ruleArray) {
@@ -113,7 +124,7 @@ export async function parseRequirements(major) {
 }
 
 // Call the function and handle the parsed requirements
-parseRequirements(supported[0]).then(parsedRequirements => {
+getMajorRequirements(supported[1], Object.keys(getSupportedOptions(supported[1]))[0]).then(parsedRequirements => {
     console.log(JSON.stringify(parsedRequirements, null, 2));
     // JSON.stringify(obj, null, 2);
 }).catch(error => {

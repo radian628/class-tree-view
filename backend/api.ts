@@ -1,5 +1,6 @@
 import { initTRPC } from "@trpc/server";
 import { PrereqTreeCache } from "./prereq-tree-cache.js";
+import { getMajorRequirements, getSupportedMajors, getSupportedOptions } from "./get-major-requirements.js";
 import { Connection, RowDataPacket } from "mysql2/promise";
 import { z } from "zod";
 import { TermsCache } from "./terms-cache.js";
@@ -79,6 +80,15 @@ export function createAPI(
         ]);
 
         return rows as CourseRaw[];
+      }),
+      getSupportedOptions: t.procedure.query(async (opts) => {
+        return await getSupportedOptions(opts.input);
+      }),
+      getMajorRequirements: t.procedure.input(z.string()).query(async (opts) => {
+        return await getMajorRequirements(opts.input);
+      }),
+      getSupportedMajors: t.procedure.query(async (opts) => {
+        return getSupportedMajors();
       }),
   });
 
