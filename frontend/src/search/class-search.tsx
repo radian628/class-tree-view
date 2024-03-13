@@ -3,7 +3,7 @@ import { CourseRaw } from "../../../backend/load-courses.js";
 import { ReactSetter, StringInput } from "../util/inputs.js";
 import React from "react";
 import { api, trpc } from "../api/index.js";
-import "./ClassSearch.less";
+import "./class-search.less";
 
 export function ClassSectionSearchResult(props: {
   result: CourseRaw;

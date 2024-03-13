@@ -8,22 +8,31 @@ import "./fdg.less";
 import { intersectLineSegmentStartingAtBoxCenter } from "../util/geometry.js";
 import { applyFDGPhysics } from "./fdg-physics.js";
 
-export type FDGItemProps<T> = {
+export type FDGItemProps<T, State> = {
   node: FDGNode<T>;
   setNode: (setter: (oldNode: FDGNode<T>) => FDGNode<T>) => void;
-  scale: number;
-};
-
-export type FDGItemComponent<T> = (
-  props: FDGItemProps<T>
-) => React.ReactElement;
-
-export function ForceDirectedGraph<T>(props: {
   graph: Map<string, FDGNode<T>>;
   setGraph: (
     setter: (old: Map<string, FDGNode<T>>) => Map<string, FDGNode<T>>
   ) => void;
-  itemTemplate: FDGItemComponent<T>;
+  scale: number;
+  state: State;
+  setState: React.Dispatch<React.SetStateAction<State>>;
+  graphKey: string;
+};
+
+export type FDGItemComponent<T, State> = (
+  props: FDGItemProps<T, State>
+) => React.ReactElement;
+
+export function ForceDirectedGraph<T, State>(props: {
+  graph: Map<string, FDGNode<T>>;
+  setGraph: (
+    setter: (old: Map<string, FDGNode<T>>) => Map<string, FDGNode<T>>
+  ) => void;
+  itemTemplate: FDGItemComponent<T, State>;
+  state: State;
+  setState: React.Dispatch<React.SetStateAction<State>>;
 }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -106,27 +115,42 @@ export function ForceDirectedGraph<T>(props: {
               yCenter1
             );
 
-            const dir = Math.atan2(p2.y - p1.y, p2.x - p1.x);
+            let dir = Math.atan2(p2.y - p1.y, p2.x - p1.x);
             const arrowLen = 20 * scale;
             const arrowAngle = (Math.PI * 2.5) / 3;
 
             ctx.lineWidth = 6 * scale;
             ctx.lineCap = "round";
             ctx.lineJoin = "round";
-            ctx.strokeStyle = "#888888";
+            ctx.strokeStyle = connection.color;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.moveTo(
-              p2.x + Math.cos(dir + arrowAngle) * arrowLen,
-              p2.y + Math.sin(dir + arrowAngle) * arrowLen
-            );
-            ctx.lineTo(p2.x, p2.y);
-            ctx.lineTo(
-              p2.x + Math.cos(dir - arrowAngle) * arrowLen,
-              p2.y + Math.sin(dir - arrowAngle) * arrowLen
-            );
-            ctx.stroke();
+            if (connection.directionality != "backwards") {
+              ctx.moveTo(
+                p2.x + Math.cos(dir + arrowAngle) * arrowLen,
+                p2.y + Math.sin(dir + arrowAngle) * arrowLen
+              );
+              ctx.lineTo(p2.x, p2.y);
+              ctx.lineTo(
+                p2.x + Math.cos(dir - arrowAngle) * arrowLen,
+                p2.y + Math.sin(dir - arrowAngle) * arrowLen
+              );
+              ctx.stroke();
+            }
+            if (connection.directionality != "forwards") {
+              dir += Math.PI;
+              ctx.moveTo(
+                p1.x + Math.cos(dir + arrowAngle) * arrowLen,
+                p1.y + Math.sin(dir + arrowAngle) * arrowLen
+              );
+              ctx.lineTo(p1.x, p1.y);
+              ctx.lineTo(
+                p1.x + Math.cos(dir - arrowAngle) * arrowLen,
+                p1.y + Math.sin(dir - arrowAngle) * arrowLen
+              );
+              ctx.stroke();
+            }
           }
         }
         ctx.restore();
@@ -174,7 +198,6 @@ export function ForceDirectedGraph<T>(props: {
         className="fdg-contents"
         onMouseDown={(e) => {
           if (e.target !== e.currentTarget) return;
-          console.log("got here!!!!!");
           setIsClickingCanvas(true);
         }}
         onWheel={(e) => {
@@ -202,7 +225,12 @@ export function ForceDirectedGraph<T>(props: {
                 }}
               >
                 <props.itemTemplate
+                  graphKey={k}
+                  state={props.state}
+                  setState={props.setState}
                   scale={scale}
+                  graph={props.graph}
+                  setGraph={props.setGraph}
                   node={v}
                   setNode={(setter) => {
                     // set a single node of the graph

@@ -45,7 +45,10 @@ async function convertPrereqToCourse(
   subject: string,
   courseNumber: string
 ) {
-  subject = subject.replace(/&amp;/g, "&");
+  // because it doesn't seem to like ECE courses in particular
+  if (subject === "Electrical & Computer Engineer") return `ECE${courseNumber}`;
+
+  //subject = subject.replace(/&amp;/g, "&");
   const fetchQuery = `SELECT * FROM Courses WHERE courseNumber = ?
       AND subjectDescription = ? LIMIT 1;`;
   let [[courseInfo]] = await connection.execute<RowDataPacket[]>(fetchQuery, [

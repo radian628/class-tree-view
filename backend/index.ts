@@ -83,6 +83,10 @@ async function main() {
   // create express server
   const app = express();
 
+  app.get("/", (req, res) => {
+    res.redirect("/static");
+  });
+
   // static hosting
   app.use("/static", express.static("./frontend/build"));
 

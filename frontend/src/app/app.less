@@ -8,6 +8,18 @@
   --bg-3: #dddddd;
   --bg-button: #333333;
   --shadow: #00000055;
+
+  --highlighted-border: #dd7737;
+
+  --taken-class-bg-1: #ebb76e;
+  --taken-class-bg-2: #d1a15f;
+
+  --available-class-bg-1: #f9f0e2;
+  --available-class-bg-2: #eee1cf;
+
+  --not-taken-bg-1: #dddddd;
+  --not-taken-bg-2: #cccccc;
+  --not-taken-color: #333333;
 }
 
 button {
@@ -36,8 +48,6 @@ body {
 
 :root:root:root:root .tree-item {
   user-select: none;
-  cursor: grab;
-  margin: 8px;
 }
 
 .app-container {
@@ -53,5 +63,14 @@ body {
 }
 
 .class-search-container {
+  max-width: 50%;
+}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-right-panel {
   max-width: 50%;
 }

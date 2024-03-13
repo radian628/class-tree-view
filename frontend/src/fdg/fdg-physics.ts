@@ -3,13 +3,14 @@ import { mapMapValues } from "../util/map.js";
 import { FDGNode } from "./fdg-types.js";
 
 export function applyFDGPhysics<T>(graph: Map<string, FDGNode<T>>, dt: number) {
-  return mapMapValues(graph, (aKey, a, i) => {
-    return produce(a, (a) => {
+  return produce(graph, (graph) => {
+    let i = 0;
+    for (const [aKey, a] of graph) {
+      let j = 0;
       const xOld = a.x;
       const yOld = a.y;
-
-      mapMapValues(graph, (bKey, b, j) => {
-        if (aKey === bKey || !a.applyForces) return;
+      for (const [bKey, b] of graph) {
+        if (aKey === bKey) continue;
 
         let dist = Math.hypot(a.x - b.x, a.y - b.y);
 
@@ -30,34 +31,42 @@ export function applyFDGPhysics<T>(graph: Map<string, FDGNode<T>>, dt: number) {
         if (conn) {
           const factor =
             dist > conn.targetDist ? conn.attractStrength : conn.repelStrength;
-          a.x += ((dx * (dist - conn.targetDist) * factor) / a.mass) * dt;
-          a.y += ((dy * (dist - conn.targetDist) * factor) / a.mass) * dt;
+          const xMove = dx * (dist - conn.targetDist) * factor * dt;
+          const yMove = dy * (dist - conn.targetDist) * factor * dt;
+
+          if (a.applyForces) {
+            a.x += xMove / a.mass;
+            a.y += yMove / a.mass;
+          }
+
+          if (b.applyForces) {
+            b.x -= xMove / b.mass;
+            b.y -= yMove / b.mass;
+          }
 
           // two elements are not connected
         } else {
-          if (dist < a.repulsionRadius) {
+          const hitDist = a.repulsionRadius + b.repulsionRadius;
+          if (dist < hitDist) {
             const factor =
-              Math.min(0, -1 * (dist - a.repulsionRadius) ** 2) *
-              a.repulsionStrength;
-            a.x += ((dx * factor) / a.mass) * dt;
-            a.y += ((dy * factor) / a.mass) * dt;
+              Math.min(0, -1 * (dist - hitDist) ** 2) * a.repulsionStrength;
+            const xMove = dx * factor * dt;
+            const yMove = dy * factor * dt;
+
+            if (a.applyForces) {
+              a.x += xMove / a.mass;
+              a.y += yMove / a.mass;
+            }
+
+            if (b.applyForces) {
+              b.x -= xMove / b.mass;
+              b.y -= yMove / b.mass;
+            }
           }
         }
-      });
-
-      // const xDelta = a.x - xOld;
-      // const yDelta = a.y - yOld;
-      // const forceDist = Math.hypot(xDelta, yDelta);
-
-      // if (forceDist > 0) {
-      //   const xDeltaN = xDelta / forceDist;
-      //   const yDeltaN = yDelta / forceDist;
-      //   const xDeltaT = yDeltaN;
-      //   const yDeltaT = -xDeltaN;
-
-      //   a.x += (xDeltaT * a.xGravity + xDeltaN * a.yGravity) * dt;
-      //   a.y += (yDeltaT * a.xGravity + yDeltaN * a.yGravity) * dt;
-      // }
-    });
+        j++;
+      }
+      i++;
+    }
   });
 }
