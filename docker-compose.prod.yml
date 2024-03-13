@@ -22,7 +22,7 @@ services:
       - ./frontend/src:/app/frontend/src
       - ./backend:/app/backend
       - ./cache:/app/cache
-      - ${CERT_PATH}:${CERT_PATH}
+      - ${VOL_PATH}:${VOL_PATH}
 
   mysql:
     image: mysql:latest

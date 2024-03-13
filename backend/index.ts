@@ -107,8 +107,11 @@ async function main() {
   // listen on port 8000
 
   if (process.env.IS_PROD === "true") {
-      const privateKey = fs.readFileSync(process.env.CERT_PATH + "privkey.pem", "utf8");
-      const certificate = fs.readFileSync(process.env.CERT_PATH + "fullchain.pem", "utf8");
+      if (typeof process.env.CERT_PATH === 'undefined') {
+          throw new Error('CERT_PATH environment variable is not set.');
+      }
+      const privateKey = fs.readFileSync(path.join(process.env.CERT_PATH, "privkey.pem"), "utf8");
+      const certificate = fs.readFileSync(path.join(process.env.CERT_PATH, "fullchain.pem"), "utf8");
 
       const credentials = { key: privateKey, cert: certificate };
 
