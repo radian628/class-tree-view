@@ -18,7 +18,10 @@
         {
             "key": "641",
             "description": "Accountancy",
-            "isVisibleInWhatif": true
+            "isVisibleInWhatif": true,
+            "options": {
+                "Accounting Information Systems": "236"
+            }
         },
         {
             "key": "897",
@@ -174,7 +177,13 @@
             "key": "307",
             "description": "Computer Science",
             "isVisibleInWhatif": true,
-            "options": ["354", "334", "004", "297", "344"]
+            "options": {
+                "Applied": "354",
+                "Systems": "334",
+                "Cybersecurity": "004",
+                "Double Degree": "297",
+                "Information Systems": "344"
+            }
         },
         {
             "key": "338",
