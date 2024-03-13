@@ -42,11 +42,11 @@ services:
       test:
         [
           "CMD-SHELL",
-          "mysql -h localhost -u mysql-user -pmysql-password-insecure -e 'SELECT 1'",
+          "mysql -h localhost -u ${DB_USER} -p${DB_PASSWORD} -e 'SELECT 1'",
         ]
       interval: 10s
       timeout: 3s
-      retries: 5
+      retries: 10
 
 volumes:
   db-data:
