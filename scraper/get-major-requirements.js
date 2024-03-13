@@ -4,10 +4,23 @@ import fetch from "node-fetch";
 import cookies from "../.cookies.json" with { type: "json" };
 import majors from "../requirements/majorCodes.json" with { type: "json" };
 
-async function getBlockArray(major) {
+
+let supported = ["Elect & Computer Engineering", "Computer Science", "Accountancy"];
+
+async function getBlockArray(major, option) {
     try {
         let cookieHeader = Object.entries(cookies).map(([key, value]) => `${key}=${value}`).join('; ');
         const matchedMajor = majors.majors.find(item => item.description === major);
+
+        let goals = [
+                { catalogYear: "", code: "MAJOR", value: matchedMajor.key},
+                { catalogYear: "", code: "COLLEGE", value: "16" } // College of Engineering
+        ];
+        if (matchedMajor.options) {
+            goals.push(
+                { catalogYear: "", code: "CONC", value: matchedMajor.options[0] } // Just pick first option for now
+            );
+        }
 
         const url = 'https://mydegrees.oregonstate.edu:7447/dashboard/api/audit';
 
@@ -15,12 +28,7 @@ async function getBlockArray(major) {
             catalogYear: "2324",
             classes: [],
             degree: "HBS",
-            goals: [
-                { catalogYear: "", code: "MAJOR", value: matchedMajor.key},
-                // options field is filled manually. Only CS so far. Not all majors should have it
-                { catalogYear: "", code: "CONC", value: matchedMajor.options[0] },
-                { catalogYear: "", code: "COLLEGE", value: "16" } // College of Engineering
-            ],
+            goals: goals,
             school: "01", // Corvallis
             studentId: "934133183" // Hello!
         };
@@ -61,24 +69,41 @@ export async function parseRequirements(major) {
         };
 
         block.ruleArray.forEach((rule) => {
-            if (!rule.requirement.courseArray) {
-                if (rule.ruleArray) {
-                    // Assumes OSU course is at idx length-1
-                    const courses = rule.ruleArray[rule.ruleArray.length-1].requirement.courseArray.map(course => course);
+            if (rule.ruleType = "Course") {
+                if (rule.requirement.courseArray) {
+                    // console.log(JSON.stringify(rule, null, 2));
+                    const courses = rule.requirement.courseArray.map(course => course);
                     const requirements = courses.map(course => course.discipline + course.number);
                     newBlock.requirements.push(requirements);
                 }
                 else {
-                    console.log("skipped requirement in", block.title);
-                    // console.log(JSON.stringify(rule));
-                    return;
+                    console.log("skipped requirement in", block.title, rule.label);
                 }
             }
-            else {
-                const courses = rule.requirement.courseArray.map(course => course);
-                const requirements = courses.map(course => course.discipline + course.number);
-                newBlock.requirements.push(requirements);
-            }
+            // if (!rule.requirement.courseArray) {
+            //     if (rule.ruleArray) {
+            //         // Assumes OSU course is at idx length-1
+            //         let courses = rule.ruleArray[rule.ruleArray.length-1].requirement;
+            //         if (courses.courseArray) {
+            //             courses = courses.courseArray.map(course => course);
+            //         }
+            //         else if (courses.ruleArray) {
+
+            //         }
+            //         //courses.map(course => course);
+            //     }
+            //     else {
+            //         console.log("skipped requirement in", block.title);
+            //         // console.log(JSON.stringify(rule, null, 2));
+            //         // console.log(JSON.stringify(rule));
+            //         return;
+            //     }
+            // }
+            // else {
+            //     const courses = rule.requirement.courseArray.map(course => course);
+            //     const requirements = courses.map(course => course.discipline + course.number);
+            //     newBlock.requirements.push(requirements);
+            // }
         });
 
         parsedBlocks.push(newBlock);
@@ -88,8 +113,9 @@ export async function parseRequirements(major) {
 }
 
 // Call the function and handle the parsed requirements
-parseRequirements("Computer Science").then(parsedRequirements => {
-    console.log(JSON.stringify(parsedRequirements));
+parseRequirements(supported[0]).then(parsedRequirements => {
+    console.log(JSON.stringify(parsedRequirements, null, 2));
+    // JSON.stringify(obj, null, 2);
 }).catch(error => {
     console.error("Error parsing requirements:", error);
 });
