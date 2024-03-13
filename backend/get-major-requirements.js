@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 const cookies = JSON.parse(await fs.readFile("./.cookies.json", { encoding: "utf-8" }));
 const majors = JSON.parse(await fs.readFile("./requirements/majorCodes.json", { encoding: "utf-8" }));
 
-let supported = ["Elect & Computer Engineering", "Computer Science", "Accountancy"];
+let supported = ["Elect and Computer Engineering", "Computer Science", "Accountancy"];
 
 export function getSupportedMajors() {
     return supported;
@@ -12,9 +12,9 @@ export function getSupportedMajors() {
 
 export async function getSupportedOptions(major) {
     const matchedMajor = majors.majors.find(item => item.description === major);
-    console.log(major);
-    console.log(matchedMajor);
-    return matchedMajor.options;
+    if (!matchedMajor)
+        return null;
+    return matchedMajor.options || null;
 }
 
 async function getBlockArray(major, option) {
@@ -124,9 +124,9 @@ export async function getMajorRequirements(major, option) {
 }
 
 // Call the function and handle the parsed requirements
-getMajorRequirements(supported[1], Object.keys(getSupportedOptions(supported[1]))[0]).then(parsedRequirements => {
-    console.log(JSON.stringify(parsedRequirements, null, 2));
-    // JSON.stringify(obj, null, 2);
-}).catch(error => {
-    console.error("Error parsing requirements:", error);
-});
+// getMajorRequirements(supported[1], Object.keys(getSupportedOptions(supported[1]))[0]).then(parsedRequirements => {
+//     console.log(JSON.stringify(parsedRequirements, null, 2));
+//     // JSON.stringify(obj, null, 2);
+// }).catch(error => {
+//     console.error("Error parsing requirements:", error);
+// });

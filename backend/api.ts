@@ -81,11 +81,17 @@ export function createAPI(
 
         return rows as CourseRaw[];
       }),
-      getSupportedOptions: t.procedure.query(async (opts) => {
-        return await getSupportedOptions(opts.input);
+      getSupportedOptions: t.procedure.input(z.string()).query(async (opts) => {
+          let options = await getSupportedOptions(opts.input);
+          return await options;
       }),
-      getMajorRequirements: t.procedure.input(z.string()).query(async (opts) => {
-        return await getMajorRequirements(opts.input);
+      getMajorRequirements: t.procedure.input(
+          z.object({
+              major: z.string(),
+              option: z.string().optional(),
+          })
+      ).query(async (opts) => {
+        return await getMajorRequirements(opts.input.major, opts.input.option);
       }),
       getSupportedMajors: t.procedure.query(async (opts) => {
         return getSupportedMajors();
