@@ -10,6 +10,9 @@ import { PrereqTreeCache } from "./prereq-tree-cache.js";
 import { TermsCache } from "./terms-cache.js";
 import { CourseCache } from "./course-cache.js";
 
+import https from 'https';
+import fs from 'fs';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -98,9 +101,24 @@ async function main() {
   );
 
   // listen on port 8000
-  app.listen(8000);
 
-  console.log("Server is listening on port 8000!");
+  if (process.env.IS_PROD === "true") {
+      const privateKey = fs.readFileSync(process.env.CERT_PATH + "privkey.pem", "utf8");
+      const certificate = fs.readFileSync(process.env.CERT_PATH + "fullchain.pem", "utf8");
+
+      const credentials = { key: privateKey, cert: certificate };
+
+      const httpsServer = https.createServer(credentials, app);
+
+      httpsServer.listen(443, () => {
+          console.log('HTTPS server running on port 443');
+      });
+  } else {
+      app.listen(8000, () => {
+          console.log('HTTP server running on port 80');
+      });
+  }
+
 }
 
 main().catch(console.error);
