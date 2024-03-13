@@ -14,8 +14,8 @@ jobs:
       run: |
         install -m 600 -D /dev/null ~/.ssh/id_rsa
         echo "${{ secrets.RSA_GITHUB }}" > ~/.ssh/id_rsa
-        ssh-keyscan -H ourdegre.es > ~/.ssh/known_hosts
+        ssh-keyscan -p 1920 -H ourdegre.es > ~/.ssh/known_hosts
     - name: connect and pull
-      run: ssh paul@ourdegre.es "cd /home/paul/class-tree-view && git checkout main && git pull && exit"
+      run: ssh paul@ourdegre.es "cd /home/paul/class-tree-view && git checkout main && git pull && exit" -p 1920
     - name: cleanup
       run: rm -rf ~/.ssh
