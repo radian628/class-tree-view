@@ -5,7 +5,7 @@ SET @pat = CONCAT('%', ?, '%');
 export const LATEST_COURSES_SQL_2 = `
 WITH cte AS
   (SELECT *, ROW_NUMBER() over (
-      PARTITION BY subjectCourse
+      PARTITION BY courseTitle
       ORDER BY term DESC
     ) AS rowNum
     FROM Courses

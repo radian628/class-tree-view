@@ -2,10 +2,14 @@ import { HTMLAttributes, useEffect, useState } from "react";
 import { FDGNode } from "../fdg/fdg-types.js";
 import React from "react";
 import { FDGItemComponent } from "./fdg.js";
+import { mapMapValues } from "../util/map.js";
 
 export function DraggableTreeItem<T>(props: {
   node: FDGNode<T>;
   setNode: (setter: (oldNode: FDGNode<T>) => FDGNode<T>) => void;
+  graphKey: string;
+  setDraggingKey: (key: string | undefined) => void;
+  setHoveringKey: (key: string | undefined) => void;
   scale: number;
   children:
     | (React.ReactElement | string | undefined)[]
@@ -18,10 +22,13 @@ export function DraggableTreeItem<T>(props: {
     // notify when mouse released by setting state and re-enable forces
     const mouseup = (e: MouseEvent) => {
       setIsMouseDown(false);
-      props.setNode((node) => ({
-        ...node,
-        applyForces: true,
-      }));
+      props.setDraggingKey(undefined);
+      if (isMouseDown)
+        props.setNode((node) => ({
+          ...node,
+          applyForces: true,
+          //repulsionRadius: 200,
+        }));
     };
 
     // move graphnode when mouse moved
@@ -50,10 +57,18 @@ export function DraggableTreeItem<T>(props: {
           return;
         // register mouse down and disable forces on this node
         setIsMouseDown(true);
+        props.setDraggingKey(props.graphKey);
         props.setNode((node) => ({
           ...node,
           applyForces: false,
+          //repulsionRadius: 500,
         }));
+      }}
+      onMouseEnter={(e) => {
+        props.setHoveringKey(props.graphKey);
+      }}
+      onMouseLeave={(e) => {
+        props.setHoveringKey(undefined);
       }}
     >
       {props.children}
@@ -62,5 +77,9 @@ export function DraggableTreeItem<T>(props: {
 }
 
 export function Draggable<T>(props: HTMLAttributes<HTMLDivElement>) {
-  return <div className="draggable" {...props} data-is-draggable="true"></div>;
+  return (
+    <div className="draggable" {...props} data-is-draggable="true">
+      {props.children}
+    </div>
+  );
 }

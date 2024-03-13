@@ -7,6 +7,7 @@
   --bg-2: #eeeeee;
   --bg-3: #dddddd;
   --bg-button: #333333;
+  --bg-button-hover: #884c33;
   --shadow: #00000055;
 
   --highlighted-border: #dd7737;
@@ -27,6 +28,11 @@ button {
   border: none;
   color: var(--text-invert);
   padding: 0.3em 0.6em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--bg-button-hover);
 }
 
 input {

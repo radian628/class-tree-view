@@ -114,6 +114,19 @@ export const TreeItemView = function (props: {
       node={props.node}
       setNode={props.setNode}
       scale={props.scale}
+      graphKey={props.graphKey}
+      setDraggingKey={(key) => {
+        props.setState((state) => ({
+          ...state,
+          dragging: key,
+        }));
+      }}
+      setHoveringKey={(key) => {
+        props.setState((state) => ({
+          ...state,
+          hovering: key,
+        }));
+      }}
     >
       <div
         className={
@@ -128,7 +141,24 @@ export const TreeItemView = function (props: {
         }
       >
         {isCourse ? (
-          <Draggable className="tree-item-header"></Draggable>
+          <Draggable className="tree-item-header">
+            {subjectCourse}
+            <button
+              className="remove-button"
+              onClick={(p) => {
+                props.setGraph((graph) =>
+                  produce(graph, (graph) => {
+                    graph.delete(props.graphKey);
+                    for (const [key, node] of graph) {
+                      node.connections.delete(props.graphKey);
+                    }
+                  })
+                );
+              }}
+            >
+              🞬
+            </button>
+          </Draggable>
         ) : undefined}
         <div
           className="tree-item-content"

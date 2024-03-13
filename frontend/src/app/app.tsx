@@ -25,6 +25,9 @@ import { CourseSelection } from "../search/course-selection.js";
 
 export type GraphState = {
   taken: Set<string>;
+  pruned: Set<string>;
+  dragging: string | undefined;
+  hovering: string | undefined;
 };
 
 export function App() {
@@ -46,9 +49,12 @@ export function App() {
 
   const [graphState, setGraphState] = useState<GraphState>({
     taken: new Set(),
+    pruned: new Set(),
+    dragging: undefined,
+    hovering: undefined,
   });
 
-  const graphWithBetterArrows = graph;
+  const graphWithBetterArrows = new Map(graph);
 
   for (const [k, v] of graphWithBetterArrows) {
     for (const [destination, connection] of v.connections) {
@@ -62,6 +68,16 @@ export function App() {
         connection.color = "#FFaa66";
       } else {
         connection.color = "#bbbbbb";
+      }
+
+      if (destination === graphState.hovering) {
+        connection.color = "#0088ff";
+      }
+    }
+
+    if (k === graphState.hovering) {
+      for (const [dst, conn] of v.connections) {
+        conn.color = "#ff0088";
       }
     }
   }
@@ -79,7 +95,7 @@ export function App() {
         for (let i = 0; i < 100; i++) {
           graph = applyFDGPhysics(graph, 10);
         }
-        for (let i = 0; i < 500; i++) {
+        for (let i = 0; i < 100; i++) {
           graph = applyFDGPhysics(graph, 1);
         }
 

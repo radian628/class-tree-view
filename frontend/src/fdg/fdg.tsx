@@ -116,7 +116,7 @@ export function ForceDirectedGraph<T, State>(props: {
             );
 
             let dir = Math.atan2(p2.y - p1.y, p2.x - p1.x);
-            const arrowLen = 20 * scale;
+            const arrowLen = 40 * scale;
             const arrowAngle = (Math.PI * 2.5) / 3;
 
             ctx.lineWidth = 6 * scale;

@@ -45,11 +45,18 @@
 }
 
 .tree-item-header {
-  height: 1.5em;
+  padding-left: 0.5em;
   width: 100%;
   background-color: var(--bg-2);
   border-bottom: 1px solid var(--border);
   cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .remove-button {
+    padding-right: 1.4em;
+  }
 }
 
 .taken-course {

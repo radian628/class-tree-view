@@ -11,6 +11,7 @@ export function applyFDGPhysics<T>(graph: Map<string, FDGNode<T>>, dt: number) {
       const yOld = a.y;
       for (const [bKey, b] of graph) {
         if (aKey === bKey) continue;
+        if (!a.applyForces && !b.applyForces) continue;
 
         let dist = Math.hypot(a.x - b.x, a.y - b.y);
 
@@ -22,9 +23,6 @@ export function applyFDGPhysics<T>(graph: Map<string, FDGNode<T>>, dt: number) {
         const dx = (b.x - a.x) / dist;
         const dy = (b.y - a.y) / dist;
 
-        if (isNaN(a.x) || isNaN(a.y) || isNaN(dx) || isNaN(dy) || isNaN(dist))
-          console.log(a.x, a.y, dx, dy, dist);
-
         const conn = b.connections.get(aKey);
 
         // two elements are connected
@@ -32,16 +30,21 @@ export function applyFDGPhysics<T>(graph: Map<string, FDGNode<T>>, dt: number) {
           const factor =
             dist > conn.targetDist ? conn.attractStrength : conn.repelStrength;
           const xMove = dx * (dist - conn.targetDist) * factor * dt;
-          const yMove = dy * (dist - conn.targetDist) * factor * dt;
+          let yMove = dy * (dist - conn.targetDist) * factor * dt;
+
+          let moveDown = dy < 0 ? Math.abs(dy) * dist * 0.1 : 0;
+          let moveUp = moveDown * 0.5;
 
           if (a.applyForces) {
             a.x += xMove / a.mass;
             a.y += yMove / a.mass;
+            a.y -= moveUp;
           }
 
           if (b.applyForces) {
             b.x -= xMove / b.mass;
             b.y -= yMove / b.mass;
+            b.y += moveDown;
           }
 
           // two elements are not connected
