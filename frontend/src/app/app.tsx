@@ -13,6 +13,7 @@ import {
   constructFDGStateFromPrereqTrees,
   grabAllPrereqs,
 } from "./generate-tree.js";
+import { applyFDGPhysics } from "../fdg/fdg-physics.js";
 
 export function App() {
   const [graph, setGraph] = useState(new Map<string, FDGNode<TreeItem>>([]));
@@ -25,9 +26,25 @@ export function App() {
     (async () => {
       setIsQueryingGraph(true);
       setGraph(
-        await constructFDGStateFromPrereqTrees(
-          await grabAllPrereqs(new Set(["CS374"]))
-        )
+        await (async () => {
+          let graph = await constructFDGStateFromPrereqTrees(
+            await grabAllPrereqs(new Set(["CS444"]))
+          );
+
+          // for (let i = 0; i < 250; i++) {
+          //   graph = applyFDGPhysics(graph, 1);
+          // }
+          // for (let i = 0; i < 1250; i++) {
+          //   graph = applyFDGPhysics(graph, 5);
+          // }
+          // for (let i = 0; i < 250; i++) {
+          //   graph = applyFDGPhysics(graph, 1);
+          // }
+
+          console.log("done balancing graph");
+
+          return graph;
+        })()
       );
     })();
   });
