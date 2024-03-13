@@ -7,9 +7,11 @@ import { api } from "../api/index.js";
 import { FDGConnectionSettings, FDGNode } from "../fdg/fdg-types.js";
 import { TreeItem } from "./tree-item.js";
 
+const FORCES = 1;
+
 const defaultFDGNodeSettings = {
-  repulsionRadius: 100,
-  repulsionStrength: 0.025,
+  repulsionRadius: 200,
+  repulsionStrength: 0.01 * FORCES,
   mass: 1,
   applyForces: true,
 };
@@ -18,9 +20,9 @@ const defaultConnectionSettings: FDGConnectionSettings = {
   directionality: "forwards",
   style: "solid",
   color: "black",
-  targetDist: 250,
-  attractStrength: 0.01,
-  repelStrength: 0.1,
+  targetDist: 300,
+  attractStrength: 0.03 * FORCES,
+  repelStrength: 0.5 * FORCES,
 };
 
 function traverseTree(tree: PrereqTree, courses: Set<string>) {
@@ -108,13 +110,15 @@ export function getTreeTerminals(tree: Map<string, PrereqTreeCacheEntry>) {
   return terminals;
 }
 
-const MAG = 250;
+const MAG = 200;
 const ANGLE_START = (4 / 3) * Math.PI;
-const ANGLE_DELTA = (1 / 4) * Math.PI;
+const INIT_ANGLE_DELTA = (1 / 5) * Math.PI;
 
 export async function constructFDGStateFromPrereqTrees(
   prereqs: Map<string, PrereqTreeCacheEntry>
 ) {
+  console.log("prereqs!...", prereqs);
+
   let id = 0;
 
   const treeData = new Map<string, FDGNode<TreeItem>>();
@@ -127,26 +131,33 @@ export async function constructFDGStateFromPrereqTrees(
     prevX: number,
     prevY: number,
     prevAngle: number,
+    angleDelta: number,
+    depth: number,
+    breadth: number,
     parentCourse?: string
   ) {
+    // next position
     const angle = prevAngle;
     const x = prevX + Math.cos(angle) * MAG;
     const y = prevY + Math.sin(angle) * MAG;
 
+    // handle course with dedicated function
     if (tree.type === "course") {
-      // const cacheEntry = prereqs.get(tree.subjectCourse);
-      // if (
-      //   cacheEntry &&
-      //   cacheEntry.type === "tree" &&
-      //   !addedToTree.has(tree.subjectCourse)
-      // ) {
-      //   addedToTree.add(tree.subjectCourse);
-      //   await traverseTree(cacheEntry.tree, x, y, 0);
-      // }
-      return await traverseCourse(tree.subjectCourse, x, y, angle);
+      return await traverseCourse(
+        tree.subjectCourse,
+        x,
+        y,
+        angle,
+        angleDelta * 1,
+        depth + 1,
+        breadth
+      );
     }
 
     const myID = (++id).toString();
+
+    const bypassANDNode =
+      tree.type === "and" && parentCourse && treeData.has(parentCourse);
 
     const newConnections = await Promise.all(
       tree.prereqs.map((e, i) =>
@@ -154,7 +165,10 @@ export async function constructFDGStateFromPrereqTrees(
           e,
           x,
           y,
-          angle + ANGLE_DELTA * i - (tree.prereqs.length / 2) * ANGLE_DELTA
+          angle + angleDelta * i - ((tree.prereqs.length - 1) / 2) * angleDelta,
+          angleDelta * 1,
+          depth + 1,
+          breadth + (i - (tree.prereqs.length - 1) / 2)
         )
       )
     ).then((prereqs) =>
@@ -171,8 +185,7 @@ export async function constructFDGStateFromPrereqTrees(
 
     console.log(tree.type, parentCourse);
 
-    if (tree.type === "and" && parentCourse && treeData.has(parentCourse)) {
-      console.log(parentCourse, tree);
+    if (bypassANDNode) {
       const parentCourseNode = treeData.get(parentCourse)!;
       for (const [k, v] of newConnections) {
         parentCourseNode.connections.set(k, v);
@@ -186,6 +199,9 @@ export async function constructFDGStateFromPrereqTrees(
         ...defaultFDGNodeSettings,
         x,
         y,
+        yGravity: depth * -0.01,
+        xGravity: breadth * 0.002,
+        repulsionRadius: 50,
         connections: new Map(newConnections),
       });
       return myID;
@@ -196,9 +212,15 @@ export async function constructFDGStateFromPrereqTrees(
     subjectCourse: string,
     prevX: number,
     prevY: number,
-    prevAngle: number
+    prevAngle: number,
+    angleDelta: number,
+    depth: number,
+    breadth: number
   ) {
-    const angle = ANGLE_START;
+    if (addedToTree.has(subjectCourse)) return subjectCourse;
+    addedToTree.add(subjectCourse);
+
+    const angle = prevAngle;
     const x = prevX + Math.cos(angle) * MAG;
     const y = prevY + Math.sin(angle) * MAG;
 
@@ -214,6 +236,8 @@ export async function constructFDGStateFromPrereqTrees(
       ...defaultFDGNodeSettings,
       x,
       y,
+      yGravity: depth * -0.01,
+      xGravity: breadth * 0.002,
       connections,
     });
 
@@ -223,9 +247,14 @@ export async function constructFDGStateFromPrereqTrees(
         x,
         y,
         prevAngle,
+        angleDelta * 1,
+        depth + 1,
+        breadth,
         subjectCourse
       );
-      connections.set(prereqs, defaultConnectionSettings);
+      connections.set(prereqs, {
+        ...defaultConnectionSettings,
+      });
     }
 
     return subjectCourse;
@@ -235,13 +264,11 @@ export async function constructFDGStateFromPrereqTrees(
 
   await Promise.all(
     [...terminals.entries()].map(async ([k, v], i) => {
-      // if (v.type === "tree") {
-      //   const clearedTree = clearEmptyEntriesFromTree(v.tree);
-      //   if (!clearedTree) return;
-      // }
-      await traverseCourse(k, i * MAG, 0, 0);
+      await traverseCourse(k, i * MAG, 0, 0, INIT_ANGLE_DELTA, 0, 0);
     })
   );
+
+  console.log(treeData);
 
   return treeData;
 }

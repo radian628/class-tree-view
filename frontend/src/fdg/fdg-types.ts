@@ -17,6 +17,8 @@ export interface FDGNode<T> {
   repulsionRadius: number;
   repulsionStrength: number;
   data: T;
+  xGravity: number;
+  yGravity: number;
 
   // coordinates
   x: number;

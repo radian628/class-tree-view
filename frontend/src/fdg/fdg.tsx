@@ -6,6 +6,7 @@ import { mapMapValues } from "../util/map.js";
 
 import "./fdg.less";
 import { intersectLineSegmentStartingAtBoxCenter } from "../util/geometry.js";
+import { applyFDGPhysics } from "./fdg-physics.js";
 
 export type FDGItemProps<T> = {
   node: FDGNode<T>;
@@ -41,6 +42,7 @@ export function ForceDirectedGraph<T>(props: {
 
     // run per-frame stuff
     function frame() {
+      if (!keepLooping) return;
       const canvas = canvasRef.current;
       const container = containerRef.current;
 
@@ -129,56 +131,9 @@ export function ForceDirectedGraph<T>(props: {
         }
         ctx.restore();
 
-        return mapMapValues(graph, (aKey, a, i) => {
-          return produce(a, (a) => {
-            mapMapValues(graph, (bKey, b, j) => {
-              if (aKey === bKey || !a.applyForces) return;
-
-              let dist = Math.hypot(a.x - b.x, a.y - b.y);
-
-              if (dist < 0.000001) {
-                if (i > j) a.x -= 10;
-                dist += 10;
-              }
-
-              const dx = (b.x - a.x) / dist;
-              const dy = (b.y - a.y) / dist;
-
-              if (
-                isNaN(a.x) ||
-                isNaN(a.y) ||
-                isNaN(dx) ||
-                isNaN(dy) ||
-                isNaN(dist)
-              )
-                console.log(a.x, a.y, dx, dy, dist);
-
-              const conn = b.connections.get(aKey);
-
-              // two elements are connected
-              if (conn) {
-                const factor =
-                  dist > conn.targetDist
-                    ? conn.attractStrength
-                    : conn.repelStrength;
-                a.x += (dx * (dist - conn.targetDist) * factor) / b.mass;
-                a.y += (dy * (dist - conn.targetDist) * factor) / b.mass;
-
-                // two elements are not connected
-              } else {
-                if (dist < a.repulsionRadius) {
-                  const factor =
-                    Math.min(0, -1 * (dist - a.repulsionRadius) ** 2) *
-                    a.repulsionStrength;
-                  a.x += (dx * factor) / b.mass;
-                  a.y += (dy * factor) / b.mass;
-                }
-              }
-            });
-          });
-        });
+        return applyFDGPhysics(graph, 1);
       });
-      if (keepLooping) requestAnimationFrame(frame);
+      requestAnimationFrame(frame);
     }
 
     // run single frame
