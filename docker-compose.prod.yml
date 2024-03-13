@@ -5,9 +5,11 @@ services:
       context: .
     environment:
       DB_HOST: mysql
-      DB_USER: mysql-user
-      DB_PASSWORD: mysql-password-insecure
-      DB_NAME: coursetree-database
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      IS_PROD: ${IS_PROD}
+      CERT_PATH: ${CERT_PATH}
     depends_on:
       mysql:
         condition: service_healthy
@@ -20,16 +22,17 @@ services:
       - ./frontend/src:/app/frontend/src
       - ./backend:/app/backend
       - ./cache:/app/cache
+      - ${CERT_PATH}:${CERT_PATH}
 
   mysql:
     image: mysql:latest
     volumes:
       - db-data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root-password-insecure
-      MYSQL_DATABASE: coursetree-database
-      MYSQL_USER: mysql-user
-      MYSQL_PASSWORD: mysql-password-insecure
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     ports:
       - "3306:3306"
     networks:
@@ -41,7 +44,7 @@ services:
           "CMD-SHELL",
           "mysql -h localhost -u mysql-user -pmysql-password-insecure -e 'SELECT 1'",
         ]
-      interval: 5s
+      interval: 10s
       timeout: 3s
       retries: 5
 
