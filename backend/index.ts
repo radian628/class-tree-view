@@ -122,10 +122,8 @@ async function main() {
       });
       // redirect HTTP server
       const httpApp = express();
-      httpApp.all('*', (req, res) => res.redirect(300, req.hostname));
-          // const httpServer = http.createServer(httpApp);
+      httpApp.all('*', (req, res) => res.redirect(['https://', req.get('Host'), req.url].join('')));
       httpApp.listen(80, () => console.log(`HTTP redirect server listening`));
-
   } else {
           app.listen(8000, () => {
               console.log('HTTP server running on port 80');
