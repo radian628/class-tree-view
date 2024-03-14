@@ -11,7 +11,7 @@ export function CourseSelection(props: {
   return (
     <div className="class-search">
       <div className="course-select-header">
-        <MajorSelector
+        {/* <MajorSelector
           loadMajor={(m) => {
             console.log(m);
 
@@ -35,7 +35,7 @@ export function CourseSelection(props: {
               })();
             } catch {}
           }}
-        ></MajorSelector>
+        ></MajorSelector> */}
       </div>
       <ul className="class-search-results">
         <li className="class-search-result-header">
