@@ -6,13 +6,15 @@ import React from "react";
 export function MajorSelector(props: {
   loadMajor: (majorReqs: unknown) => void;
 }) {
-  const majors = trpc.getSupportedMajors.useQuery();
+  const majors = {
+    data: ["Computer Science", "Accountancy"],
+  };
 
-  const [major, setMajor] = useState("Select Major");
+  const [major, setMajor] = useState("null");
 
   const options = trpc.getSupportedOptions.useQuery(major);
 
-  const [option, setOption] = useState("Select Option");
+  const [option, setOption] = useState("nulln");
 
   let optionsArr = undefined;
 
@@ -51,8 +53,7 @@ export function MajorSelector(props: {
           ))}
         </select>
       )}
-      {major !== "Select Major" &&
-        option !== "Select Option" &&
+      {(option !== "null" || optionsArr?.length === 0) &&
         majors.data &&
         major !== "null" &&
         (optionsArr?.length == 0 || option !== "null") && (

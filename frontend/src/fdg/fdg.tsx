@@ -148,17 +148,6 @@ export function ForceDirectedGraph<T, State>(props: {
         }
       }
       ctx.restore();
-
-      // if (!editingNodeElsewhere.current) {
-      //   const newGraph = applyFDGPhysics(graph, 1);
-      //   // externallyControlledElements.current = new Set();
-
-      //   if (!props.paused) props.setGraph(newGraph);
-      // } else {
-      //   editingNodeElsewhere.current = false;
-      // }
-
-      //applyFDGPhysics(graph, 1);
     }
 
     // run single frame
@@ -186,7 +175,7 @@ export function ForceDirectedGraph<T, State>(props: {
       document.removeEventListener("mousemove", mousemove);
       document.body.removeEventListener("mouseup", mouseup);
     };
-  });
+  }, [positionOffset, isClickingCanvas]);
 
   return (
     <div className="fdg" ref={containerRef}>
