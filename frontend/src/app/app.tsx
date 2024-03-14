@@ -34,11 +34,17 @@ export function App() {
   const [graph, setGraph] = useState(new Map<string, FDGNode<TreeItem>>([]));
 
   useEffect(() => {
+    let keepLooping = true;
+
     function physicsLoop() {
       setGraph((graph) => applyFDGPhysics(graph, 1));
-      requestAnimationFrame(physicsLoop);
+      if (keepLooping) requestAnimationFrame(physicsLoop);
     }
     requestAnimationFrame(physicsLoop);
+
+    return () => {
+      keepLooping = false;
+    };
   }, []);
 
   const [isQueryingGraph, setIsQueryingGraph] = useState(false);

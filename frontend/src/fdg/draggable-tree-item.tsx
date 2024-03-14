@@ -19,17 +19,20 @@ export function DraggableTreeItem<T>(props: {
 }) {
   const isMouseDown = props.draggingKey === props.graphKey;
 
-  console.log("most up to date isMouseDown", isMouseDown);
+  // this is stupid and I shouldn't have to do this
+  useEffect(() => {
+    if (!isMouseDown)
+      props.setNode({
+        ...props.node,
+        applyForces: true,
+      });
+  }, [isMouseDown]);
 
   useEffect(() => {
     // notify when mouse released by setting state and re-enable forces
     const mouseup = (e: MouseEvent) => {
       props.setDraggingKey(undefined);
-      if (isMouseDown)
-        props.setNode({
-          ...props.node,
-          applyForces: true,
-        });
+      console.log("applyForces should be true now!!!");
     };
 
     // move graphnode when mouse moved
