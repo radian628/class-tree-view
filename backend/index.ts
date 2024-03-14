@@ -120,11 +120,17 @@ async function main() {
       httpsServer.listen(443, () => {
           console.log('HTTPS server running on port 443');
       });
+      // redirect HTTP server
+      const httpApp = express();
+      httpApp.all('*', (req, res) => res.redirect(300, req.hostname));
+          // const httpServer = http.createServer(httpApp);
+      httpApp.listen(80, () => console.log(`HTTP redirect server listening`));
+
   } else {
-      app.listen(8000, () => {
-          console.log('HTTP server running on port 80');
-      });
-  }
+          app.listen(8000, () => {
+              console.log('HTTP server running on port 80');
+          });
+      }
 
 }
 
