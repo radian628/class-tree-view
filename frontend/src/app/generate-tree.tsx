@@ -393,8 +393,22 @@ export async function constructFDGStateFromPrereqTrees(
   const terminals = getTreeTerminals(prereqs);
   const initials = getTreeInitials(prereqs);
 
+  const initCount = initials.size;
+  const termCount = terminals.size;
+
+  const initInterval = 1000 / initCount ** 0.3;
+  const termInterval = 1000 / termCount ** 0.3;
+
   [...terminals.entries()].map(async ([k, v], i) => {
-    return traverseCourse(k, i * 900, 0, ANGLE_START, INIT_ANGLE_DELTA, 0, 0);
+    return traverseCourse(
+      k,
+      i * termInterval,
+      0,
+      ANGLE_START,
+      INIT_ANGLE_DELTA,
+      0,
+      0
+    );
   });
 
   const initialsArr = [...initials.keys()];
@@ -406,7 +420,7 @@ export async function constructFDGStateFromPrereqTrees(
 
     if (!node) continue;
 
-    node.x = i * 900;
+    node.x = i * initInterval;
     node.y = -200 * treeData.size;
   }
 

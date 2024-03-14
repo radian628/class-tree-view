@@ -47,13 +47,13 @@ export function applyFDGPhysics<T>(
           if (applyForcesA) {
             a.x += xMove / a.mass;
             a.y += yMove / a.mass;
-            a.y -= moveUp;
+            a.y -= moveUp / a.mass;
           }
 
           if (applyForcesB) {
             b.x -= xMove / b.mass;
             b.y -= yMove / b.mass;
-            b.y += moveDown;
+            b.y += moveDown / b.mass;
           }
 
           // two elements are not connected

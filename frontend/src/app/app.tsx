@@ -108,6 +108,7 @@ export function App() {
   const [selectedCourses, setSelectedCourses] = useState<CourseRaw[]>([]);
 
   async function regenerateGraph(courses: Set<string>) {
+    console.log("regen graph");
     setIsQueryingGraph(true);
     setGraph(
       await (async () => {
