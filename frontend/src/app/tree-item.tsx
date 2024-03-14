@@ -82,14 +82,10 @@ export function isRequirementSatisfied(
 export const TreeItemView = function (props: {
   graphKey: string;
   node: FDGNode<TreeItem>;
-  setNode: (setter: (oldNode: FDGNode<TreeItem>) => FDGNode<TreeItem>) => void;
+  setNode: (setter: FDGNode<TreeItem>) => void;
   scale: number;
   graph: Map<string, FDGNode<TreeItem>>;
-  setGraph: (
-    setter: (
-      old: Map<string, FDGNode<TreeItem>>
-    ) => Map<string, FDGNode<TreeItem>>
-  ) => void;
+  setGraph: (setter: Map<string, FDGNode<TreeItem>>) => void;
   state: GraphState;
   setState: React.Dispatch<React.SetStateAction<GraphState>>;
 }) {
@@ -109,9 +105,12 @@ export const TreeItemView = function (props: {
     props.state.taken
   );
 
+  const { graph } = props;
+
   return (
     <DraggableTreeItem
       node={props.node}
+      draggingKey={props.state.dragging}
       setNode={props.setNode}
       scale={props.scale}
       graphKey={props.graphKey}
@@ -146,12 +145,33 @@ export const TreeItemView = function (props: {
             <button
               className="remove-button"
               onClick={(p) => {
-                props.setGraph((graph) =>
+                props.setGraph(
                   produce(graph, (graph) => {
-                    graph.delete(props.graphKey);
-                    for (const [key, node] of graph) {
-                      node.connections.delete(props.graphKey);
+                    function removeKey(key: string) {
+                      graph.delete(key);
+                      for (const [key, node] of graph) {
+                        node.connections.delete(key);
+                      }
+
+                      const hasConnections = new Set<string>();
+
+                      for (const [key, node] of graph) {
+                        for (const [dst, conn] of node.connections) {
+                          hasConnections.add(dst);
+                        }
+                      }
+
+                      for (const [key, node] of graph) {
+                        if (
+                          node.data.type !== "course" &&
+                          !hasConnections.has(key)
+                        ) {
+                          removeKey(key);
+                        }
+                      }
                     }
+
+                    removeKey(props.graphKey);
                   })
                 );
               }}

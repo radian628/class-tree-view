@@ -33,6 +33,14 @@ export type GraphState = {
 export function App() {
   const [graph, setGraph] = useState(new Map<string, FDGNode<TreeItem>>([]));
 
+  useEffect(() => {
+    function physicsLoop() {
+      setGraph((graph) => applyFDGPhysics(graph, 1));
+      requestAnimationFrame(physicsLoop);
+    }
+    requestAnimationFrame(physicsLoop);
+  }, []);
+
   const [isQueryingGraph, setIsQueryingGraph] = useState(false);
 
   const [queryClient] = useState(() => new QueryClient());
@@ -54,33 +62,42 @@ export function App() {
     hovering: undefined,
   });
 
-  const graphWithBetterArrows = new Map(graph);
+  function fixGraphArrows(graph: Map<string, FDGNode<TreeItem>>) {
+    return new Map(
+      produce(graph, (graph) => {
+        for (const [k, v] of graph) {
+          for (const [destination, connection] of v.connections) {
+            const sat = isRequirementSatisfied(
+              graph.get(destination),
+              destination,
+              graph,
+              graphState.taken
+            );
+            if (
+              sat === Satisfaction.Taken ||
+              sat === Satisfaction.AvailableAndOr
+            ) {
+              connection.color = "#FFaa66";
+            } else {
+              connection.color = "#bbbbbb";
+            }
 
-  for (const [k, v] of graphWithBetterArrows) {
-    for (const [destination, connection] of v.connections) {
-      const sat = isRequirementSatisfied(
-        graph.get(destination),
-        destination,
-        graph,
-        graphState.taken
-      );
-      if (sat === Satisfaction.Taken || sat === Satisfaction.AvailableAndOr) {
-        connection.color = "#FFaa66";
-      } else {
-        connection.color = "#bbbbbb";
-      }
+            if (destination === graphState.hovering) {
+              connection.color = "#0088ff";
+            }
+          }
 
-      if (destination === graphState.hovering) {
-        connection.color = "#0088ff";
-      }
-    }
-
-    if (k === graphState.hovering) {
-      for (const [dst, conn] of v.connections) {
-        conn.color = "#ff0088";
-      }
-    }
+          if (k === graphState.hovering) {
+            for (const [dst, conn] of v.connections) {
+              conn.color = "#ff0088";
+            }
+          }
+        }
+      })
+    );
   }
+
+  const graphWithBetterArrows = fixGraphArrows(graph);
 
   const [selectedCourses, setSelectedCourses] = useState<CourseRaw[]>([]);
 
@@ -106,6 +123,7 @@ export function App() {
         });
 
         setIsQueryingGraph(false);
+        console.log("QUERIED GRAPH!!!");
         return graph;
       })()
     );
@@ -117,9 +135,12 @@ export function App() {
         <div className="app-container">
           <div className="tree-container">
             <ForceDirectedGraph
+              paused={isQueryingGraph}
               itemTemplate={TreeItemView}
               graph={graphWithBetterArrows}
-              setGraph={setGraph}
+              setGraph={(graph) => {
+                setGraph(fixGraphArrows(graph));
+              }}
               state={graphState}
               setState={setGraphState}
             ></ForceDirectedGraph>

@@ -6,8 +6,9 @@ import { mapMapValues } from "../util/map.js";
 
 export function DraggableTreeItem<T>(props: {
   node: FDGNode<T>;
-  setNode: (setter: (oldNode: FDGNode<T>) => FDGNode<T>) => void;
+  setNode: (setter: FDGNode<T>) => void;
   graphKey: string;
+  draggingKey: string | undefined;
   setDraggingKey: (key: string | undefined) => void;
   setHoveringKey: (key: string | undefined) => void;
   scale: number;
@@ -16,29 +17,30 @@ export function DraggableTreeItem<T>(props: {
     | React.ReactElement
     | string;
 }) {
-  const [isMouseDown, setIsMouseDown] = useState(false);
+  const isMouseDown = props.draggingKey === props.graphKey;
+
+  console.log("most up to date isMouseDown", isMouseDown);
 
   useEffect(() => {
     // notify when mouse released by setting state and re-enable forces
     const mouseup = (e: MouseEvent) => {
-      setIsMouseDown(false);
       props.setDraggingKey(undefined);
       if (isMouseDown)
-        props.setNode((node) => ({
-          ...node,
+        props.setNode({
+          ...props.node,
           applyForces: true,
-          //repulsionRadius: 200,
-        }));
+        });
     };
 
     // move graphnode when mouse moved
     const mousemove = (e: MouseEvent) => {
       if (!isMouseDown) return;
-      props.setNode((node) => ({
+      const { node } = props;
+      props.setNode({
         ...node,
         x: node.x + e.movementX / props.scale,
         y: node.y + e.movementY / props.scale,
-      }));
+      });
     };
 
     // listener add/remove lifecycle stuff
@@ -48,7 +50,7 @@ export function DraggableTreeItem<T>(props: {
       document.removeEventListener("mouseup", mouseup);
       document.removeEventListener("mousemove", mousemove);
     };
-  }, [isMouseDown]);
+  });
 
   return (
     <div
@@ -56,13 +58,11 @@ export function DraggableTreeItem<T>(props: {
         if (!(e.target instanceof HTMLElement) || !e.target.dataset.isDraggable)
           return;
         // register mouse down and disable forces on this node
-        setIsMouseDown(true);
         props.setDraggingKey(props.graphKey);
-        props.setNode((node) => ({
-          ...node,
+        props.setNode({
+          ...props.node,
           applyForces: false,
-          //repulsionRadius: 500,
-        }));
+        });
       }}
       onMouseEnter={(e) => {
         props.setHoveringKey(props.graphKey);

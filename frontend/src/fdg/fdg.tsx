@@ -10,11 +10,9 @@ import { applyFDGPhysics } from "./fdg-physics.js";
 
 export type FDGItemProps<T, State> = {
   node: FDGNode<T>;
-  setNode: (setter: (oldNode: FDGNode<T>) => FDGNode<T>) => void;
+  setNode: (setter: FDGNode<T>) => void;
   graph: Map<string, FDGNode<T>>;
-  setGraph: (
-    setter: (old: Map<string, FDGNode<T>>) => Map<string, FDGNode<T>>
-  ) => void;
+  setGraph: (graph: Map<string, FDGNode<T>>) => void;
   scale: number;
   state: State;
   setState: React.Dispatch<React.SetStateAction<State>>;
@@ -27,12 +25,11 @@ export type FDGItemComponent<T, State> = (
 
 export function ForceDirectedGraph<T, State>(props: {
   graph: Map<string, FDGNode<T>>;
-  setGraph: (
-    setter: (old: Map<string, FDGNode<T>>) => Map<string, FDGNode<T>>
-  ) => void;
+  setGraph: (graph: Map<string, FDGNode<T>>) => void;
   itemTemplate: FDGItemComponent<T, State>;
   state: State;
   setState: React.Dispatch<React.SetStateAction<State>>;
+  paused: boolean;
 }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -47,11 +44,8 @@ export function ForceDirectedGraph<T, State>(props: {
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
-    let keepLooping = true;
-
     // run per-frame stuff
     function frame() {
-      if (!keepLooping) return;
       const canvas = canvasRef.current;
       const container = containerRef.current;
 
@@ -63,110 +57,113 @@ export function ForceDirectedGraph<T, State>(props: {
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
-      // modify graph
-      props.setGraph((graph) => {
-        // resize canvas if necessary
-        const containerRect = container.getBoundingClientRect();
-        const containerRectWidthRounded = Math.round(containerRect.width);
-        const containerRectHeightRounded = Math.round(containerRect.height);
+      // resize canvas if necessary
+      const containerRect = container.getBoundingClientRect();
+      const containerRectWidthRounded = Math.round(containerRect.width);
+      const containerRectHeightRounded = Math.round(containerRect.height);
 
-        if (canvas.width !== containerRectWidthRounded)
-          canvas.width = containerRectWidthRounded;
-        if (canvas.height !== containerRectHeightRounded)
-          canvas.height = containerRectHeightRounded;
+      if (canvas.width !== containerRectWidthRounded)
+        canvas.width = containerRectWidthRounded;
+      if (canvas.height !== containerRectHeightRounded)
+        canvas.height = containerRectHeightRounded;
 
-        const offsetX = containerRect?.left ?? 0;
-        const offsetY = containerRect?.top ?? 0;
+      const offsetX = containerRect?.left ?? 0;
+      const offsetY = containerRect?.top ?? 0;
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.save();
-        ctx.translate(-offsetX, -offsetY);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.save();
+      ctx.translate(-offsetX, -offsetY);
 
-        // draw all connections on canvas
-        for (const [keyA, node] of graph.entries()) {
-          for (const [keyB, connection] of node.connections.entries()) {
-            const elementB = innerElementsRef.current.get(keyA);
-            const elementA = innerElementsRef.current.get(keyB);
+      // draw all connections on canvas
+      const graph = props.graph;
 
-            if (!elementA || !elementB) continue;
+      for (const [keyA, node] of graph.entries()) {
+        for (const [keyB, connection] of node.connections.entries()) {
+          const elementB = innerElementsRef.current.get(keyA);
+          const elementA = innerElementsRef.current.get(keyB);
 
-            const rect1 = elementA.getBoundingClientRect();
-            const rect2 = elementB.getBoundingClientRect();
+          if (!elementA || !elementB) continue;
 
-            const xCenter1 = rect1.width / 2 + rect1.left;
-            const xCenter2 = rect2.width / 2 + rect2.left;
-            const yCenter1 = rect1.height / 2 + rect1.top;
-            const yCenter2 = rect2.height / 2 + rect2.top;
+          const rect1 = elementA.getBoundingClientRect();
+          const rect2 = elementB.getBoundingClientRect();
 
-            const p2 = intersectLineSegmentStartingAtBoxCenter(
-              rect1.left,
-              rect1.top,
-              rect1.left + rect1.width,
-              rect1.top + rect1.height,
-              xCenter2,
-              yCenter2
+          const xCenter1 = rect1.width / 2 + rect1.left;
+          const xCenter2 = rect2.width / 2 + rect2.left;
+          const yCenter1 = rect1.height / 2 + rect1.top;
+          const yCenter2 = rect2.height / 2 + rect2.top;
+
+          const p2 = intersectLineSegmentStartingAtBoxCenter(
+            rect1.left,
+            rect1.top,
+            rect1.left + rect1.width,
+            rect1.top + rect1.height,
+            xCenter2,
+            yCenter2
+          );
+          const p1 = intersectLineSegmentStartingAtBoxCenter(
+            rect2.left,
+            rect2.top,
+            rect2.left + rect2.width,
+            rect2.top + rect2.height,
+            xCenter1,
+            yCenter1
+          );
+
+          let dir = Math.atan2(p2.y - p1.y, p2.x - p1.x);
+          const arrowLen = 40 * scale;
+          const arrowAngle = (Math.PI * 2.5) / 3;
+
+          ctx.lineWidth = 6 * scale;
+          ctx.lineCap = "round";
+          ctx.lineJoin = "round";
+          ctx.strokeStyle = connection.color;
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          if (connection.directionality != "backwards") {
+            ctx.moveTo(
+              p2.x + Math.cos(dir + arrowAngle) * arrowLen,
+              p2.y + Math.sin(dir + arrowAngle) * arrowLen
             );
-            const p1 = intersectLineSegmentStartingAtBoxCenter(
-              rect2.left,
-              rect2.top,
-              rect2.left + rect2.width,
-              rect2.top + rect2.height,
-              xCenter1,
-              yCenter1
-            );
-
-            let dir = Math.atan2(p2.y - p1.y, p2.x - p1.x);
-            const arrowLen = 40 * scale;
-            const arrowAngle = (Math.PI * 2.5) / 3;
-
-            ctx.lineWidth = 6 * scale;
-            ctx.lineCap = "round";
-            ctx.lineJoin = "round";
-            ctx.strokeStyle = connection.color;
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            if (connection.directionality != "backwards") {
-              ctx.moveTo(
-                p2.x + Math.cos(dir + arrowAngle) * arrowLen,
-                p2.y + Math.sin(dir + arrowAngle) * arrowLen
-              );
-              ctx.lineTo(p2.x, p2.y);
-              ctx.lineTo(
-                p2.x + Math.cos(dir - arrowAngle) * arrowLen,
-                p2.y + Math.sin(dir - arrowAngle) * arrowLen
-              );
-              ctx.stroke();
-            }
-            if (connection.directionality != "forwards") {
-              dir += Math.PI;
-              ctx.moveTo(
-                p1.x + Math.cos(dir + arrowAngle) * arrowLen,
-                p1.y + Math.sin(dir + arrowAngle) * arrowLen
-              );
-              ctx.lineTo(p1.x, p1.y);
-              ctx.lineTo(
-                p1.x + Math.cos(dir - arrowAngle) * arrowLen,
-                p1.y + Math.sin(dir - arrowAngle) * arrowLen
-              );
-              ctx.stroke();
-            }
+            ctx.lineTo(
+              p2.x + Math.cos(dir - arrowAngle) * arrowLen,
+              p2.y + Math.sin(dir - arrowAngle) * arrowLen
+            );
+            ctx.stroke();
+          }
+          if (connection.directionality != "forwards") {
+            dir += Math.PI;
+            ctx.moveTo(
+              p1.x + Math.cos(dir + arrowAngle) * arrowLen,
+              p1.y + Math.sin(dir + arrowAngle) * arrowLen
+            );
+            ctx.lineTo(p1.x, p1.y);
+            ctx.lineTo(
+              p1.x + Math.cos(dir - arrowAngle) * arrowLen,
+              p1.y + Math.sin(dir - arrowAngle) * arrowLen
+            );
+            ctx.stroke();
           }
         }
-        ctx.restore();
+      }
+      ctx.restore();
 
-        return applyFDGPhysics(graph, 1);
-      });
-      requestAnimationFrame(frame);
+      // if (!editingNodeElsewhere.current) {
+      //   const newGraph = applyFDGPhysics(graph, 1);
+      //   // externallyControlledElements.current = new Set();
+
+      //   if (!props.paused) props.setGraph(newGraph);
+      // } else {
+      //   editingNodeElsewhere.current = false;
+      // }
+
+      //applyFDGPhysics(graph, 1);
     }
 
     // run single frame
     requestAnimationFrame(frame);
-
-    return () => {
-      keepLooping = false;
-    };
-  }, [positionOffset, scale]);
+  }, [positionOffset, scale, props.paused, props.graph]);
 
   useEffect(() => {
     const mousemove = (e: MouseEvent) => {
@@ -232,20 +229,10 @@ export function ForceDirectedGraph<T, State>(props: {
                   graph={props.graph}
                   setGraph={props.setGraph}
                   node={v}
-                  setNode={(setter) => {
-                    // set a single node of the graph
-                    props.setGraph((graph) => {
-                      const newNode = setter(graph.get(k)!);
-                      return produce(
-                        [graph, newNode] as [
-                          Map<string, FDGNode<T>>,
-                          FDGNode<T>
-                        ],
-                        ([g, nn]) => {
-                          g.set(k, nn);
-                        }
-                      )[0];
-                    });
+                  setNode={(newNode) => {
+                    const newGraph = new Map(props.graph);
+                    newGraph.set(k, newNode);
+                    props.setGraph(newGraph);
                   }}
                 ></props.itemTemplate>
               </div>
