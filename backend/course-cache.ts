@@ -43,10 +43,6 @@ export class CourseCache {
       // }
       if (!(await exists(path))) {
         shouldRedo = true;
-      } else {
-        console.log(
-          `Skipping term ${terms[i].code} (cached file already exists)`
-        );
       }
 
       if (shouldRedo) {
@@ -61,8 +57,6 @@ export class CourseCache {
 
       // reading to database
       await fs.readFile(path).then(async (data: Buffer) => {
-        console.log(`Reading term ${terms[i].code} to database.`);
-
         const courses: CourseRaw[] = JSON.parse(data.toString());
 
         // insert course data into DB
@@ -83,7 +77,6 @@ export class CourseCache {
           ]),
         ]);
 
-        console.log(`Finished reading term ${terms[i].code} to database.`);
       });
 
       if (shouldRedo) await delay(1000 * 15);

@@ -63,17 +63,17 @@ async function convertPrereqToCourse(
 }
 
 export class PrereqTreeCache {
-  map: Map<string, PrereqTreeCacheEntry>;
+  map: { [key: string]: PrereqTreeCacheEntry };
   conn: Connection;
 
   constructor(conn: Connection) {
     this.conn = conn;
-    this.map = new Map();
+    this.map = {};
   }
 
   setDNE(subjectCourse: string) {
     const dne: PrereqTreeCacheEntry = { type: "dne", timestamp: Date.now() };
-    this.map.set(subjectCourse, dne);
+    this.map[subjectCourse] = dne;
     return dne;
   }
 
@@ -103,8 +103,14 @@ export class PrereqTreeCache {
 
   async getDirectPrereqs(subjectCourse: string): Promise<PrereqTreeCacheEntry> {
     // best case: prereq info is in cache
-    const entry = this.map.get(subjectCourse);
-    if (entry) return entry;
+    console.time("Reading map");
+    const entry = this.map[subjectCourse];
+    console.timeEnd("Reading map");
+
+    if (entry) {
+        console.log("cache hit");
+        return entry;
+    }
 
     // look up course info so we can query banner
     const [[courseInfo]] = await this.conn.execute<RowDataPacket[]>(
@@ -133,7 +139,7 @@ export class PrereqTreeCache {
       tree: convertedTree,
       timestamp: Date.now(),
     };
-    this.map.set(subjectCourse, newCacheEntry);
+    this.map[subjectCourse] = newCacheEntry;
 
     return newCacheEntry;
   }
